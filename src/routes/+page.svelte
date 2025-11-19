@@ -30,6 +30,8 @@
 	</Canvas>
 </div>
 
+<p>Thank you for visiting, this site is under construction</p>
+
 <style>
 	h1 {
 		margin: 5rem;

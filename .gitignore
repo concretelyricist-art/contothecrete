@@ -8,7 +8,8 @@ node_modules
 .prettierrc
 .prettierignore
 .npmrc
-
+.eslint.config.js
+package-lock.json
 /.svelte-kit
 /build
 /dist
