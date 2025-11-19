@@ -30,7 +30,9 @@
 	</Canvas>
 </div>
 
-<p>Thank you for visiting, this site is under construction</p>
+<p>Thank you for visiting, this site is under construction.</p>
+
+<p>You are great</p>
 
 <style>
 	h1 {
