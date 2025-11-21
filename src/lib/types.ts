@@ -3,4 +3,5 @@ export type CharacterActions = {
 	idle;
 	idleChainsaw;
 	raiseChainsaw;
+	menuChainsaw;
 };

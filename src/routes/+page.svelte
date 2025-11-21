@@ -20,6 +20,12 @@
 			action = 'raiseChainsaw';
 		}}
 	/>
+	<Button
+		title="Menu"
+		on:click={() => {
+			action = 'menuChainsaw';
+		}}
+	/>
 </Pane>
 
 <h1>Hello friend</h1>
