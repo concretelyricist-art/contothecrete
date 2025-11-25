@@ -1,5 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Canvas } from '@threlte/core';
+	import Scene from '$lib/Scene.svelte';
+	import type { CharacterActions } from './types';
+
+	let action = $state<CharacterActions>('idleChainsaw');
+
 	let isMenuOpen = $state(false);
 	let current = $state(1);
 
@@ -29,11 +35,24 @@
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
+
+	function handleClick() {
+		action = 'menuChainsaw';
+
+		// after 5 seconds, return to idle
+		setTimeout(() => {
+			action = 'idleChainsaw';
+		}, 3500);
+	}
 </script>
 
 <div>
-	<button class="center-toggle" onclick={() => (isMenuOpen = !isMenuOpen)} aria-label="Toggle menu">
-		<svg> Home</svg>
+	<button class="center-toggle" onclick={() => ((isMenuOpen = !isMenuOpen), handleClick())}>
+		<div class="threeDBox">
+			<Canvas>
+				<Scene {action} />
+			</Canvas>
+		</div>
 	</button>
 
 	{#if isMenuOpen}
@@ -66,29 +85,27 @@
 <style>
 	.center-toggle {
 		position: fixed;
-		top: 0.5rem;
+		bottom: 0.5rem;
 		right: 0.5rem;
 		z-index: 960;
-		width: 4rem;
-		height: 4rem;
-		border-radius: 50%;
-		background: rgba(21, 48, 20, 0.5);
-		backdrop-filter: blur(12px);
-		border: var(--bord);
+		width: 10rem;
+		height: 10rem;
+		background: var(--bg-2);
+		border: var(--bord-2);
 		cursor: pointer;
 		transition:
 			transform 0.3s ease,
 			background 0.3s ease;
+	}
 
-		svg {
-			width: 90%;
-			height: 90%;
-		}
+	.threeDBox {
+		position: relative;
+		height: 100%;
+		width: 100%;
 	}
 
 	.center-toggle:hover {
 		transform: scale(1.1);
-		background: rgba(255, 255, 255, 0.25);
 	}
 
 	.menu-overlay {

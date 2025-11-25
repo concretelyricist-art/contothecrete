@@ -2,7 +2,7 @@
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls } from '@threlte/extras';
-	import Character from './MovingBox.svelte';
+	import Character from './Assets/ChainsawMan.svelte';
 
 	let { action } = $props();
 </script>
@@ -13,11 +13,9 @@
 	oncreate={(ref) => {
 		ref.lookAt(0, 1, 0);
 	}}
->
-	<OrbitControls />
-</T.PerspectiveCamera>
+></T.PerspectiveCamera>
 
-<T.AmbientLight />
-<T.DirectionalLight position={[10, 5, 3]} castShadow />
+<T.AmbientLight intensity={1} />
+<T.DirectionalLight position={[1, 5, 1]} castShadow />
 
 <Character actionKey={action} />
