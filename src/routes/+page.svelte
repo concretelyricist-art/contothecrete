@@ -91,6 +91,7 @@
 		</p>
 	</section>
 
+	<h2>Merch</h2>
 	<section class="merch-scroll">
 		{#each Shirts as shirt}
 			<div class="card-Topper">
