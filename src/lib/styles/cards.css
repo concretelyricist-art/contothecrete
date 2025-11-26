@@ -1,0 +1,125 @@
+:root {  
+.card-Brutal {
+    background: var(--accent-1);
+    padding: 1.4rem;
+    margin: 1rem;
+    min-width: 250px;
+    min-height: 350px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 2px;  
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 60%;
+        margin-left: 20%;
+        height: auto;
+    }
+
+    h2 {
+        margin-top: auto;
+    }
+
+    .sizes, .price { 
+        font-size: 1rem; 
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+}
+
+.card-BoldOutline {
+    background: #000;
+    padding: 1.5rem;
+    border: 3px solid #ff3333;
+    outline: 3px solid #000;
+    outline-offset: -6px;
+    border-radius: 12px;
+    color: #fff;
+    width: 250px;
+}
+.card-8:hover { background: #1a0000; }
+
+.card-Dashed {
+    background: #141414;
+    color: #ddd;
+    padding: 1.1rem;
+    width: 230px;
+    border-radius: 3px;
+    border: 2px dashed #ff3d3d;
+}
+.card-Dashed h3 {
+    font-family: "Courier New", monospace;
+    margin-bottom: .3rem;
+}
+
+.card-Small-Lines {
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    border: 1px solid #444;
+    padding: 1.2rem;
+    border-radius: 4px;
+    color: #ccc;
+    width: 230px;
+}
+.card-Small-Lines h3 { border-bottom: 1px solid #444; padding-bottom: .3rem; }
+
+.card-Sideline {
+    background: #111;
+    padding: 1.2rem 1.4rem;
+    border-left: 6px solid #ff2c2c;
+    border-radius: 6px;
+    color: #eee;
+    width: 250px;
+}
+.card-Sideline h3 { margin-top: 0; }
+
+.card-Topper {
+    background: var(--bg-2);
+    color: #fff;
+    padding: 1.6rem;
+    border-radius: 6px;
+    width: 260px;
+    height: 260px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+        img {
+        width: 60%;
+        margin:5% 20% 0 20%;
+        height: auto;
+    }
+
+    h2 {
+        padding: 0;
+        position: absolute;
+        top:0;
+        left: 5%;
+    }
+
+    .price {
+        
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+    }
+
+    .sizes { 
+        font-size: 1rem;  
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+    }
+}
+.card-Topper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    background: linear-gradient(to right, #900, #f00, #900);
+}
+
+}

@@ -7,7 +7,7 @@
 --size-5: clamp(1rem, 2.5vw, 1.25rem);
 --size-6: clamp(1.2rem, 3vw, 1.5rem);
 --size-7: clamp(1.5rem, 5vw, 2.5rem);
---size-8: clamp(2.5rem, 7vw, 3.5rem);
+--size-8: clamp(2.25rem, 6.75vw, 3.25rem);
 --size-9: clamp(3rem, 8vw, 5rem);
 --size-10: clamp(5rem, 10vw, 7rem);
 --size-11: clamp(7rem, 12vw, 10rem);
@@ -34,7 +34,7 @@
 --rad-Md:           1rem;
 --rad-Lg:           2rem;
 --bord:             2px solid var(--border-color);
---bord-2:             2px dashed var(--border-color);
+--bord-2:             2px dashed var(--accent-1);
 
 /* Shadows & lights */
 --glow-Box:       6px 4px 8px var(--hover), 0 4px 6px var(--hover);

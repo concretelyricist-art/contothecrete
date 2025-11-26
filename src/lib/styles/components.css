@@ -28,8 +28,7 @@
 .glass-Box { 
 	backdrop-filter: blur(8px);
 	--webkit-backdrop-filter: blur(1.5px);
-	border: var(--bord);
-		border-radius: var(--rad-Sm);
+	border: var(--bord); 
 }
 
 .glass-Box-2 {
