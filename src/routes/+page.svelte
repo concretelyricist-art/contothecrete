@@ -131,7 +131,7 @@
 
 <section class="merch-scroll">
 	{#each Shirts as shirt}
-		<div class="card-Brutal">
+		<button class="card-Brutal" onclick={() => openMerch(shirt)}>
 			<img src={shirt.img} alt={shirt.description} />
 			<h2>{shirt.name}</h2>
 			<p class="price">${shirt.price}</p>
@@ -140,7 +140,7 @@
 					<span>{size} /</span>
 				{/each}
 			</div>
-		</div>
+		</button>
 	{/each}
 </section>
 
