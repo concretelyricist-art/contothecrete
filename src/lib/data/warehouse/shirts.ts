@@ -4,12 +4,15 @@ import shirt3 from '$lib/Images/con5.png';
 import shirt4 from '$lib/Images/con20.jpg';
 import shirt5 from '$lib/Images/con21.jpg';
 
+import SceneAlt from '$lib/SceneAlt.svelte';
+
 export type Shirt = {
 	id: number;
 	name: string;
 	price: number;
 	img: string;
 	sizes: string[];
+	model?: { Scene: typeof SceneAlt };
 	description: string;
 };
 
@@ -20,6 +23,7 @@ export const Shirts = [
 		price: 25,
 		img: shirt,
 		sizes: ['S', 'M', 'L', 'XL'],
+		url: './shirtBase3.glb',
 		description: 'A stylish shirt featuring a Concrete face paint.'
 	},
 	{
@@ -28,6 +32,7 @@ export const Shirts = [
 		price: 25,
 		img: shirt2,
 		sizes: ['S', 'M', 'XL', 'XXL'],
+		url: './shirtBase.glb',
 		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.'
 	},
 	{
@@ -36,6 +41,7 @@ export const Shirts = [
 		price: 25,
 		img: shirt3,
 		sizes: ['S', 'M', 'L'],
+		url: './shirtBase2.glb',
 		description: 'A shirt featuring Concrete holding a pigs head.'
 	},
 	{
@@ -44,6 +50,7 @@ export const Shirts = [
 		price: 25,
 		img: shirt4,
 		sizes: ['S', 'M', 'L', 'XL'],
+		url: './shirtBase4.glb',
 		description: 'A classic shirt featuring a Concrete face.'
 	},
 	{
@@ -52,6 +59,7 @@ export const Shirts = [
 		price: 25,
 		img: shirt5,
 		sizes: ['S', 'M'],
+		url: './shirtBase5.glb',
 		description: 'A  shirt featuring a Concrete cartoon.'
 	}
 ];

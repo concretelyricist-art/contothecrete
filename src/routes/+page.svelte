@@ -3,17 +3,26 @@
 
 	import { Shirts } from '$lib/data/warehouse/shirts';
 
+	import MerchItem from './MerchItem.svelte';
+
+	let merchItem = $state(false);
+	let selectedShirt = $state(null);
+
+	function openMerch(shirt) {
+		selectedShirt = shirt;
+		merchItem = true;
+	}
+
+	function closeMerch() {
+		merchItem = false;
+		selectedShirt = null;
+	}
+
 	import img1 from '$lib/Images/con14.jpg';
 	import img2 from '$lib/Images/con16.jpg';
 	import img4 from '$lib/Images/con2.jpg';
 	import img3 from '$lib/Images/con5.jpg';
 	import img5 from '$lib/Images/con1.jpg';
-
-	import shirt from '$lib/Images/con1.png';
-	import shirt2 from '$lib/Images/con3.png';
-	import shirt3 from '$lib/Images/con5.png';
-	import shirt4 from '$lib/Images/con20.jpg';
-	import shirt5 from '$lib/Images/con21.jpg';
 
 	const images = [img1, img2, img3, img4, img5];
 	let index = $state(0);
@@ -92,20 +101,32 @@
 	</section>
 
 	<h2>Merch</h2>
+
 	<section class="merch-scroll">
 		{#each Shirts as shirt}
-			<div class="card-Topper">
+			<button class="card-Topper" onclick={() => openMerch(shirt)}>
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
+
 				<div class="size-row">
 					{#each shirt.sizes as size}
 						<span class="size-badge">{size}</span>
 					{/each}
 				</div>
-			</div>
+			</button>
 		{/each}
 	</section>
+
+	{#if merchItem}
+		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
+			<div class="modal-content" tabindex="-1" autofocus>
+				<MerchItem shirt={selectedShirt} />
+
+				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
+			</div>
+		</dialog>
+	{/if}
 </main>
 
 <section class="merch-scroll">
@@ -258,6 +279,29 @@
 	.size-badge:hover {
 		transform: scale(1.1);
 		background: #ff3636;
+	}
+
+	.modal-overlay {
+		position: fixed;
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.6);
+		align-items: center;
+		justify-content: center;
+		z-index: 999;
+	}
+
+	.modal-content {
+		background: var(--bg-2);
+		color: var(--txt-1);
+		border: var(--bord-2);
+		max-width: 90vw;
+		max-height: 90vh;
+		overflow-y: auto;
+		text-align: center;
 	}
 
 	.slider {
