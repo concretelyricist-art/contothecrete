@@ -56,9 +56,12 @@
 		<article class="glass-Box">
 			<h1>Subscribe</h1>
 		</article>
+		<article class="glass-Box large-Only">
+			<h1>Merch</h1>
+		</article>
 
 		<article class="glass-Box">
-			<h1>Shows</h1>
+			<h1><a href="/Shows"> Shows</a></h1>
 			<table>
 				<thead>
 					<tr>
@@ -76,6 +79,9 @@
 					</tr>
 				</tbody>
 			</table>
+		</article>
+		<article class="glass-Box large-Only">
+			<h1>VIdeo</h1>
 		</article>
 	</section>
 </header>
@@ -100,7 +106,14 @@
 		</p>
 	</section>
 
-	<h2>Merch</h2>
+	<section>
+		<h2>Merch</h2>
+
+		<p>
+			Buy some dope shit and make youself look fresh as fuck! Click the item to check it out and
+			learn more about it.
+		</p>
+	</section>
 
 	<section class="merch-scroll">
 		{#each Shirts as shirt}
@@ -127,9 +140,23 @@
 			</div>
 		</dialog>
 	{/if}
+
+	<section>
+		<h2>Check out my newest video!</h2>
+		<!-- Lake of fire  -->
+		<iframe
+			src="https://www.youtube.com/embed/ffZ4t26jLLM?si=HRLWmvdW_eHUI_Dy"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+		<a class="btn-Ghost" href="/Videos" style="margin-left:40%;"> Watch More</a>
+	</section>
 </main>
 
-<section class="merch-scroll">
+<!-- <section class="merch-scroll">
 	{#each Shirts as shirt}
 		<button class="card-Brutal" onclick={() => openMerch(shirt)}>
 			<img src={shirt.img} alt={shirt.description} />
@@ -142,7 +169,7 @@
 			</div>
 		</button>
 	{/each}
-</section>
+</section> -->
 
 <!--svelte-ignore css_unused_selector -->
 <style>
@@ -162,7 +189,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		position: absolute;
-		bottom: 4rem;
+		bottom: 6rem;
 		height: 45vh;
 		width: 80vw;
 		margin: 0 2rem;
@@ -176,24 +203,30 @@
 		}
 
 		@media only screen and (min-width: 768px) {
-			left: 10%;
+			left: 18%;
 
 			.glass-Box {
 				width: fit-content;
 				height: fit-content;
+
+				h1 {
+					margin: 0;
+					padding: 3rem;
+				}
 			}
 		}
 
-		@media only screen and (min-width: 1440px) {
-			.glass-Box {
-				width: 100%;
+		@media only screen and (min-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
 
+			margin: 0;
+			.glass-Box {
+				max-width: 30vw;
+				min-width: 30vw;
+				min-height: fit-content;
 				p {
 					margin: 0;
 					padding: 0;
-				}
-				& img {
-					width: 30%;
 				}
 			}
 		}
@@ -232,28 +265,34 @@
 	}
 
 	.merch-scroll {
-		display: flex;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		grid-template-rows: repeat(1, auto);
 		gap: 1rem;
 		overflow-x: auto;
 		padding: 1rem;
-		scroll-behavior: smooth;
 		scrollbar-width: none;
+
+		button {
+			border: none;
+			cursor: pointer;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			grid-template-rows: repeat(2, auto);
+		}
 	}
 
 	.merch-scroll::-webkit-scrollbar {
 		display: none;
 	}
 
-	.card-Topper {
-		min-width: 250px;
-		flex-shrink: 0;
-	}
-
 	.size-row {
-		margin-top: auto;
+		margin: 0;
+		padding: 0;
 		display: flex;
 		gap: 0.5rem;
-		padding-top: 1rem;
 		z-index: 10;
 	}
 
@@ -261,13 +300,12 @@
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
-		background: #ff1a1a; /* blood red */
+		background: #ff1a1a;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		color: #000;
 		font-weight: bold;
-		font-size: 0.9rem;
 		border: 2px solid #000;
 		box-shadow: 0 0 4px #000;
 		cursor: pointer;
@@ -330,5 +368,12 @@
 		to {
 			background-position: right center;
 		}
+	}
+
+	iframe {
+		width: 90%;
+		min-height: 70vh;
+		border: none;
+		margin: 5%;
 	}
 </style>

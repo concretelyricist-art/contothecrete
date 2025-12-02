@@ -79,38 +79,35 @@
     color: #fff;
     padding: 1.6rem;
     border-radius: 6px;
-    width: 260px;
-    height: 260px;
+    width: 60vw;
+    height: 30vh;  
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-        img {
-        width: 60%;
-        margin:5% 20% 0 20%;
-        height: auto;
-    }
-
+ 
     h2 {
         padding: 0;
-        position: absolute;
-        top:0;
-        left: 5%;
+        margin:40% 0 0 0;
     }
 
-    .price {
-        
-        position: absolute;
-        bottom: 10%;
-        left: 5%;
-    }
+    @media only screen and (min-width: 768px) { 
+        height: 45vh;  
 
-    .sizes { 
-        font-size: 1rem;  
-        position: absolute;
-        bottom: 0;
-        left: 5%;
+        .price {
+            padding: 0;
+            margin:1rem 0;
+        }
+
+            h2 {
+        margin:20% 0 0 0;
     }
+	}
+
+        @media only screen and (min-width: 1440px) { 
+        width: 30vw; 
+	}
 }
 .card-Topper:before {
     content: "";
