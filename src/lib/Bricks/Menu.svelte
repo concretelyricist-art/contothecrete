@@ -13,7 +13,7 @@
 		{ label: 'Home', href: '/', id: 1 },
 		{ label: 'Shows', href: '/Shows', id: 2 },
 		{ label: 'Shop', href: '/Shop', id: 3 },
-		{ label: 'Contest ', href: '/Contest', id: 4 },
+		// { label: 'Contest ', href: '/Contest', id: 4 },
 		{ label: 'Gallery ', href: '/Gallery', id: 5 },
 		{ label: 'Contact', href: '/Contact', id: 6 },
 		{ label: 'About ', href: '/About', id: 7 }

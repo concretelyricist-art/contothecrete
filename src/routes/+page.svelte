@@ -81,7 +81,7 @@
 			</table>
 		</article>
 		<article class="glass-Box large-Only">
-			<h1>VIdeo</h1>
+			<h1>Video</h1>
 		</article>
 	</section>
 </header>
@@ -272,7 +272,9 @@
 		gap: 1rem;
 		overflow-x: auto;
 		padding: 1rem;
-		scrollbar-width: none;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: thin;
 
 		button {
 			border: none;

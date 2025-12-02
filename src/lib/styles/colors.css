@@ -19,7 +19,7 @@
     --hover-2: color-mix(in oklch, var(--accent-2) 80%, white 20%);
     --color-active: color-mix(in oklch, var(--accent-1 ) 80%, black 25%);
 
-    --border-color: color-mix(in oklch, var(--accent-1) 100%, var(--bg-1) 50%);
+    --border-color: color-mix(in oklch, var(--accent-1) 100%, var(--bg-1) 10%);
     --border-color-2: color-mix(in oklch, var(--accent-2) 100%, var(--bg-1) 50%);
     
     --shadow:color-mix(in oklch, var(--bg-1) 70%, var(--bg-1) 10%);
