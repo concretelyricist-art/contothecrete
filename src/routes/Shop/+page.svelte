@@ -29,13 +29,6 @@
 	a raise.
 </p>
 
-<button class="cart-trigger" onclick={() => (cartOpen = true)}>
-	🛒 Cart ({cart.totalItems})
-</button>
-
-<!-- Cart Drawer Component -->
-<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
-
 <h2>Shirts</h2>
 
 <main class="grid-Main">

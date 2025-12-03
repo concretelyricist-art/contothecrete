@@ -45,7 +45,19 @@
 			action = 'idleChainsaw';
 		}, 3500);
 	}
+
+	import Cart from '$lib/Assets/Cart.svelte'; // Import the new Cart component
+	import { cart } from '$lib/stores/cart.svelte.js'; // Import store for count
+
+	let cartOpen = $state(false); // State for cart drawer
 </script>
+
+<button class="cart-trigger" onclick={() => (cartOpen = true)}>
+	🛒 Cart ({cart.totalItems})
+</button>
+
+<!-- Cart Drawer Component -->
+<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 
 <div>
 	<button class="center-toggle" onclick={() => ((isMenuOpen = !isMenuOpen), handleClick())}>
@@ -84,6 +96,22 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.cart-trigger {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 100;
+		padding: 0.75rem 1.5rem;
+		background: #ff1a1a;
+		color: white;
+		border: 2px solid #000;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	}
+	.cart-trigger:hover {
+		transform: scale(1.05);
+	}
 	.center-toggle {
 		position: fixed;
 		bottom: 0.5rem;
