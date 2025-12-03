@@ -6,6 +6,26 @@
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls, GLTF } from '@threlte/extras';
+
+	import { cart } from '$lib/stores/cart.svelte.js';
+
+	let selectedSize = $state(null);
+	let error = $state('');
+	let warning = $state(false);
+
+	function handleAddToCart() {
+		// 2. Validate that a size is selected
+		if (!selectedSize) {
+			warning = true;
+			return;
+		}
+
+		// 3. Add to global cart store
+		cart.addItem(shirt, selectedSize);
+
+		// Optional: Reset state or provide success feedback
+		warning = false;
+	}
 </script>
 
 <article class="merch-card">
@@ -44,13 +64,31 @@
 	<h3>Available Sizes</h3>
 	<div class="size-row">
 		{#each shirt.sizes as size}
-			<span class="size-badge">{size}</span>
+			<span class="size-badge" class:active={selectedSize === size}>
+				<button
+					class="size-btn"
+					onclick={() => {
+						selectedSize = size;
+						warning = false; // Clear warning when user selects a size
+					}}
+				>
+					{size}
+				</button></span
+			>
 		{/each}
 	</div>
 
 	{#if shirt.description}
 		<p>{shirt.description}</p>
 	{/if}
+
+	{#if error}
+		<p style="color: red;">{error}</p>
+	{/if}
+
+	<button class="add-btn" onclick={handleAddToCart}>
+		Add to Cart - ${shirt.price}
+	</button>
 </article>
 
 <style>
@@ -102,5 +140,17 @@
 	.size-badge:hover {
 		transform: scale(1.1);
 		background: #ff3636;
+	}
+
+	.size-btn {
+		background: transparent;
+		border: none;
+	}
+
+	/* Active state styling (when selected) */
+
+	.size-badge.active {
+		background: var(--color-active);
+		transform: scale(1.25);
 	}
 </style>

@@ -1,0 +1,159 @@
+<script>
+	import { cart } from '$lib/stores/cart.svelte.js';
+
+	let { isOpen, close } = $props();
+</script>
+
+{#if isOpen}
+	<dialog class="cart-overlay" open aria-modal="true">
+		<div class="cart-content">
+			<div class="cart-header">
+				<h2>Your Cart ({cart.totalItems})</h2>
+				<button class="btn-close" onclick={close}>X</button>
+			</div>
+
+			{#if cart.items.length === 0}
+				<div class="empty-state">
+					<p>Your cart is empty. Go get that dope gear.</p>
+				</div>
+			{:else}
+				<ul class="cart-list">
+					{#each cart.items as item (item.cartItemId)}
+						<li class="cart-item">
+							<img src={item.img} alt={item.name} />
+							<div class="item-details">
+								<h3>{item.name}</h3>
+								<span class="badge">{item.selectedSize}</span>
+								<p>${item.price}</p>
+							</div>
+							<div class="qty-controls">
+								<button onclick={() => cart.updateQuantity(item.cartItemId, -1)}>-</button>
+								<span>{item.quantity}</span>
+								<button onclick={() => cart.updateQuantity(item.cartItemId, 1)}>+</button>
+							</div>
+						</li>
+					{/each}
+				</ul>
+
+				<div class="cart-footer">
+					<div class="total-row">
+						<span>Total:</span>
+						<span>${cart.totalPrice.toFixed(2)}</span>
+					</div>
+					<button class="btn-checkout">Checkout</button>
+				</div>
+			{/if}
+		</div>
+	</dialog>
+{/if}
+
+<style>
+	.cart-overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1000;
+		display: flex;
+		justify-content: flex-end;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	.cart-content {
+		width: 400px;
+		max-width: 90vw;
+		background: var(--bg-2, #222);
+		color: var(--txt-1, #fff);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+		padding: 1.5rem;
+	}
+	.cart-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid #444;
+		padding-bottom: 1rem;
+	}
+	.cart-list {
+		flex: 1;
+		overflow-y: auto;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.cart-item {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		align-items: center;
+		background: rgba(255, 255, 255, 0.05);
+		padding: 0.5rem;
+		border-radius: 4px;
+	}
+	.cart-item img {
+		width: 50px;
+		height: 50px;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+	.item-details {
+		flex: 1;
+	}
+	.item-details h3 {
+		margin: 0;
+		font-size: 1rem;
+	}
+	.badge {
+		background: #ff1a1a;
+		color: #000;
+		padding: 2px 6px;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+	.qty-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.qty-controls button {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+	}
+	.cart-footer {
+		border-top: 1px solid #444;
+		padding-top: 1rem;
+		margin-top: auto;
+	}
+	.total-row {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.25rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+	.btn-checkout {
+		width: 100%;
+		padding: 1rem;
+		background: #ff1a1a;
+		border: none;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.btn-close {
+		background: transparent;
+		border: 1px solid #fff;
+		color: #fff;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+</style>

@@ -15,6 +15,11 @@
 		merchItem = false;
 		selectedShirt = null;
 	}
+
+	import Cart from '$lib/Assets/Cart.svelte'; // Import the new Cart component
+	import { cart } from '$lib/stores/cart.svelte.js'; // Import store for count
+
+	let cartOpen = $state(false); // State for cart drawer
 </script>
 
 <h1>Shop</h1>
@@ -23,6 +28,13 @@
 	Buy some dope gear so that everyone wants to take you to bed and makes your boss want to give you
 	a raise.
 </p>
+
+<button class="cart-trigger" onclick={() => (cartOpen = true)}>
+	🛒 Cart ({cart.totalItems})
+</button>
+
+<!-- Cart Drawer Component -->
+<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 
 <h2>Shirts</h2>
 
@@ -33,7 +45,6 @@
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
-
 				<div class="size-row">
 					{#each shirt.sizes as size}
 						<span class="size-badge">{size}</span>
@@ -42,16 +53,6 @@
 			</button>
 		{/each}
 	</section>
-
-	{#if merchItem}
-		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
-			<div class="modal-content" tabindex="-1" autofocus>
-				<MerchItem shirt={selectedShirt} />
-
-				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
-			</div>
-		</dialog>
-	{/if}
 
 	<h2>Hoodies</h2>
 
@@ -61,7 +62,6 @@
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
-
 				<div class="size-row">
 					{#each shirt.sizes as size}
 						<span class="size-badge">{size}</span>
@@ -70,16 +70,6 @@
 			</button>
 		{/each}
 	</section>
-
-	{#if merchItem}
-		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
-			<div class="modal-content" tabindex="-1" autofocus>
-				<MerchItem shirt={selectedShirt} />
-
-				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
-			</div>
-		</dialog>
-	{/if}
 
 	<h2>Hats</h2>
 
@@ -89,7 +79,6 @@
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
-
 				<div class="size-row">
 					{#each shirt.sizes as size}
 						<span class="size-badge">{size}</span>
@@ -99,19 +88,39 @@
 		{/each}
 	</section>
 
+	<!-- Product Detail Modal -->
 	{#if merchItem}
 		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
 			<div class="modal-content" tabindex="-1" autofocus>
 				<MerchItem shirt={selectedShirt} />
-
 				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
 			</div>
 		</dialog>
 	{/if}
+
+	<!-- Cart Drawer Component -->
+	<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 </main>
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.cart-trigger {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 100;
+		padding: 0.75rem 1.5rem;
+		background: #ff1a1a;
+		color: white;
+		border: 2px solid #000;
+		font-weight: bold;
+		cursor: pointer;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	}
+	.cart-trigger:hover {
+		transform: scale(1.05);
+	}
+
 	.merch-scroll {
 		display: grid;
 		grid-auto-flow: column;
