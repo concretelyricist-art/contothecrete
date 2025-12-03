@@ -1,1 +1,194 @@
-<h1>Hello friend</h1>
+<script>
+	import { Shirts } from '$lib/data/warehouse/shirts';
+
+	import MerchItem from '$lib/Assets/MerchItem.svelte';
+
+	let merchItem = $state(false);
+	let selectedShirt = $state(null);
+
+	function openMerch(shirt) {
+		selectedShirt = shirt;
+		merchItem = true;
+	}
+
+	function closeMerch() {
+		merchItem = false;
+		selectedShirt = null;
+	}
+</script>
+
+<h1>Shop</h1>
+
+<p>
+	Buy some dope gear so that everyone wants to take you to bed and makes your boss want to give you
+	a raise.
+</p>
+
+<h2>Shirts</h2>
+
+<main class="grid-Main">
+	<section class="merch-scroll">
+		{#each Shirts as shirt}
+			<button class="card-Topper" onclick={() => openMerch(shirt)}>
+				<img src={shirt.img} alt={shirt.description} />
+				<h2>{shirt.name}</h2>
+				<p class="price">${shirt.price}</p>
+
+				<div class="size-row">
+					{#each shirt.sizes as size}
+						<span class="size-badge">{size}</span>
+					{/each}
+				</div>
+			</button>
+		{/each}
+	</section>
+
+	{#if merchItem}
+		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
+			<div class="modal-content" tabindex="-1" autofocus>
+				<MerchItem shirt={selectedShirt} />
+
+				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
+			</div>
+		</dialog>
+	{/if}
+
+	<h2>Hoodies</h2>
+
+	<section class="merch-scroll">
+		{#each Shirts as shirt}
+			<button class="card-Topper" onclick={() => openMerch(shirt)}>
+				<img src={shirt.img} alt={shirt.description} />
+				<h2>{shirt.name}</h2>
+				<p class="price">${shirt.price}</p>
+
+				<div class="size-row">
+					{#each shirt.sizes as size}
+						<span class="size-badge">{size}</span>
+					{/each}
+				</div>
+			</button>
+		{/each}
+	</section>
+
+	{#if merchItem}
+		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
+			<div class="modal-content" tabindex="-1" autofocus>
+				<MerchItem shirt={selectedShirt} />
+
+				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
+			</div>
+		</dialog>
+	{/if}
+
+	<h2>Hats</h2>
+
+	<section class="merch-scroll">
+		{#each Shirts as shirt}
+			<button class="card-Topper" onclick={() => openMerch(shirt)}>
+				<img src={shirt.img} alt={shirt.description} />
+				<h2>{shirt.name}</h2>
+				<p class="price">${shirt.price}</p>
+
+				<div class="size-row">
+					{#each shirt.sizes as size}
+						<span class="size-badge">{size}</span>
+					{/each}
+				</div>
+			</button>
+		{/each}
+	</section>
+
+	{#if merchItem}
+		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
+			<div class="modal-content" tabindex="-1" autofocus>
+				<MerchItem shirt={selectedShirt} />
+
+				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
+			</div>
+		</dialog>
+	{/if}
+</main>
+
+<!--svelte-ignore css_unused_selector -->
+<style>
+	.merch-scroll {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		grid-template-rows: repeat(1, auto);
+		gap: 1rem;
+		overflow-x: auto;
+		padding: 1rem;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: thin;
+
+		button {
+			border: none;
+			cursor: pointer;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			grid-template-rows: repeat(2, auto);
+		}
+	}
+
+	.merch-scroll::-webkit-scrollbar {
+		display: none;
+	}
+
+	.size-row {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		gap: 0.5rem;
+		z-index: 10;
+	}
+
+	.size-badge {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: #ff1a1a;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #000;
+		font-weight: bold;
+		border: 2px solid #000;
+		box-shadow: 0 0 4px #000;
+		cursor: pointer;
+		transition:
+			transform 0.15s ease,
+			background 0.15s ease;
+	}
+
+	.size-badge:hover {
+		transform: scale(1.1);
+		background: #ff3636;
+	}
+
+	.modal-overlay {
+		position: fixed;
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.6);
+		align-items: center;
+		justify-content: center;
+		z-index: 999;
+	}
+
+	.modal-content {
+		background: var(--bg-2);
+		color: var(--txt-1);
+		border: var(--bord-2);
+		max-width: 90vw;
+		max-height: 90vh;
+		overflow-y: auto;
+		text-align: center;
+	}
+</style>

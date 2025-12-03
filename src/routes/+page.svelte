@@ -3,7 +3,7 @@
 
 	import { Shirts } from '$lib/data/warehouse/shirts';
 
-	import MerchItem from './MerchItem.svelte';
+	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
 	let merchItem = $state(false);
 	let selectedShirt = $state(null);
@@ -142,7 +142,7 @@
 	{/if}
 
 	<section>
-		<h2>Check out my newest video!</h2>
+		<h2>Check out my newest videos!</h2>
 		<!-- Lake of fire  -->
 		<iframe
 			src="https://www.youtube.com/embed/ffZ4t26jLLM?si=HRLWmvdW_eHUI_Dy"

@@ -1,5 +1,7 @@
 <!-- Lake of fire  -->
 <iframe
+	width="560"
+	height="315"
 	src="https://www.youtube.com/embed/ffZ4t26jLLM?si=HRLWmvdW_eHUI_Dy"
 	title="YouTube video player"
 	frameborder="0"
@@ -52,3 +54,10 @@
 	referrerpolicy="strict-origin-when-cross-origin"
 	allowfullscreen
 ></iframe>
+
+<style>
+	iframe {
+		margin: 2rem 1rem;
+		border-radius: 8px;
+	}
+</style>
