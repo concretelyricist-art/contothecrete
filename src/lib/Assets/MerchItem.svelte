@@ -86,7 +86,7 @@
 		<p style="color: red;">{error}</p>
 	{/if}
 
-	<button class="add-btn" onclick={handleAddToCart}>
+	<button class="btn-Ghost" onclick={handleAddToCart}>
 		Add to Cart - ${shirt.price}
 	</button>
 </article>
