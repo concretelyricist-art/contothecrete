@@ -1,94 +1,101 @@
 <script>
 	import { Canvas } from '@threlte/core';
-	// import SceneAlt from '$lib/SceneAlt.svelte';
-	let { shirt } = $props();
-
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls, GLTF } from '@threlte/extras';
 
 	import { cart } from '$lib/stores/cart.svelte.js';
+	import { Shirts } from '$lib/data/warehouse/shirts';
 
+	let { shirt } = $props();
+
+	let currentShirt = $state(shirt);
 	let selectedSize = $state(null);
-	let error = $state('');
 	let warning = $state(false);
 
+	function navigate(direction) {
+		const currentIndex = Shirts.findIndex((s) => s.name === currentShirt.name);
+
+		const newIndex = (currentIndex + direction + Shirts.length) % Shirts.length;
+
+		currentShirt = Shirts[newIndex];
+
+		selectedSize = null;
+		warning = false;
+	}
+
 	function handleAddToCart() {
-		// 2. Validate that a size is selected
 		if (!selectedSize) {
 			warning = true;
 			return;
 		}
-
-		// 3. Add to global cart store
-		cart.addItem(shirt, selectedSize);
-
-		// Optional: Reset state or provide success feedback
+		cart.addItem(currentShirt, selectedSize);
 		warning = false;
 	}
 </script>
 
 <article class="merch-card">
 	<div class="shirtObject">
-		<Canvas>
-			<T.PerspectiveCamera
-				makeDefault
-				position={[0, -1, 6]}
-				oncreate={(ref) => {
-					ref.lookAt(1, 1, 1);
-				}}
-			>
-				<OrbitControls
-					enableDamping={true}
-					dampingFactor={0.05}
-					rotateSpeed={0.5}
-					minDistance={3}
-					maxDistance={10}
-					minPolarAngle={MathUtils.degToRad(0)}
-					maxPolarAngle={MathUtils.degToRad(90)}
-				/>
-			</T.PerspectiveCamera>
+		{#key currentShirt.id}
+			<Canvas>
+				<T.PerspectiveCamera
+					makeDefault
+					position={[0, -1, 6]}
+					oncreate={(ref) => ref.lookAt(0, 0, 0)}
+				>
+					<OrbitControls
+						enableDamping={true}
+						dampingFactor={0.05}
+						rotateSpeed={0.5}
+						minDistance={3}
+						maxDistance={10}
+						minPolarAngle={MathUtils.degToRad(0)}
+						maxPolarAngle={MathUtils.degToRad(90)}
+					/>
+				</T.PerspectiveCamera>
 
-			<T.AmbientLight intensity={1} />
-			<T.DirectionalLight position={[1, 5, 1]} castShadow />
+				<T.AmbientLight intensity={1} />
+				<T.DirectionalLight position={[1, 5, 1]} castShadow />
 
-			<!-- <Shirt /> -->
-
-			<GLTF url={shirt.url} />
-		</Canvas>
+				<GLTF url={currentShirt.url} />
+			</Canvas>
+		{/key}
 	</div>
-	<h2>{shirt.name}</h2>
 
-	<p><strong>Price:</strong> ${shirt.price}</p>
+	<h2>{currentShirt.name}</h2>
+
+	<p><strong>Price:</strong> ${currentShirt.price}</p>
 
 	<h3>Available Sizes</h3>
 	<div class="size-row">
-		{#each shirt.sizes as size}
-			<span class="size-badge" class:active={selectedSize === size}>
-				<button
-					class="size-btn"
-					onclick={() => {
-						selectedSize = size;
-						warning = false; // Clear warning when user selects a size
-					}}
-				>
-					{size}
-				</button></span
+		{#each currentShirt.sizes as size}
+			<button
+				class="size-badge"
+				class:active={selectedSize === size}
+				onclick={() => {
+					selectedSize = size;
+					warning = false;
+				}}
 			>
+				{size}
+			</button>
 		{/each}
 	</div>
 
-	{#if shirt.description}
-		<p>{shirt.description}</p>
+	{#if currentShirt.description}
+		<p>{currentShirt.description}</p>
 	{/if}
 
-	{#if error}
-		<p style="color: red;">{error}</p>
+	<div class="modal-nav">
+		<button class="btn-Skew" onclick={() => navigate(-1)}>&larr; Prev</button>
+		<button class="btn-Skew" onclick={() => navigate(1)}>Next &rarr;</button>
+	</div>
+
+	{#if warning}
+		<p style="color: red;">Please select a size!</p>
 	{/if}
 
-	<button class="btn-Ghost" onclick={handleAddToCart}>
-		Add to Cart - ${shirt.price}
-	</button>
+	<button class="btn-Ghost" onclick={handleAddToCart}> Add to Cart</button>
 </article>
 
 <style>
@@ -100,7 +107,7 @@
 	}
 
 	.shirtObject {
-		height: 400px;
+		height: 375px;
 		position: relative;
 	}
 
@@ -111,10 +118,8 @@
 	}
 
 	.size-row {
-		margin-top: auto;
 		display: flex;
 		gap: 0.5rem;
-		padding-top: 1rem;
 		z-index: 10;
 	}
 
@@ -122,7 +127,7 @@
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
-		background: #ff1a1a; /* blood red */
+		background: #ff1a1a;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -141,13 +146,6 @@
 		transform: scale(1.1);
 		background: #ff3636;
 	}
-
-	.size-btn {
-		background: transparent;
-		border: none;
-	}
-
-	/* Active state styling (when selected) */
 
 	.size-badge.active {
 		background: var(--color-active);

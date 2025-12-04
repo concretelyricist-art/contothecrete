@@ -1,5 +1,9 @@
 <script>
 	import { cart } from '$lib/stores/cart.svelte.js';
+	import { Canvas } from '@threlte/core';
+	import { MathUtils } from 'three';
+	import { T } from '@threlte/core';
+	import { OrbitControls, GLTF } from '@threlte/extras';
 
 	let { isOpen, close } = $props();
 </script>
@@ -20,11 +24,39 @@
 				<ul class="cart-list">
 					{#each cart.items as item (item.cartItemId)}
 						<li class="cart-item">
-							<img src={item.img} alt={item.name} />
+							<div class="shirtObject">
+								<Canvas>
+									<T.PerspectiveCamera
+										makeDefault
+										position={[0, -1, 6]}
+										oncreate={(ref) => {
+											ref.lookAt(1, 1, 1);
+										}}
+									>
+										<OrbitControls
+											enableDamping={true}
+											dampingFactor={0.05}
+											rotateSpeed={0.5}
+											minDistance={3}
+											maxDistance={10}
+											minPolarAngle={MathUtils.degToRad(0)}
+											maxPolarAngle={MathUtils.degToRad(90)}
+										/>
+									</T.PerspectiveCamera>
+
+									<T.AmbientLight intensity={1} />
+									<T.DirectionalLight position={[1, 5, 1]} castShadow />
+
+									<!-- <Shirt /> -->
+
+									<GLTF url={item.url} />
+								</Canvas>
+							</div>
 							<div class="item-details">
 								<h3>{item.name}</h3>
 								<span class="badge">{item.selectedSize}</span>
 								<p>${item.price}</p>
+								<p>{item.description}</p>
 							</div>
 							<div class="qty-controls">
 								<button onclick={() => cart.updateQuantity(item.cartItemId, -1)}>-</button>
@@ -97,11 +129,9 @@
 		padding: 0.5rem;
 		border-radius: 4px;
 	}
-	.cart-item img {
-		width: 50px;
-		height: 50px;
-		object-fit: cover;
-		border-radius: 4px;
+	.shirtObject {
+		height: 200px;
+		position: relative;
 	}
 	.item-details {
 		flex: 1;

@@ -55,6 +55,7 @@
 	allowfullscreen
 ></iframe>
 
+<!--svelte-ignore css_unused_selector -->
 <style>
 	iframe {
 		margin: 2rem 1rem;

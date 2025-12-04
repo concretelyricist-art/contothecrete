@@ -36,6 +36,7 @@
 	</article>
 </main>
 
+<!--svelte-ignore css_unused_selector -->
 <style>
 	h1 {
 		margin-top: 0;

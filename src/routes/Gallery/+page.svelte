@@ -2,10 +2,7 @@
 	const images = import.meta.glob('$lib/Images/gallery/*.jpg', { eager: true });
 
 	const imageEntries = Object.entries(images).map(([path, module]) => {
-		// Extract filename from path
-		const fileName = path.split('/').pop(); // e.g., "01_sunset.jpg"
-
-		// Separate number and label
+		const fileName = path.split('/').pop();
 		const [rawIndex, ...labelParts] = fileName.replace('.jpg', '').split('_');
 		const index = parseInt(rawIndex, 10);
 		const label = labelParts.join(' ');
@@ -17,7 +14,6 @@
 		};
 	});
 
-	// Optional: sort by index
 	imageEntries.sort((a, b) => a.index - b.index);
 
 	let selectedIndex = $state(null);
@@ -103,6 +99,7 @@
 	</dialog>
 {/if}
 
+<!--svelte-ignore css_unused_selector -->
 <style>
 	.image-gallery {
 		column-count: 3;

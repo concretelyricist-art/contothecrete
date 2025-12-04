@@ -44,14 +44,12 @@
 </script>
 
 <header>
-	<!-- Background slider -->
 	<div class="slider">
 		{#key current}
 			<div class="slide" style={`background-image: url(${images[index]});`} transition:fade></div>
 		{/key}
 	</div>
 
-	<!-- Foreground content -->
 	<section class="header-info light-White">
 		<article class="glass-Box">
 			<h1>Subscribe</h1>

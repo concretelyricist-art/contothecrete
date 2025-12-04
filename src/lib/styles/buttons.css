@@ -127,11 +127,12 @@
 .btn-Skew {
 	background-color: var(--accent-1);
 	border: none;
-	padding: 15px 32px;
+	padding: var(--size-4);
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	font-size: var(--size-5);
+	font-weight: bold;
 	cursor: pointer;
 	transform: skewX(-20deg);
 }

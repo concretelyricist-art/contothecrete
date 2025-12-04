@@ -40,23 +40,21 @@
 	function handleClick() {
 		action = 'menuChainsaw';
 
-		// after 5 seconds, return to idle
 		setTimeout(() => {
 			action = 'idleChainsaw';
 		}, 3500);
 	}
 
-	import Cart from '$lib/Assets/Cart.svelte'; // Import the new Cart component
-	import { cart } from '$lib/stores/cart.svelte.js'; // Import store for count
+	import Cart from '$lib/Assets/Cart.svelte';
+	import { cart } from '$lib/stores/cart.svelte.js';
 
-	let cartOpen = $state(false); // State for cart drawer
+	let cartOpen = $state(false);
 </script>
 
 <button class="cart-trigger" onclick={() => (cartOpen = true)}>
 	🛒 Cart ({cart.totalItems})
 </button>
 
-<!-- Cart Drawer Component -->
 <Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 
 <div>

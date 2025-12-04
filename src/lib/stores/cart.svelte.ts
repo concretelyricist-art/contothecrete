@@ -5,14 +5,12 @@ class CartStore {
 	items = $state([]);
 
 	constructor() {
-		// Load from local storage on initialization (client-side only)
 		if (typeof window !== 'undefined') {
 			const saved = localStorage.getItem('cart_v1');
 			if (saved) this.items = JSON.parse(saved);
 		}
 	}
 
-	// Derived values (getters act as $derived)
 	get totalPrice() {
 		return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
 	}
@@ -22,7 +20,6 @@ class CartStore {
 	}
 
 	addItem(product, size) {
-		// Create a unique ID based on product ID and selected size
 		const cartItemId = `${product.id}-${size}`;
 		const existingItem = this.items.find((i) => i.cartItemId === cartItemId);
 
@@ -31,7 +28,7 @@ class CartStore {
 		} else {
 			this.items.push({
 				...product,
-				cartItemId, // Unique identifier
+				cartItemId,
 				selectedSize: size,
 				quantity: 1
 			});
