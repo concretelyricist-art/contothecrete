@@ -140,7 +140,8 @@
 	{/if}
 
 	<section>
-		<h2>Check out my newest videos!</h2>
+		<h2>Check out some<a href="/Videos" style="padding: 0 .5rem; margin: 0">videos!</a></h2>
+
 		<!-- Lake of fire  -->
 		<iframe
 			src="https://www.youtube.com/embed/ffZ4t26jLLM?si=HRLWmvdW_eHUI_Dy"
@@ -150,7 +151,6 @@
 			referrerpolicy="strict-origin-when-cross-origin"
 			allowfullscreen
 		></iframe>
-		<a class="btn-Ghost" href="/Videos" style="margin-left:40%;"> Watch More</a>
 	</section>
 </main>
 
@@ -168,6 +168,8 @@
 		</button>
 	{/each}
 </section> -->
+
+<div class="bottom-Line"></div>
 
 <!--svelte-ignore css_unused_selector -->
 <style>
@@ -297,9 +299,9 @@
 	}
 
 	.size-badge {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
+		width: fit-content;
+		padding: 0.25rem 0.5rem;
+		border-radius: 25%;
 		background: #ff1a1a;
 		display: flex;
 		justify-content: center;

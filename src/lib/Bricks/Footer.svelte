@@ -1,6 +1,7 @@
 <footer>
 	<p>
-		Produced by <a href="https://www.lanternlightdevelopment.com/">Lantern Light Development</a>
+		Produced by <br />
+		<a href="https://www.lanternlightdevelopment.com/">Lantern Light Development</a>
 	</p>
 </footer>
 
@@ -9,11 +10,11 @@
 	footer {
 		background-color: var(--bg-2);
 		color: var(--txt-1);
-		display: none;
-		/* display: flex;  */
+		/* display: none; */
+		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		align-items: left;
+		justify-content: left;
 		width: 100vw;
 		padding: 1rem;
 		gap: 0.5rem;
@@ -23,7 +24,7 @@
 	footer section {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: left;
 		gap: 1rem;
 		margin-bottom: 0.5rem;
 	}
@@ -45,7 +46,7 @@
 	}
 
 	footer p {
-		text-align: center;
+		text-align: left;
 		font-size: var(--size-4);
 		margin: 0.5rem 0;
 	}

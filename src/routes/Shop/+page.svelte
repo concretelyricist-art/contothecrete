@@ -1,5 +1,5 @@
 <script>
-	import { Shirts } from '$lib/data/warehouse/shirts';
+	import { Shirts, Hats, Stickers } from '$lib/data/warehouse/shirts';
 
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
@@ -50,13 +50,13 @@
 	<h2>Hats</h2>
 
 	<section class="merch-scroll">
-		{#each Shirts as shirt}
-			<button class="card-Topper" onclick={() => openMerch(shirt)}>
-				<img src={shirt.img} alt={shirt.description} />
-				<h2>{shirt.name}</h2>
-				<p class="price">${shirt.price}</p>
+		{#each Hats as hat}
+			<button class="card-Topper" onclick={() => openMerch(hat)}>
+				<img src={hat.img} alt={hat.description} />
+				<h2>{hat.name}</h2>
+				<p class="price">${hat.price}</p>
 				<div class="size-row">
-					{#each shirt.sizes as size}
+					{#each hat.sizes as size}
 						<span class="size-badge">{size}</span>
 					{/each}
 				</div>
@@ -67,13 +67,13 @@
 	<h2>Stickers</h2>
 
 	<section class="merch-scroll">
-		{#each Shirts as shirt}
-			<button class="card-Topper" onclick={() => openMerch(shirt)}>
-				<img src={shirt.img} alt={shirt.description} />
-				<h2>{shirt.name}</h2>
-				<p class="price">${shirt.price}</p>
+		{#each Stickers as sticker}
+			<button class="card-Topper" onclick={() => openMerch(sticker)}>
+				<img src={sticker.img} alt={sticker.description} />
+				<h2>{sticker.name}</h2>
+				<p class="price">${sticker.price}</p>
 				<div class="size-row">
-					{#each shirt.sizes as size}
+					{#each sticker.sizes as size}
 						<span class="size-badge">{size}</span>
 					{/each}
 				</div>
@@ -92,6 +92,8 @@
 
 	<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 </main>
+
+<div class="bottom-Line"></div>
 
 <!--svelte-ignore css_unused_selector -->
 <style>
@@ -147,9 +149,9 @@
 	}
 
 	.size-badge {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
+		width: fit-content;
+		padding: 0.25rem 0.5rem;
+		border-radius: 25%;
 		background: #ff1a1a;
 		display: flex;
 		justify-content: center;

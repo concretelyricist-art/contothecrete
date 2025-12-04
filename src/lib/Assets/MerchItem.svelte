@@ -124,9 +124,9 @@
 	}
 
 	.size-badge {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
+		width: fit-content;
+		padding: 0.25rem 0.5rem;
+		border-radius: 25%;
 		background: #ff1a1a;
 		display: flex;
 		justify-content: center;

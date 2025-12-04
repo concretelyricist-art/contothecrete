@@ -52,7 +52,7 @@
 </script>
 
 <button class="cart-trigger" onclick={() => (cartOpen = true)}>
-	🛒 Cart ({cart.totalItems})
+	Cart ({cart.totalItems})
 </button>
 
 <Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
@@ -96,10 +96,10 @@
 <style>
 	.cart-trigger {
 		position: fixed;
-		top: 1rem;
-		right: 1rem;
+		top: 0;
+		right: 0;
 		z-index: 100;
-		padding: 0.75rem 1.5rem;
+		padding: 0.5rem;
 		background: #ff1a1a;
 		color: white;
 		border: 2px solid #000;
@@ -112,11 +112,11 @@
 	}
 	.center-toggle {
 		position: fixed;
-		bottom: 0.5rem;
-		right: 0.5rem;
+		bottom: 0;
+		right: 0;
 		z-index: 960;
-		width: 10rem;
-		height: 10rem;
+		width: 9rem;
+		height: 9rem;
 		background: var(--bg-2);
 		border: var(--bord-2);
 		cursor: pointer;
@@ -196,9 +196,10 @@
 	}
 
 	.scroll-top-button {
+		display: none;
 		position: fixed;
-		bottom: 1.5rem;
-		right: 1.5rem;
+		bottom: 9rem;
+		right: 3rem;
 		background: var(--accent-2);
 		color: var(--txt-1);
 		border: none;
