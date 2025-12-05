@@ -1,9 +1,5 @@
 <script>
 	import { cart } from '$lib/stores/cart.svelte.js';
-	import { Canvas } from '@threlte/core';
-	import { MathUtils } from 'three';
-	import { T } from '@threlte/core';
-	import { OrbitControls, GLTF } from '@threlte/extras';
 </script>
 
 <div class="cart-content">
@@ -11,9 +7,8 @@
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
 	<!-- NETLIFY CONTACT FORM -->
-	<form name="contact" method="POST" data-netlify="true">
-		<!-- Required for Netlify -->
-		<input type="hidden" name="form-name" value="contact" />
+	<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+		<input type="hidden" name="form-name" value="checkout" />
 
 		<!-- Honeypot (spam trap) -->
 		<div style="display:none">
@@ -27,32 +22,6 @@
 			<ul class="cart-list">
 				{#each cart.items as item (item.cartItemId)}
 					<li class="cart-item">
-						<div class="shirtObject">
-							<Canvas>
-								<T.PerspectiveCamera
-									makeDefault
-									position={[0, -1, 6]}
-									oncreate={(ref) => {
-										ref.lookAt(1, 1, 1);
-									}}
-								>
-									<OrbitControls
-										enableDamping={true}
-										dampingFactor={0.05}
-										rotateSpeed={0.5}
-										minDistance={3}
-										maxDistance={10}
-										minPolarAngle={MathUtils.degToRad(0)}
-										maxPolarAngle={MathUtils.degToRad(90)}
-									/>
-								</T.PerspectiveCamera>
-
-								<T.AmbientLight intensity={1} />
-								<T.DirectionalLight position={[1, 5, 1]} castShadow />
-
-								<GLTF url={item.url} />
-							</Canvas>
-						</div>
 						<div class="item-details">
 							<h3>{item.name}</h3>
 							<span class="badge">{item.selectedSize}</span>
@@ -60,11 +29,21 @@
 							<p>{item.description}</p>
 						</div>
 						<div class="qty-controls">
-							<button onclick={() => cart.updateQuantity(item.cartItemId, -1)}>-</button>
+							<button type="button" on:click={() => cart.updateQuantity(item.cartItemId, -1)}
+								>-</button
+							>
 							<span>{item.quantity}</span>
-							<button onclick={() => cart.updateQuantity(item.cartItemId, 1)}>+</button>
+							<button type="button" on:click={() => cart.updateQuantity(item.cartItemId, 1)}
+								>+</button
+							>
 						</div>
 					</li>
+
+					<!-- Hidden inputs for Netlify -->
+					<input type="hidden" name="item-name" value={item.name} />
+					<input type="hidden" name="item-size" value={item.selectedSize} />
+					<input type="hidden" name="item-price" value={item.price} />
+					<input type="hidden" name="item-quantity" value={item.quantity} />
 				{/each}
 			</ul>
 
@@ -72,8 +51,10 @@
 				<div class="total-row">
 					<span>Total:</span>
 					<span>${cart.totalPrice.toFixed(2)}</span>
+					<input type="hidden" name="total-items" value={cart.totalItems} />
+					<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
 				</div>
-				<a href="/Checkout"> <button type="submit" class="btn-checkout">Checkout</button></a>
+				<button type="submit" class="btn-checkout">Checkout</button>
 			</div>
 		{/if}
 	</form>
