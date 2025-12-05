@@ -46,9 +46,9 @@
 					<input type="hidden" name="item-price" value={item.price} />
 					<input type="hidden" name="item-quantity" value={item.quantity} />
 
-                    <!-- <input type="hidden" name="cart-data" value={JSON.stringify(cart.items)} />
+                    <input type="hidden" name="cart-data" value={JSON.stringify(cart.items)} />
 <input type="hidden" name="total-items" value={cart.totalItems} />
-<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} /> -->
+<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
 
 				{/each}
 			</ul>
