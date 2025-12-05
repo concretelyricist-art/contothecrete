@@ -1,6 +1,4 @@
 <script lang="ts">
-	const contactEmail = 'Concretelyricist@gmail.com';
-
 	const socials = [
 		{ name: 'Facebook', url: 'https://www.facebook.com/THEDARKMINISTER' },
 		{ name: 'Spotify', url: 'https://open.spotify.com/artist/653FzE8oWvxI1EvIYX8dUz' },

@@ -47,8 +47,6 @@
 									<T.AmbientLight intensity={1} />
 									<T.DirectionalLight position={[1, 5, 1]} castShadow />
 
-									<!-- <Shirt /> -->
-
 									<GLTF url={item.url} />
 								</Canvas>
 							</div>
@@ -72,7 +70,7 @@
 						<span>Total:</span>
 						<span>${cart.totalPrice.toFixed(2)}</span>
 					</div>
-					<button class="btn-checkout">Checkout</button>
+					<a href="/Checkout"> <button class="btn-checkout">Checkout</button></a>
 				</div>
 			{/if}
 		</div>
