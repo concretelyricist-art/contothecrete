@@ -7,11 +7,10 @@
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
 	<!-- NETLIFY CONTACT FORM -->
-<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify="true" data-netlify-honeypot="bot-field">
+	<!-- <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify="true" data-netlify-honeypot="bot-field">
 
 		<input type="hidden" name="form-name" value="checkout" />
-
-		<!-- Honeypot (spam trap) -->
+ 
 		<div style="display:none">
 			<input name="bot-field" />
 		</div>
@@ -39,8 +38,7 @@
 							>
 						</div>
 					</li>
-
-					<!-- Hidden inputs for Netlify -->
+ 
 					<input type="hidden" name="item-name" value={item.name} />
 					<input type="hidden" name="item-size" value={item.selectedSize} />
 					<input type="hidden" name="item-price" value={item.price} />
@@ -63,25 +61,27 @@
 				<button type="submit" class="btn-checkout">Checkout</button>
 			</div>
 		{/if}
-	</form>
-
-    <!-- <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-  <input type="hidden" name="form-name" value="checkout" />
-  <div style="display:none">
-    <input name="bot-field" />
-  </div>
-
-  {#each cart.items as item (item.cartItemId)}
-    <input type="hidden" name="item[]" value={`${item.name} | ${item.selectedSize} | ${item.price} | qty: ${item.quantity}`} />
-  {/each}
-
-  <input type="hidden" name="total-items" value={cart.totalItems} />
-  <input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
-
-  <button type="submit">Checkout</button>
-</form> -->
-
+	</form> -->
 </div>
+<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+	<input type="hidden" name="form-name" value="checkout" />
+	<div style="display:none">
+		<input name="bot-field" />
+	</div>
+
+	{#each cart.items as item (item.cartItemId)}
+		<input
+			type="hidden"
+			name="item[]"
+			value={`${item.name} | ${item.selectedSize} | ${item.price} | qty: ${item.quantity}`}
+		/>
+	{/each}
+
+	<input type="hidden" name="total-items" value={cart.totalItems} />
+	<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
+
+	<button type="submit">Checkout</button>
+</form>
 
 <div class="bottom-Line"></div>
 
