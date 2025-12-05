@@ -7,7 +7,7 @@
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
 	<!-- NETLIFY CONTACT FORM -->
-	<form
+	<!-- <form
 		name="checkout"
 		method="POST"
 		data-netlify="true"
@@ -65,7 +65,7 @@
 				<button type="submit" class="btn-checkout">Checkout</button>
 			</div>
 		{/if}
-	</form>
+	</form> -->
 </div>
 <!-- <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 	<input type="hidden" name="form-name" value="checkout" />
@@ -85,6 +85,25 @@
 
 	<button type="submit">Checkout</button>
 </form> -->
+
+<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+	<input type="hidden" name="form-name" value="checkout" />
+	<div style="display:none"><input name="bot-field" /></div>
+
+	{#each cart.items as item, i (item.cartItemId)}
+		<input
+			type="hidden"
+			name={`item-${i}`}
+			value={`${item.name} | ${item.selectedSize} | $${item.price} | qty: ${item.quantity}`}
+		/>
+	{/each}
+
+	<input type="hidden" name="cart-data" value={JSON.stringify(cart.items)} />
+	<input type="hidden" name="total-items" value={cart.totalItems.toString()} />
+	<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
+
+	<button type="submit">Checkout</button>
+</form>
 
 <div class="bottom-Line"></div>
 
