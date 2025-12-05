@@ -1,4 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { Canvas } from '@threlte/core';
+	import Scene from '$lib/ContactScene.svelte';
+	import type { CharacterActions } from './types';
+
+	let action = $state<CharacterActions>('idleChainsaw');
+
 	const contactEmail = 'Concretelyricist@gmail.com';
 
 	const socials = [
@@ -16,42 +23,24 @@
 	];
 </script>
 
-<section class="contact-page">
-	<h1>Contact & Follow</h1>
+<div class="threeDBox">
+	<Canvas>
+		<Scene {action} />
+	</Canvas>
+</div>
 
+<!-- <section class="contact-page">
+	<h1>Contact & Follow</h1>
+ 
 	<div class="contact-card">
 		<h2>Contact Me</h2>
 		<p>For booking, collaborations, or business inquiries:</p>
 
-		<!-- NETLIFY CONTACT FORM -->
-		<form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
-			<!-- Required for Netlify -->
-			<input type="hidden" name="form-name" value="contact" />
-
-			<!-- Honeypot (spam trap) -->
-			<div style="display:none">
-				<input name="bot-field" />
-			</div>
-
-			<label>
-				Your Name
-				<input type="text" name="name" required />
-			</label>
-
-			<label>
-				Your Email
-				<input type="email" name="email" required />
-			</label>
-
-			<label>
-				Message
-				<textarea name="message" required></textarea>
-			</label>
-
-			<button type="submit">Send Message</button>
-		</form>
+		<a href={`mailto:${contactEmail}`} class="email-btn">
+			{contactEmail}
+		</a>
 	</div>
-
+ 
 	<div class="socials-card">
 		<h2>Follow My Music</h2>
 		<p>Find Con-Crete on every major platform:</p>
@@ -64,7 +53,7 @@
 			{/each}
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!--svelte-ignore css_unused_selector -->
 <style>
