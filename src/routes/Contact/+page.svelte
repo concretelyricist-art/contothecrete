@@ -24,7 +24,7 @@
 		<p>For booking, collaborations, or business inquiries:</p>
 
 		<!-- NETLIFY CONTACT FORM -->
-		<form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
+		<form name="contact" method="POST" data-netlify="true">
 			<!-- Required for Netlify -->
 			<input type="hidden" name="form-name" value="contact" />
 
