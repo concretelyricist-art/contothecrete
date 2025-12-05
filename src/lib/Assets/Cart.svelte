@@ -70,7 +70,7 @@
 						<span>Total:</span>
 						<span>${cart.totalPrice.toFixed(2)}</span>
 					</div>
-					<a href="/Checkout"> <button class="btn-checkout">Checkout</button></a>
+					<a href="/Checkout"> <button class="btn-checkout" onclick={close}>Checkout</button></a>
 				</div>
 			{/if}
 		</div>

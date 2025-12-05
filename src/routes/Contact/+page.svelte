@@ -21,12 +21,9 @@
 		<h2>Contact Me</h2>
 		<p>For booking, collaborations, or business inquiries:</p>
 
-		<!-- NETLIFY CONTACT FORM -->
-		<form name="contact" method="POST" data-netlify="true">
-			<!-- Required for Netlify -->
+		<form class="classicForm" name="contact" method="POST" data-netlify="true">
 			<input type="hidden" name="form-name" value="contact" />
 
-			<!-- Honeypot (spam trap) -->
 			<div style="display:none">
 				<input name="bot-field" />
 			</div>
@@ -46,7 +43,7 @@
 				<textarea name="message" required></textarea>
 			</label>
 
-			<button type="submit">Send Message</button>
+			<button class="btn-Ghost" type="submit">Send Message</button>
 		</form>
 	</div>
 

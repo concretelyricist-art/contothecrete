@@ -1,98 +1,77 @@
 <script>
 	import { cart } from '$lib/stores/cart.svelte.js';
+	import { Canvas } from '@threlte/core';
+	import { MathUtils } from 'three';
+	import { T } from '@threlte/core';
+	import { OrbitControls, GLTF } from '@threlte/extras';
 </script>
 
 <div class="cart-content">
 	<div class="cart-header">
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
-	<!-- NETLIFY CONTACT FORM -->
-	<!-- <form
-		name="checkout"
-		method="POST"
-		data-netlify="true"
-		netlify-honeypot="bot-field"
-		data-netlify-honeypot="bot-field"
-	>
-		<input type="hidden" name="form-name" value="checkout" />
 
-		<div style="display:none">
-			<input name="bot-field" />
+	{#if cart.items.length === 0}
+		<div class="empty-state">
+			<p>Your cart is empty. Go get that dope gear.</p>
 		</div>
-		{#if cart.items.length === 0}
-			<div class="empty-state">
-				<p>Your cart is empty. Go get that dope gear.</p>
-			</div>
-		{:else}
-			<ul class="cart-list">
-				{#each cart.items as item (item.cartItemId)}
-					<li class="cart-item">
-						<div class="item-details">
-							<h3>{item.name}</h3>
-							<span class="badge">{item.selectedSize}</span>
-							<p>${item.price}</p>
-							<p>{item.description}</p>
-						</div>
-						<div class="qty-controls">
-							<button type="button" on:click={() => cart.updateQuantity(item.cartItemId, -1)}
-								>-</button
+	{:else}
+		<ul class="cart-list">
+			{#each cart.items as item (item.cartItemId)}
+				<li class="cart-item">
+					<div class="shirtObject">
+						<Canvas>
+							<T.PerspectiveCamera
+								makeDefault
+								position={[0, -1, 6]}
+								oncreate={(ref) => {
+									ref.lookAt(1, 1, 1);
+								}}
 							>
-							<span>{item.quantity}</span>
-							<button type="button" on:click={() => cart.updateQuantity(item.cartItemId, 1)}
-								>+</button
-							>
-						</div>
-					</li>
+								<OrbitControls
+									enableDamping={true}
+									dampingFactor={0.05}
+									rotateSpeed={0.5}
+									minDistance={3}
+									maxDistance={10}
+									minPolarAngle={MathUtils.degToRad(0)}
+									maxPolarAngle={MathUtils.degToRad(90)}
+								/>
+							</T.PerspectiveCamera>
 
-					<input type="hidden" name="item-name" value={item.name} />
-					<input type="hidden" name="item-size" value={item.selectedSize} />
-					<input type="hidden" name="item-price" value={item.price} />
-					<input type="hidden" name="item-quantity" value={item.quantity} />
+							<T.AmbientLight intensity={1} />
+							<T.DirectionalLight position={[1, 5, 1]} castShadow />
 
-					<input type="hidden" name="cart-data" value={JSON.stringify(cart.items)} />
-					<input type="hidden" name="total-items" value={cart.totalItems} />
-					<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
-				{/each}
-			</ul>
+							<GLTF url={item.url} />
+						</Canvas>
+					</div>
+					<div class="item-details">
+						<h3>{item.name}</h3>
+						<span class="badge">{item.selectedSize}</span>
+						<p>${item.price}</p>
+						<p>{item.description}</p>
+					</div>
+					<div class="qty-controls">
+						<button onclick={() => cart.updateQuantity(item.cartItemId, -1)}>-</button>
+						<span>{item.quantity}</span>
+						<button onclick={() => cart.updateQuantity(item.cartItemId, 1)}>+</button>
+					</div>
+				</li>
+			{/each}
+		</ul>
 
-			<div class="cart-footer">
-				<div class="total-row">
-					<span>Total:</span>
-					<span>${cart.totalPrice.toFixed(2)}</span>
-					<input type="hidden" name="total-items" value={cart.totalItems} />
-					<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
-				</div>
-				<button type="submit" class="btn-checkout">Checkout</button>
+		<div class="cart-footer">
+			<div class="total-row">
+				<span>Total:</span>
+				<span>${cart.totalPrice.toFixed(2)}</span>
 			</div>
-		{/if}
-	</form> -->
+			<a href="/Checkout"> <button class="btn-checkout">Checkout</button></a>
+		</div>
+	{/if}
 </div>
-<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-	<input type="hidden" name="form-name" value="checkout" />
-	<div style="display:none">
-		<input name="bot-field" />
-	</div>
 
-	{#each cart.items as item, i (item.cartItemId)}
-		<input type="hidden" name={`item-${i}-name`} value={item.name} />
-		<input type="hidden" name={`item-${i}-size`} value={item.selectedSize} />
-		<input type="hidden" name={`item-${i}-price`} value={item.price} />
-		<input type="hidden" name={`item-${i}-quantity`} value={item.quantity} />
-	{/each}
-
-	<input type="hidden" name="total-items" value={cart.totalItems} />
-	<input type="hidden" name="total-items" value={cart} />
-	<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
-
-	<button type="submit">Checkout</button>
-</form>
-
-<div class="bottom-Line"></div>
-
-<!--svelte-ignore css_unused_selector -->
 <style>
 	.cart-content {
-		width: 100vw;
 		max-width: 100vw;
 		background: var(--bg-2, #222);
 		color: var(--txt-1, #fff);
