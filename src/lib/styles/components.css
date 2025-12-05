@@ -89,6 +89,34 @@
 }
 
 
+	/* 🦕  🦖🦖🦖 🦕 🦕 Modals  💀= 💣 🌠 */
+	.modal-overlay {
+		position: fixed;
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.6);
+		align-items: center;
+		justify-content: center;
+		z-index: 999;
+	}
+
+	.modal-content {
+		background: var(--bg-2);
+		color: var(--txt-1);
+		border: var(--bord-2);
+		max-width: 90vw;
+		max-height: 90vh;
+		overflow-y: auto;
+		text-align: center;
+	}
+
+
+
+
+
 	/* 🦕  🦖🦖🦖 🦕 🦕 Extras  💀= 💣 🌠 */
 /* Opacity for depth */
 .gradient-bg-depth {

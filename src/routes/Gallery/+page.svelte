@@ -61,9 +61,14 @@
 	{/each}
 </section>
 {#if selectedIndex !== null}
-	<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
-		<div class="modal-content" tabindex="-1">
-			<h2 id="modal-title" class="visually-hidden">Image preview</h2>
+	<dialog
+		class="gallery-modal-overlay"
+		open
+		aria-modal="true"
+		aria-labelledby="gallery-modal-title"
+	>
+		<div class="gallery-modal-content" tabindex="-1">
+			<h2 id="gallery-modal-title" class="visually-hidden">Image preview</h2>
 			<img src={imageEntries[selectedIndex].src} alt={imageEntries[selectedIndex].label} />
 
 			<p>{imageEntries[selectedIndex].label}</p>
@@ -117,6 +122,9 @@
 		break-inside: avoid;
 		margin-bottom: 1rem;
 		overflow: hidden;
+		button {
+			border: var(--bord);
+		}
 	}
 
 	.image-card img {
@@ -125,20 +133,22 @@
 		display: block;
 	}
 
-	.modal-overlay {
+	.gallery-modal-overlay {
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background: rgba(0, 0, 0, 0.6);
+		background: var(--hallow);
+		backdrop-filter: blur(10px);
+		--webkit-backdrop-filter: blur(1.5px);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		z-index: 999;
 	}
 
-	.modal-content {
+	.gallery-modal-content {
 		background: var(--bg-2);
 		padding: 1rem;
 		max-width: 90vw;
@@ -157,7 +167,7 @@
 		}
 	}
 
-	.modal-content img {
+	.gallery-modal-content img {
 		max-width: 100%;
 		padding: 0;
 		margin: 0;

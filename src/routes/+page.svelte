@@ -154,21 +154,6 @@
 	</section>
 </main>
 
-<!-- <section class="merch-scroll">
-	{#each Shirts as shirt}
-		<button class="card-Brutal" onclick={() => openMerch(shirt)}>
-			<img src={shirt.img} alt={shirt.description} />
-			<h2>{shirt.name}</h2>
-			<p class="price">${shirt.price}</p>
-			<div class="size-row">
-				{#each shirt.sizes as size}
-					<span>{size} /</span>
-				{/each}
-			</div>
-		</button>
-	{/each}
-</section> -->
-
 <div class="bottom-Line"></div>
 
 <!--svelte-ignore css_unused_selector -->
@@ -193,7 +178,6 @@
 		height: 45vh;
 		width: 80vw;
 		margin: 0 2rem;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 
 		.glass-Box {
 			min-width: 60vw;
@@ -238,30 +222,28 @@
 	}
 
 	thead th {
-		background: #1a0000;
+		background: var(--bg-2);
 		padding: 12px;
-		border-bottom: 2px solid #ff1a1a;
+		border-bottom: var(--bord);
 	}
 
 	tbody td {
 		padding: 12px;
-		border-bottom: 1px solid #330000;
-		color: #ddd;
 	}
 
 	tbody tr:hover {
-		background: #260000;
+		background: var(--hover);
 	}
 
 	a {
-		color: #ff3333;
+		color: var(--accent-1);
 		text-decoration: none;
 		font-weight: bold;
 	}
 
 	a:hover {
 		text-decoration: underline;
-		color: #ff6666;
+		color: var(--hover);
 	}
 
 	.merch-scroll {
@@ -288,60 +270,6 @@
 
 	.merch-scroll::-webkit-scrollbar {
 		display: none;
-	}
-
-	.size-row {
-		margin: 0;
-		padding: 0;
-		display: flex;
-		gap: 0.5rem;
-		z-index: 10;
-	}
-
-	.size-badge {
-		width: fit-content;
-		padding: 0.25rem 0.5rem;
-		border-radius: 25%;
-		background: #ff1a1a;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: #000;
-		font-weight: bold;
-		border: 2px solid #000;
-		box-shadow: 0 0 4px #000;
-		cursor: pointer;
-		transition:
-			transform 0.15s ease,
-			background 0.15s ease;
-	}
-
-	.size-badge:hover {
-		transform: scale(1.1);
-		background: #ff3636;
-	}
-
-	.modal-overlay {
-		position: fixed;
-		display: flex;
-		width: 100vw;
-		height: 100vh;
-		top: 0;
-		left: 0;
-		background: rgba(0, 0, 0, 0.6);
-		align-items: center;
-		justify-content: center;
-		z-index: 999;
-	}
-
-	.modal-content {
-		background: var(--bg-2);
-		color: var(--txt-1);
-		border: var(--bord-2);
-		max-width: 90vw;
-		max-height: 90vh;
-		overflow-y: auto;
-		text-align: center;
 	}
 
 	.slider {

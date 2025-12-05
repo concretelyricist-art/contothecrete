@@ -153,6 +153,34 @@
 		}
 	}
 
+	/* Side scroll grid  */
+		.grid-SideScroll {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		grid-template-rows: repeat(1, auto);
+		gap: 1rem;
+		overflow-x: auto;
+		padding: 1rem;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: thin;
+
+		button {
+			border: none;
+			cursor: pointer;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			grid-template-rows: repeat(2, auto);
+		}
+	}
+
+	.grid-SideScroll::-webkit-scrollbar {
+		display: none;
+	}
+
+
 	/* Glassmorphism flip cards grid */
 .grid-Glass-Flip {
 	background-size: cover;

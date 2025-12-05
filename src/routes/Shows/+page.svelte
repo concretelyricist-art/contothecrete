@@ -36,6 +36,8 @@
 	</article>
 </main>
 
+<div class="bottom-Line"></div>
+
 <!--svelte-ignore css_unused_selector -->
 <style>
 	h1 {
@@ -44,10 +46,11 @@
 
 	.showPage {
 		min-height: 100vh;
-		height: 100vh;
+		height: 100%;
 		background-size: cover;
 		background-position: center;
 	}
+
 	table.centered {
 		width: 100%;
 		margin: auto;
@@ -82,7 +85,7 @@
 		border-bottom: var(--bord-2);
 	}
 	tr:hover {
-		background: var(--hover);
+		background: var(--bg-2);
 	}
 	a {
 		color: var(--accent-2);
