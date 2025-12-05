@@ -7,7 +7,7 @@
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
 	<!-- NETLIFY CONTACT FORM -->
-	<!-- <form
+	<form
 		name="checkout"
 		method="POST"
 		data-netlify="true"
@@ -65,9 +65,9 @@
 				<button type="submit" class="btn-checkout">Checkout</button>
 			</div>
 		{/if}
-	</form> -->
+	</form>
 </div>
-<form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<!-- <form name="checkout" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 	<input type="hidden" name="form-name" value="checkout" />
 	<div style="display:none">
 		<input name="bot-field" />
@@ -84,7 +84,7 @@
 	<input type="hidden" name="total-price" value={cart.totalPrice.toFixed(2)} />
 
 	<button type="submit">Checkout</button>
-</form>
+</form> -->
 
 <div class="bottom-Line"></div>
 
