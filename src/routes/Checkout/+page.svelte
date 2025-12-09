@@ -1,10 +1,90 @@
-<script>
+<script lang="ts">
+	import { PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID } from '$env/static/public';
 	import { cart } from '$lib/stores/cart.svelte.js';
-	import { Canvas } from '@threlte/core';
-	import { MathUtils } from 'three';
-	import { T } from '@threlte/core';
-	import { OrbitControls, GLTF } from '@threlte/extras';
+	import { goto } from '$app/navigation';
+
+	let form = $state({
+		address1: '',
+		address2: '',
+		city: '',
+		state: '',
+		zip: '',
+		country: 'US'
+	});
+
+	let payments = $state<any>(null);
+	let card = $state<any>(null);
+	let status = $state('Waiting');
+
+	async function loadSquareSdk() {
+		return new Promise((resolve, reject) => {
+			const script = document.createElement('script');
+			script.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
+			script.onload = () => resolve((window as any).Square);
+			script.onerror = reject;
+			document.head.appendChild(script);
+		});
+	}
+
+	async function handlePayment() {
+		status = 'Tokenizing...';
+		const result = await card.tokenize();
+
+		if (result.status !== 'OK') {
+			status = 'Card tokenize failed: ' + (result.errors?.[0]?.message ?? 'Unknown');
+			return;
+		}
+
+		status = 'Paying...';
+
+		const simplifiedItems = cart.items.map((item) => ({
+			name: item.name,
+			size: item.selectedSize,
+			price: item.price,
+			quantity: item.quantity
+		}));
+
+		const response = await fetch('/api/pay', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				token: result.token,
+				amount: Math.round(cart.totalPrice * 100),
+				items: simplifiedItems,
+				postal: {
+					addressLine1: form.address1,
+					addressLine2: form.address2,
+					city: form.city,
+					state: form.state,
+					zip: form.zip,
+					country: form.country
+				}
+			})
+		});
+
+		const data = await response.json();
+
+		if (data.ok) {
+			status = 'Payment successful!';
+			cart.clear();
+
+			goto('/pay-success');
+		} else {
+			status = 'Payment failed: ' + data.error;
+		}
+	}
+
+	$effect(async () => {
+		const SquareSdk = await loadSquareSdk();
+
+		payments = await SquareSdk.payments(PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID);
+
+		card = await payments.card();
+		await card.attach('#card-container'); // safe now
+	});
 </script>
+
+<h1>Checkout</h1>
 
 <div class="cart-content">
 	<div class="cart-header">
@@ -19,32 +99,6 @@
 		<ul class="cart-list">
 			{#each cart.items as item (item.cartItemId)}
 				<li class="cart-item">
-					<div class="shirtObject">
-						<Canvas>
-							<T.PerspectiveCamera
-								makeDefault
-								position={[0, -1, 6]}
-								oncreate={(ref) => {
-									ref.lookAt(1, 1, 1);
-								}}
-							>
-								<OrbitControls
-									enableDamping={true}
-									dampingFactor={0.05}
-									rotateSpeed={0.5}
-									minDistance={3}
-									maxDistance={10}
-									minPolarAngle={MathUtils.degToRad(0)}
-									maxPolarAngle={MathUtils.degToRad(90)}
-								/>
-							</T.PerspectiveCamera>
-
-							<T.AmbientLight intensity={1} />
-							<T.DirectionalLight position={[1, 5, 1]} castShadow />
-
-							<GLTF url={item.url} />
-						</Canvas>
-					</div>
 					<div class="item-details">
 						<h3>{item.name}</h3>
 						<span class="badge">{item.selectedSize}</span>
@@ -60,13 +114,46 @@
 			{/each}
 		</ul>
 
-		<div class="cart-footer">
-			<div class="total-row">
-				<span>Total:</span>
-				<span>${cart.totalPrice.toFixed(2)}</span>
+		<h1>Checkout</h1>
+
+		<form class="classicForm" onsubmit={handlePayment}>
+			<label>
+				Address Line 1
+				<input bind:value={form.address1} required />
+			</label>
+			<label>
+				Address Line 2
+				<input bind:value={form.address2} />
+			</label>
+			<label>
+				City
+				<input bind:value={form.city} required />
+			</label>
+			<label>
+				State
+				<input bind:value={form.state} required />
+			</label>
+			<label>
+				ZIP
+				<input bind:value={form.zip} required />
+			</label>
+			<label>
+				Country
+				<input bind:value={form.country} required />
+			</label>
+
+			<div class="cart-footer">
+				<div class="total-row">
+					<span>Total:</span>
+					<span>${cart.totalPrice.toFixed(2)}</span>
+				</div>
+
+				<div id="card-container"></div>
+
+				<button type="submit" class="btn-checkout">Checkout</button>
+				<p>{status}</p>
 			</div>
-			<a href="/Checkout"> <button class="btn-checkout">Checkout</button></a>
-		</div>
+		</form>
 	{/if}
 </div>
 

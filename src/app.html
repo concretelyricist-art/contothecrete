@@ -1,41 +1,36 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div>%sveltekit.body%</div>
-	</body>
-</html>
-<!DOCTYPE html>
-<html lang="en" >
+<html lang="en" style="scroll-behavior: smooth;">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-	<title>Freelance Web Developer for hire</title>
-	<meta charset="utf-8" />
-	<link rel="canonical" href="https://concretesworld.com">
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="description"
-		content="Horrorcore Master.">
-</head>
+        <title>Freelance Web Developer for hire</title>
+        <link rel="canonical" href="https://concretesworld.com">
+        <meta name="description" content="Horrorcore Master.">
+        
+        <script type="text/javascript" src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+        %sveltekit.head%
+    </head>
+    <body data-sveltekit-preload-data="hover">
+        <div style="display: contents">%sveltekit.body%</div>
+        
+        <style>
+            ::-webkit-scrollbar {
+                width: 0.65rem;
+            }
 
-<style>
-	::-webkit-scrollbar {
-		width: 0.65rem;
-	}
+            ::-webkit-scrollbar-track {
+                /* Replace var(--bg-1) with a literal color if necessary */
+                background: var(--bg-1);
+            }
 
-	::-webkit-scrollbar-track {
-		background: var(--bg-1);
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: var(--accent-1);
-		border-radius: var(--rad);
-	}
-</style>
-
+            ::-webkit-scrollbar-thumb {
+                /* Replace var(--accent-1) with a literal color if necessary */
+                background: var(--accent-1);
+                border-radius: var(--rad);
+            }
+        </style>
+    </body>
 </html>

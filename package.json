@@ -60,6 +60,7 @@
 						"@threlte/core": "^8.1.9",
 						"@threlte/extras": "^9.6.0",
 						"@threlte/studio": "^0.1.11",
+						"square": "^43.2.1",
 						"three": "^0.181.0"
 			}
 }
