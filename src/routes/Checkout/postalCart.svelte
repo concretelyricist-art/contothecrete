@@ -2,10 +2,6 @@
 	import { PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID } from '$env/static/public';
 	import { cart } from '$lib/stores/cart.svelte.js';
 	import { goto } from '$app/navigation';
-	import { Canvas } from '@threlte/core';
-	import { MathUtils } from 'three';
-	import { T } from '@threlte/core';
-	import { OrbitControls, GLTF } from '@threlte/extras';
 
 	let form = $state({
 		address1: '',
@@ -43,10 +39,9 @@
 
 		const simplifiedItems = cart.items.map((item) => ({
 			name: item.name,
-			size: item.selectedSize.label,
+			size: item.selectedSize,
 			price: item.price,
-			quantity: item.quantity,
-			catalogObjectId: item.selectedSize.catalogObjectId
+			quantity: item.quantity
 		}));
 
 		const response = await fetch('/api/pay', {
@@ -104,35 +99,9 @@
 		<ul class="cart-list">
 			{#each cart.items as item (item.cartItemId)}
 				<li class="cart-item">
-					<div class="shirtObject">
-						<Canvas>
-							<T.PerspectiveCamera
-								makeDefault
-								position={[0, -1, 6]}
-								oncreate={(ref) => {
-									ref.lookAt(1, 1, 1);
-								}}
-							>
-								<OrbitControls
-									enableDamping={true}
-									dampingFactor={0.05}
-									rotateSpeed={0.5}
-									minDistance={3}
-									maxDistance={10}
-									minPolarAngle={MathUtils.degToRad(0)}
-									maxPolarAngle={MathUtils.degToRad(90)}
-								/>
-							</T.PerspectiveCamera>
-
-							<T.AmbientLight intensity={1} />
-							<T.DirectionalLight position={[1, 5, 1]} castShadow />
-
-							<GLTF url={item.url} />
-						</Canvas>
-					</div>
 					<div class="item-details">
 						<h3>{item.name}</h3>
-						<span class="badge">{item.selectedSize.label}</span>
+						<span class="badge">{item.selectedSize}</span>
 						<p>${item.price}</p>
 						<p>{item.description}</p>
 					</div>
@@ -188,9 +157,6 @@
 	{/if}
 </div>
 
-<div class="bottom-Line"></div>
-
-<!--svelte-ignore css_unused_selector -->
 <style>
 	.cart-content {
 		max-width: 100vw;

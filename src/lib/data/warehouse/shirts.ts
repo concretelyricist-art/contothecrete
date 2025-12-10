@@ -19,48 +19,16 @@ export type Shirt = {
 export const Shirts = [
 	{
 		id: 1,
-		name: 'Painted Face ',
-		price: 35,
-		img: shirt,
-		sizes: ['S', 'M', 'L', 'XL'],
-		url: './shirtBase3.glb',
-		description: 'A stylish shirt featuring a Concrete face paint.'
-	},
-	{
-		id: 2,
-		name: 'Suit Chase ',
+		name: 'Suit Chase',
 		price: 35,
 		img: shirt2,
-		sizes: ['S', 'M', 'XL', 'XXL'],
 		url: './shirtBase.glb',
-		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.'
-	},
-	{
-		id: 3,
-		name: 'Pig Head ',
-		price: 35,
-		img: shirt3,
-		sizes: ['S', 'M', 'L'],
-		url: './shirtBase2.glb',
-		description: 'A shirt featuring Concrete holding a pigs head.'
-	},
-	{
-		id: 4,
-		name: 'Classic Face ',
-		price: 35,
-		img: shirt4,
-		sizes: ['S', 'M', 'L', 'XL'],
-		url: './shirtBase4.glb',
-		description: 'A classic shirt featuring a Concrete face.'
-	},
-	{
-		id: 5,
-		name: 'Cartoon Classic ',
-		price: 35,
-		img: shirt5,
-		sizes: ['S', 'M'],
-		url: './shirtBase5.glb',
-		description: 'A  shirt featuring a Concrete cartoon.'
+		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
+		sizes: [
+			{ label: 'M', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
+			{ label: 'L', catalogObjectId: 'JUCUVF47LLP6I34LINB52L5E' },
+			{ label: 'XL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+		]
 	}
 ];
 

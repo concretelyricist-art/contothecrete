@@ -77,7 +77,7 @@
 					warning = false;
 				}}
 			>
-				{size}
+				{size.label}
 			</button>
 		{/each}
 	</div>

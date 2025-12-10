@@ -122,7 +122,7 @@
 
 				<div class="size-row">
 					{#each shirt.sizes as size}
-						<span class="size-badge">{size}</span>
+						<span class="size-badge">{size.label}</span>
 					{/each}
 				</div>
 			</button>

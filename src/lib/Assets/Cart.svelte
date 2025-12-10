@@ -52,7 +52,7 @@
 							</div>
 							<div class="item-details">
 								<h3>{item.name}</h3>
-								<span class="badge">{item.selectedSize}</span>
+								<span class="badge">{item.selectedSize.label}</span>
 								<p>${item.price}</p>
 								<p>{item.description}</p>
 							</div>
