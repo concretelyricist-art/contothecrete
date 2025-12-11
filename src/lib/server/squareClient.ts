@@ -1,8 +1,7 @@
-// src/lib/server/squareClient.ts
 import { SquareClient, SquareEnvironment } from 'square';
-import { env } from '$env/dynamic/private';
+import { SQUARE_ACCESS_TOKEN } from '$env/static/private';
 
 export const square = new SquareClient({
-	environment: SquareEnvironment.Production,
-	accessToken: env.SQUARE_ACCESS_TOKEN
+	environment: SquareEnvironment.Sandbox,
+	token: SQUARE_ACCESS_TOKEN
 });
