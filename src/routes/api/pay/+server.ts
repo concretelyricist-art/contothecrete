@@ -1,6 +1,8 @@
 import { json } from '@sveltejs/kit';
-import { square } from '$lib/server/squareClient.server';
-import { SQUARE_LOCATION_ID } from '$env/static/private';
+import { getSquareClient } from '$lib/server/squareClient.server';
+import { env } from '$env/dynamic/private';
+
+const { SQUARE_LOCATION_ID } = env;
 
 function createIdempotencyKey() {
 	return crypto.randomUUID();
@@ -41,6 +43,7 @@ function getPaymentsApi(client: any) {
 
 export async function POST({ request }) {
 	try {
+		const square = getSquareClient();
 		const { token, amount, items, postal } = await request.json();
 
 		if (!Array.isArray(items) || items.length === 0) {
