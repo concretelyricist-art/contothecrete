@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID } from '$env/dynamic/public';
+	import { PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID } from '$env/static/public';
 	import { cart } from '$lib/stores/cart.svelte.js';
 	import { goto } from '$app/navigation';
 	import { Canvas } from '@threlte/core';
