@@ -18,6 +18,8 @@
 
 	let selectedIndex = $state(null);
 
+	/* 🦕  🦖🦖🦖 🦕 🦕 Modal  💀= 💣 🌠 */
+
 	function openImage(image) {
 		selectedIndex = imageEntries.findIndex((img) => img.src === image.src);
 	}
