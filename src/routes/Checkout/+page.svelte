@@ -20,6 +20,7 @@
 	let card = $state<any>(null);
 	let status = $state('Waiting');
 
+	/* 🦕  🦖🦖🦖 🦕 🦕 Load Data  💀= 💣 🌠 */
 	async function loadSquareSdk() {
 		return new Promise((resolve, reject) => {
 			const script = document.createElement('script');
@@ -30,6 +31,7 @@
 		});
 	}
 
+	/* 🦕  🦖🦖🦖 🦕 🦕 Payment  💀= 💣 🌠 */
 	async function handlePayment() {
 		status = 'Tokenizing...';
 		const result = await card.tokenize();
