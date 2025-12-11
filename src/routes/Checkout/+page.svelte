@@ -6,6 +6,8 @@
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls, GLTF } from '@threlte/extras';
+	const { data } = $props();
+	const { applicationId, locationId } = data.publicConfig;
 
 	let form = $state({
 		address1: '',
@@ -83,11 +85,9 @@
 
 	$effect(async () => {
 		const SquareSdk = await loadSquareSdk();
-
-		payments = await SquareSdk.payments(PUBLIC_SQUARE_APPLICATION_ID, PUBLIC_SQUARE_LOCATION_ID);
-
+		payments = await SquareSdk.payments(applicationId, locationId);
 		card = await payments.card();
-		await card.attach('#card-container'); // safe now
+		await card.attach('#card-container');
 	});
 </script>
 

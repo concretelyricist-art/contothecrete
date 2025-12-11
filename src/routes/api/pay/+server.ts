@@ -42,6 +42,8 @@ function getPaymentsApi(client: any) {
 }
 
 export async function POST({ request }) {
+	const square = getSquareClient();
+	const locationId = env.SQUARE_LOCATION_ID;
 	try {
 		const square = getSquareClient();
 		const { token, amount, items, postal } = await request.json();
