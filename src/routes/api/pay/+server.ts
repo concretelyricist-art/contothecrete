@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { square } from '$lib/server/squareClient';
+import { square } from '$lib/server/squareClient.server';
 import { SQUARE_LOCATION_ID } from '$env/static/private';
 
 function createIdempotencyKey() {
