@@ -91,8 +91,8 @@
 
 <h1>Checkout</h1>
 
-<div class="cart-content">
-	<div class="cart-header">
+<div>
+	<div>
 		<h2>Your Cart ({cart.totalItems})</h2>
 	</div>
 
@@ -101,10 +101,10 @@
 			<p>Your cart is empty. Go get that dope gear.</p>
 		</div>
 	{:else}
-		<ul class="cart-list">
+		<section class="cart-Classic">
 			{#each cart.items as item (item.cartItemId)}
-				<li class="cart-item">
-					<div class="shirtObject">
+				<article class="cart-item">
+					<div class="model-preview">
 						<Canvas>
 							<T.PerspectiveCamera
 								makeDefault
@@ -130,58 +130,59 @@
 							<GLTF url={item.url} />
 						</Canvas>
 					</div>
-					<div class="item-details">
+
+					<div class="cart-info">
 						<h3>{item.name}</h3>
-						<span class="badge">{item.selectedSize.label}</span>
-						<p>${item.price}</p>
-						<p>{item.description}</p>
+						<p class="size-label">{item.selectedSize.label}</p>
+						<p class="price">${item.price}</p>
+						<p class="description">{item.description}</p>
+
+						<div class="quantity-controls">
+							<button class="qty-btn" onclick={() => cart.updateQuantity(item.cartItemId, -1)}
+								>-</button
+							>
+
+							<span class="qty-display">{item.quantity}</span>
+
+							<button class="qty-btn" onclick={() => cart.updateQuantity(item.cartItemId, 1)}
+								>+</button
+							>
+						</div>
 					</div>
-					<div class="qty-controls">
-						<button onclick={() => cart.updateQuantity(item.cartItemId, -1)}>-</button>
-						<span>{item.quantity}</span>
-						<button onclick={() => cart.updateQuantity(item.cartItemId, 1)}>+</button>
-					</div>
-				</li>
+				</article>
 			{/each}
-		</ul>
+		</section>
 
 		<h1>Checkout</h1>
 
 		<form class="classicForm" onsubmit={handlePayment}>
 			<label>
-				Address Line 1
-				<input bind:value={form.address1} required />
+				<input bind:value={form.address1} required placeholder="Address(Main)" />
 			</label>
 			<label>
-				Address Line 2
-				<input bind:value={form.address2} />
+				<input bind:value={form.address2} placeholder="Address(Secondary)" />
 			</label>
 			<label>
-				City
-				<input bind:value={form.city} required />
+				<input bind:value={form.city} required placeholder="City" />
 			</label>
 			<label>
-				State
-				<input bind:value={form.state} required />
+				<input bind:value={form.state} required placeholder="State" />
 			</label>
 			<label>
-				ZIP
-				<input bind:value={form.zip} required />
+				<input bind:value={form.zip} required placeholder="Zip" />
 			</label>
 			<label>
-				Country
-				<input bind:value={form.country} required />
+				<input bind:value={form.country} required placeholder="Country" />
 			</label>
 
-			<div class="cart-footer">
+			<div class="form-Footer">
 				<div class="total-row">
-					<span>Total:</span>
-					<span>${cart.totalPrice.toFixed(2)}</span>
+					<p><span>Total: ${cart.totalPrice.toFixed(2)}</span></p>
 				</div>
 
 				<div id="card-container"></div>
 
-				<button type="submit" class="btn-checkout">Checkout</button>
+				<button type="submit" class="btn-Ghost">Checkout</button>
 				<p>{status}</p>
 			</div>
 		</form>
@@ -190,97 +191,9 @@
 
 <div class="bottom-Line"></div>
 
-<!--svelte-ignore css_unused_selector -->
 <style>
-	.cart-content {
-		max-width: 100vw;
-		background: var(--bg-2, #222);
-		color: var(--txt-1, #fff);
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
-		padding: 1.5rem;
-	}
-	.cart-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1rem;
-		border-bottom: 1px solid #444;
-		padding-bottom: 1rem;
-	}
-	.cart-list {
-		flex: 1;
-		overflow-y: auto;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	.cart-item {
-		display: flex;
-		gap: 1rem;
-		margin-bottom: 1rem;
-		align-items: center;
-		background: rgba(255, 255, 255, 0.05);
-		padding: 0.5rem;
-		border-radius: 4px;
-	}
-	.shirtObject {
-		height: 200px;
-		position: relative;
-	}
-	.item-details {
-		flex: 1;
-	}
-	.item-details h3 {
-		margin: 0;
-		font-size: 1rem;
-	}
-	.badge {
-		background: #ff1a1a;
-		color: #000;
-		padding: 2px 6px;
-		border-radius: 4px;
-		font-size: 0.8rem;
-		font-weight: bold;
-	}
-	.qty-controls {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-	.qty-controls button {
-		width: 24px;
-		height: 24px;
-		cursor: pointer;
-	}
-	.cart-footer {
-		border-top: 1px solid #444;
-		padding-top: 1rem;
-		margin-top: auto;
-	}
-	.total-row {
-		display: flex;
-		justify-content: space-between;
-		font-size: 1.25rem;
-		font-weight: bold;
-		margin-bottom: 1rem;
-	}
-	.btn-checkout {
-		width: 100%;
-		padding: 1rem;
-		background: #ff1a1a;
-		border: none;
-		font-weight: bold;
-		cursor: pointer;
-	}
-	.btn-close {
-		background: transparent;
-		border: 1px solid #fff;
-		color: #fff;
-		width: 30px;
-		height: 30px;
-		cursor: pointer;
+	.empty-state {
+		padding: 2rem;
+		text-align: center;
 	}
 </style>

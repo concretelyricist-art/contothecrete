@@ -65,5 +65,10 @@
 		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 		gap: 1rem;
 		margin-top: 1.5rem;
+
+		@media only screen and (min-width: 1024px) {
+			width: 60vw;
+			margin: 1.5rem auto;
+		}
 	}
 </style>

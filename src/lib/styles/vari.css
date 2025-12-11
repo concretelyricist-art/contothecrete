@@ -34,7 +34,7 @@
 --rad-Md:           1rem;
 --rad-Lg:           2rem;
 --bord:             2px solid var(--border-color);
---bord-2:             2px dashed var(--accent-1);
+--bord-2:             3px solid var(--accent-2);
 
 /* Shadows & lights */
 --glow-Box:       6px 4px 8px var(--hover), 0 4px 6px var(--hover);

@@ -118,7 +118,7 @@
 		width: 9rem;
 		height: 9rem;
 		background: var(--bg-2);
-		border: var(--bord-2);
+		border: var(--bord);
 		cursor: pointer;
 		transition:
 			transform 0.3s ease,
