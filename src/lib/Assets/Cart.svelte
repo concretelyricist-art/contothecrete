@@ -110,8 +110,8 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
 		padding: 1.5rem;
+		overflow-y: auto;
 	}
 
 	.cart-header {
@@ -126,7 +126,7 @@
 	.btn-checkout {
 		width: 100%;
 		padding: 1rem;
-		background: #ff1a1a;
+		background: var(--accent-1);
 		border: none;
 		font-weight: bold;
 		cursor: pointer;
