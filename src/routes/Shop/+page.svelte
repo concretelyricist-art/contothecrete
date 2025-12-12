@@ -1,5 +1,5 @@
 <script>
-	import { Shirts, Hats, Stickers } from '$lib/data/warehouse/shirts';
+	import { Shirts, Hats, Stickers, Cds } from '$lib/data/warehouse/shirts';
 
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
@@ -15,11 +15,6 @@
 		merchItem = false;
 		selectedShirt = null;
 	}
-
-	import Cart from '$lib/Assets/Cart.svelte';
-	import { cart } from '$lib/stores/cart.svelte.js';
-
-	let cartOpen = $state(false);
 </script>
 
 <h1>Shop</h1>
@@ -29,9 +24,25 @@
 	a raise.
 </p>
 
-<h2>Shirts</h2>
-
+<h2>Cds</h2>
 <main class="grid-Main">
+	<section class="grid-SideScroll">
+		{#each Cds as cd}
+			<button class="card-Topper" onclick={() => openMerch(cd)}>
+				<img src={cd.img} alt={cd.description} />
+				<h2>{cd.name}</h2>
+				<p class="price">${cd.price}</p>
+				<div class="size-row">
+					{#each cd.sizes as cdsize}
+						<span class="size-badge">{cdsize.label}</span>
+					{/each}
+				</div>
+			</button>
+		{/each}
+	</section>
+
+	<h2>Shirts</h2>
+
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
 			<button class="card-Topper" onclick={() => openMerch(shirt)}>
@@ -56,8 +67,8 @@
 				<h2>{hat.name}</h2>
 				<p class="price">${hat.price}</p>
 				<div class="size-row">
-					{#each hat.sizes as size}
-						<span class="size-badge">{size}</span>
+					{#each hat.sizes as hatSize}
+						<span class="size-badge">{hatSize}</span>
 					{/each}
 				</div>
 			</button>
@@ -73,8 +84,8 @@
 				<h2>{sticker.name}</h2>
 				<p class="price">${sticker.price}</p>
 				<div class="size-row">
-					{#each sticker.sizes as size}
-						<span class="size-badge">{size}</span>
+					{#each sticker.sizes as stickerSize}
+						<span class="size-badge">{stickerSize}</span>
 					{/each}
 				</div>
 			</button>
@@ -89,8 +100,6 @@
 			</div>
 		</dialog>
 	{/if}
-
-	<Cart isOpen={cartOpen} close={() => (cartOpen = false)} />
 </main>
 
 <div class="bottom-Line"></div>
@@ -98,28 +107,9 @@
 <!--svelte-ignore css_unused_selector -->
 <style>
 	.grid-SideScroll {
-		display: grid;
-		grid-auto-flow: column;
-		grid-auto-columns: 1fr;
-		grid-template-rows: repeat(1, auto);
-		gap: 1rem;
 		overflow-x: auto;
-		padding: 1rem;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
-
-		button {
-			border: none;
-			cursor: pointer;
-		}
-
-		@media only screen and (min-width: 1024px) {
-			grid-template-rows: repeat(2, auto);
-		}
-	}
-
-	.grid-SideScroll::-webkit-scrollbar {
-		display: none;
 	}
 </style>

@@ -21,7 +21,6 @@
 	let card = $state<any>(null);
 	let status = $state('Waiting');
 
-	/* 🦕  🦖🦖🦖 🦕 🦕 Load Data  💀= 💣 🌠 */
 	async function loadSquareSdk() {
 		return new Promise((resolve, reject) => {
 			const script = document.createElement('script');
@@ -32,7 +31,6 @@
 		});
 	}
 
-	/* 🦕  🦖🦖🦖 🦕 🦕 Payment  💀= 💣 🌠 */
 	async function handlePayment() {
 		status = 'Tokenizing...';
 		const result = await card.tokenize();
@@ -44,13 +42,20 @@
 
 		status = 'Paying...';
 
-		const simplifiedItems = cart.items.map((item) => ({
-			name: item.name,
-			size: item.selectedSize.label,
-			price: item.price,
-			quantity: item.quantity,
-			catalogObjectId: item.selectedSize.catalogObjectId
-		}));
+		const simplifiedItems = cart.items.map((item) => {
+			// Grab the selected size object (contains either catalogObjectId or productId + provider)
+			const size = item.selectedSize;
+
+			return {
+				name: item.name,
+				size: size.label,
+				price: item.price,
+				quantity: item.quantity,
+				provider: item.provider ?? 'square',
+				catalogObjectId: size.catalogObjectId ?? null,
+				productId: size.productId ?? null
+			};
+		});
 
 		const response = await fetch('/api/pay', {
 			method: 'POST',

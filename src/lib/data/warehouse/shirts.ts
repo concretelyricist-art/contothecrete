@@ -6,7 +6,27 @@ import shirt5 from '$lib/Images/con21.jpg';
 
 import SceneAlt from '$lib/SceneAlt.svelte';
 
+export type Cds = {
+	id: number;
+	name: string;
+	price: number;
+	img: string;
+	url: string;
+	description: string;
+	sizes: { label: string; productId: string }[];
+};
+
 export type Shirt = {
+	id: number;
+	name: string;
+	price: number;
+	img: string;
+	sizes: { label: string; catalogObjectId: string }[];
+	model?: { Scene: typeof SceneAlt };
+	description: string;
+};
+
+export type Hat = {
 	id: number;
 	name: string;
 	price: number;
@@ -15,6 +35,29 @@ export type Shirt = {
 	model?: { Scene: typeof SceneAlt };
 	description: string;
 };
+
+export type Sticker = {
+	id: number;
+	name: string;
+	price: number;
+	img: string;
+	sizes: string[];
+	url: string;
+	description: string;
+};
+
+export const Cds = [
+	{
+		id: 1,
+		name: 'TestaPillar',
+		price: 20,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00Z193GH' }],
+		provider: 'kunaki'
+	}
+];
 
 export const Shirts = [
 	{
@@ -28,7 +71,8 @@ export const Shirts = [
 			{ label: 'M', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
 			{ label: 'L', catalogObjectId: 'JUCUVF47LLP6I34LINB52L5E' },
 			{ label: 'XL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
-		]
+		],
+		provider: 'square'
 	}
 ];
 

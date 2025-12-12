@@ -160,8 +160,8 @@
 		grid-auto-columns: 1fr;
 		grid-template-rows: repeat(1, auto);
 		gap: 1rem;
-		overflow-x: auto;
 		padding: 1rem;
+		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
@@ -175,11 +175,7 @@
 			grid-template-rows: repeat(2, auto);
 		}
 	}
-
-	.grid-SideScroll::-webkit-scrollbar {
-		display: none;
-	}
-
+ 
 
 	/* Glassmorphism flip cards grid */
 .grid-Glass-Flip {
