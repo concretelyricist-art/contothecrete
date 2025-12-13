@@ -14,6 +14,7 @@ export type Cds = {
 	url: string;
 	description: string;
 	sizes: { label: string; productId: string }[];
+	provider: string;
 };
 
 export type Shirt = {
@@ -21,9 +22,10 @@ export type Shirt = {
 	name: string;
 	price: number;
 	img: string;
-	sizes: { label: string; catalogObjectId: string }[];
 	model?: { Scene: typeof SceneAlt };
 	description: string;
+	sizes: { label: string; catalogObjectId: string }[];
+	provider: string;
 };
 
 export type Hat = {
@@ -31,9 +33,10 @@ export type Hat = {
 	name: string;
 	price: number;
 	img: string;
-	sizes: string[];
 	model?: { Scene: typeof SceneAlt };
 	description: string;
+	sizes: { label: string; catalogObjectId: string }[];
+	provider: string;
 };
 
 export type Sticker = {
@@ -41,9 +44,10 @@ export type Sticker = {
 	name: string;
 	price: number;
 	img: string;
-	sizes: string[];
 	url: string;
 	description: string;
+	sizes: { label: string; catalogObjectId: string }[];
+	provider: string;
 };
 
 export const Cds = [
