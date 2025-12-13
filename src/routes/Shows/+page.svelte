@@ -15,7 +15,6 @@
 					<th>City</th>
 					<th>Date</th>
 					<th>Time</th>
-					<th>Price</th>
 					<th>Tickets</th>
 				</tr>
 			</thead>
@@ -27,8 +26,7 @@
 						<td>{d.city}</td>
 						<td>{d.date}</td>
 						<td>{d.time}</td>
-						<td>{d.price}</td>
-						<td><a href={d.ticketsUrl}>Tickets</a></td>
+						<td><a href={d.ticketsUrl}>Tickets: {d.price}</a></td>
 					</tr>
 				{/each}
 			</tbody>
@@ -60,6 +58,10 @@
 		border: var(--bord);
 		backdrop-filter: blur(8px);
 		--webkit-backdrop-filter: blur(1.5px);
+
+		a {
+			font-size: var(--size-5);
+		}
 
 		@media only screen and (min-width: 1024px) {
 			width: 70%;

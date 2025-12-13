@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 
-	import { Shirts } from '$lib/data/warehouse/shirts';
+	import { Shirts, Cds } from '$lib/data/warehouse/shirts';
 
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
 
@@ -137,7 +137,20 @@
 		</p>
 	</section>
 
-	<section class="merch-scroll">
+	<h2>Cds</h2>
+	<section class="grid-SideScroll">
+		{#each Cds as cd}
+			<button class="card-Topper" onclick={() => openMerch(cd)}>
+				<img src={cd.img} alt={cd.description} />
+				<h2>{cd.name}</h2>
+				<p class="price">${cd.price}</p>
+			</button>
+		{/each}
+	</section>
+
+	<h2>Shirts</h2>
+
+	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
 			<button class="card-Topper" onclick={() => openMerch(shirt)}>
 				<img src={shirt.img} alt={shirt.description} />
@@ -244,6 +257,10 @@
 		backdrop-filter: blur(8px);
 		--webkit-backdrop-filter: blur(1.5px);
 
+		a {
+			font-size: var(--size-5);
+		}
+
 		@media only screen and (min-width: 1024px) {
 			width: 70%;
 		}
@@ -270,15 +287,11 @@
 	tr:hover {
 		background: var(--bg-2);
 	}
-	a {
-		color: var(--accent-2);
-		font-weight: bold;
-	}
 
 	a {
 		color: var(--accent-1);
 		text-decoration: none;
-		font-weight: bold;
+		text-shadow: var(--shdw-Txt);
 	}
 
 	a:hover {
@@ -286,30 +299,11 @@
 		color: var(--hover);
 	}
 
-	.merch-scroll {
-		display: grid;
-		grid-auto-flow: column;
-		grid-auto-columns: 1fr;
-		grid-template-rows: repeat(1, auto);
-		gap: 1rem;
+	.grid-SideScroll {
 		overflow-x: auto;
-		padding: 1rem;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
-
-		button {
-			border: none;
-			cursor: pointer;
-		}
-
-		@media only screen and (min-width: 1024px) {
-			grid-template-rows: repeat(2, auto);
-		}
-	}
-
-	.merch-scroll::-webkit-scrollbar {
-		display: none;
 	}
 
 	.slider {
