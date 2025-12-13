@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
 	import { fade } from 'svelte/transition';
 
 	import { Shirts } from '$lib/data/warehouse/shirts';
+
+	import { ShowDates } from '$lib/data/shows/showdates.ts';
 
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
@@ -41,6 +43,22 @@
 		const id = setInterval(next, intervalMs);
 		return () => clearInterval(id);
 	});
+
+	const parseDate = (str: string) => {
+		const [month, day, year] = str.split('-').map(Number);
+		return new Date(year, month - 1, day);
+	};
+
+	const today = $state(new Date());
+
+	const nextShow = $derived(() => {
+		const upcoming = ShowDates.map((d) => ({ ...d, parsed: parseDate(d.date) }))
+			.filter((d) => d.parsed.getTime() >= today.getTime())
+			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
+		return upcoming[0] ?? null;
+	});
+
+	$inspect({ nextShow });
 </script>
 
 <header>
@@ -60,23 +78,29 @@
 
 		<article class="glass-Box">
 			<h1><a href="/Shows"> Shows</a></h1>
-			<table>
-				<thead>
-					<tr>
-						<th>Place</th>
-						<th>Date</th>
-						<th>Price / Link</th>
-					</tr>
-				</thead>
 
-				<tbody>
-					<tr>
-						<td>Seattle, Wa</td>
-						<td>January 15, 2026</td>
-						<td><a href="/">Buy Tickets</a></td>
-					</tr>
-				</tbody>
-			</table>
+			{#if nextShow()}
+				<table class="centered">
+					<thead>
+						<tr>
+							<th>Place</th>
+							<th>City</th>
+							<th>Date</th>
+							<th>Tickets</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href={nextShow.venueUrl}>{nextShow().location}</a></td>
+							<td>{nextShow().city}</td>
+							<td>{nextShow().date}</td>
+							<td><a href={nextShow.ticketsUrl}>{nextShow().price} / Tickets</a></td>
+						</tr>
+					</tbody>
+				</table>
+			{:else}
+				<p>No upcoming shows found.</p>
+			{/if}
 		</article>
 		<article class="glass-Box large-Only">
 			<h1>Video</h1>
@@ -119,12 +143,6 @@
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
-
-				<div class="size-row">
-					{#each shirt.sizes as size}
-						<span class="size-badge">{size.label}</span>
-					{/each}
-				</div>
 			</button>
 		{/each}
 	</section>
@@ -216,23 +234,45 @@
 		}
 	}
 
-	table {
+	table.centered {
 		width: 100%;
+		margin: auto;
 		border-collapse: collapse;
-	}
+		table-layout: fixed;
+		background-color: var(--hallow);
+		border: var(--bord);
+		backdrop-filter: blur(8px);
+		--webkit-backdrop-filter: blur(1.5px);
 
-	thead th {
-		background: var(--bg-2);
+		@media only screen and (min-width: 1024px) {
+			width: 70%;
+		}
+	}
+	th,
+	td {
+		text-align: center;
 		padding: 12px;
+		font-size: var(--size-3);
+
+		@media only screen and (min-width: 768px) {
+			font-size: var(--size-4);
+		}
+	}
+	thead {
+		background: var(--color-active);
+	}
+	th {
 		border-bottom: var(--bord);
 	}
-
 	tbody td {
-		padding: 12px;
+		border-bottom: var(--bord-2);
 	}
-
-	tbody tr:hover {
-		background: var(--hover);
+	tr:hover {
+		background: var(--bg-2);
+	}
+	a {
+		color: var(--accent-2);
+		font-weight: bold;
 	}
 
 	a {

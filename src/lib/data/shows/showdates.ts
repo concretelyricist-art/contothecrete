@@ -11,17 +11,17 @@ export type ShowDate = {
 
 export const ShowDates = [
 	{
-		date: 'March 6, 2025',
+		date: '01-10-2026',
 		time: '7:00 PM',
-		location: 'The Space',
+		location: 'El Corazon',
 		city: 'Seattle, WA',
-		venueUrl: '404',
-		ticketsUrl: '404',
-		description: 'Join us for an unforgettable night of music and art at The Space in Seattle!',
+		venueUrl: 'https://www.elcorazonseattle.com/',
+		ticketsUrl: 'https://www.elcorazonseattle.com/',
+		description: 'Join us for an unforgettable night of music and art at El Corazon in Seattle!',
 		price: '$30'
 	},
 	{
-		date: 'March 8, 2025',
+		date: '02-08-2026',
 		time: '8:00 PM',
 		location: 'Echo Hall',
 		city: 'Portland, OR',
@@ -31,7 +31,7 @@ export const ShowDates = [
 		price: '$28'
 	},
 	{
-		date: 'March 15, 2025',
+		date: '03-15-2026',
 		time: '7:30 PM',
 		location: 'The Iron Lantern',
 		city: 'San Francisco, CA',
@@ -42,7 +42,7 @@ export const ShowDates = [
 		price: '$35'
 	},
 	{
-		date: 'March 21, 2025',
+		date: '03-21-2026',
 		time: '7:00 PM',
 		location: 'Riverlight Theater',
 		city: 'Denver, CO',
@@ -52,7 +52,7 @@ export const ShowDates = [
 		price: '$32'
 	},
 	{
-		date: 'March 29, 2025',
+		date: '03-29-2026',
 		time: '8:00 PM',
 		location: 'The Crimson Stage',
 		city: 'Chicago, IL',
@@ -62,7 +62,7 @@ export const ShowDates = [
 		price: '$34'
 	},
 	{
-		date: 'April 4, 2025',
+		date: '04-05-2026',
 		time: '7:00 PM',
 		location: 'The Atrium',
 		city: 'Minneapolis, MN',
@@ -72,7 +72,7 @@ export const ShowDates = [
 		price: '$29'
 	},
 	{
-		date: 'April 12, 2025',
+		date: '04-12-2026',
 		time: '7:30 PM',
 		location: 'Glassline Pavilion',
 		city: 'Austin, TX',
@@ -80,45 +80,5 @@ export const ShowDates = [
 		ticketsUrl: '404',
 		description: 'Step inside the atmosphere at Glassline Pavilion in Austin.',
 		price: '$33'
-	},
-	{
-		date: 'April 18, 2025',
-		time: '8:00 PM',
-		location: 'The Foundry',
-		city: 'Phoenix, AZ',
-		venueUrl: '404',
-		ticketsUrl: '404',
-		description: 'The Foundry hosts a dynamic and immersive performance in Phoenix.',
-		price: '$30'
-	},
-	{
-		date: 'April 26, 2025',
-		time: '7:00 PM',
-		location: 'Northgate Arena',
-		city: 'Salt Lake City, UT',
-		venueUrl: '404',
-		ticketsUrl: '404',
-		description: 'Join the energy at Northgate Arena for a night of unforgettable soundscapes.',
-		price: '$31'
-	},
-	{
-		date: 'May 3, 2025',
-		time: '7:30 PM',
-		location: 'The Beacon Yard',
-		city: 'Las Vegas, NV',
-		venueUrl: '404',
-		ticketsUrl: '404',
-		description: 'A bold, atmospheric show at The Beacon Yard in Las Vegas.',
-		price: '$36'
-	},
-	{
-		date: 'May 10, 2025',
-		time: '8:00 PM',
-		location: 'Harborline Hall',
-		city: 'Los Angeles, CA',
-		venueUrl: '404',
-		ticketsUrl: '404',
-		description: 'Close out the tour with an unforgettable night at Harborline Hall in LA.',
-		price: '$38'
 	}
 ];

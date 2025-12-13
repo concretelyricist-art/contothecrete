@@ -32,11 +32,6 @@
 				<img src={cd.img} alt={cd.description} />
 				<h2>{cd.name}</h2>
 				<p class="price">${cd.price}</p>
-				<div class="size-row">
-					{#each cd.sizes as cdsize}
-						<span class="size-badge">{cdsize.label}</span>
-					{/each}
-				</div>
 			</button>
 		{/each}
 	</section>
@@ -49,11 +44,6 @@
 				<img src={shirt.img} alt={shirt.description} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
-				<div class="size-row">
-					{#each shirt.sizes as size}
-						<span class="size-badge">{size.label}</span>
-					{/each}
-				</div>
 			</button>
 		{/each}
 	</section>
@@ -66,16 +56,11 @@
 				<img src={hat.img} alt={hat.description} />
 				<h2>{hat.name}</h2>
 				<p class="price">${hat.price}</p>
-				<div class="size-row">
-					{#each hat.sizes as hatSize}
-						<span class="size-badge">{hatSize}</span>
-					{/each}
-				</div>
 			</button>
 		{/each}
 	</section>
 
-	<h2>Stickers</h2>
+	<!-- <h2>Stickers</h2>
 
 	<section class="grid-SideScroll">
 		{#each Stickers as sticker}
@@ -90,7 +75,7 @@
 				</div>
 			</button>
 		{/each}
-	</section>
+	</section> -->
 
 	{#if merchItem}
 		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
