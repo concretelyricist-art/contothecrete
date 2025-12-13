@@ -42,9 +42,7 @@ ${kunakiItems
 		body: xmlPayload
 	});
 
-	console.log('XML payload being sent to Kunaki:\n', xmlPayload);
 	const kunakiResult = await response.text();
-	console.log('Kunaki raw response:\n', kunakiResult);
 
 	if (!response.ok) {
 		return json({ ok: false, status: response.status, result: kunakiResult }, { status: 500 });

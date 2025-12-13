@@ -49,12 +49,72 @@ export type Sticker = {
 export const Cds = [
 	{
 		id: 1,
-		name: 'TestaPillar',
-		price: 20,
+		name: 'I Hate Cops Vol. 1',
+		price: 6.66,
 		img: shirt2,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00Z193GH' }],
+		sizes: [{ label: 'CD', productId: 'PX00YF1WV2' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 2,
+		name: 'I Hate Cops Vol. 2',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00OJJVFR' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 3,
+		name: 'SAWS UP',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 4,
+		name: 'Kill The T.H.O.T.',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 5,
+		name: 'EVOL',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00HTD7S8' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 6,
+		name: 'Sawdemic',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT' }],
+		provider: 'kunaki'
+	},
+	{
+		id: 6,
+		name: 'Indulgence Of The Flesh: The Sequel',
+		price: 6.66,
+		img: shirt2,
+		url: './sticker.glb',
+		description: 'Platinum selling record from Concrete.',
+		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R' }],
 		provider: 'kunaki'
 	}
 ];
