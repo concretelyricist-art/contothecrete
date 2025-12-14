@@ -70,10 +70,10 @@
 
 	<section class="header-info light-White">
 		<article class="glass-Box">
-			<h1>Subscribe</h1>
+			<h1><a href="/Contact">Contact me now</a></h1>
 		</article>
 		<article class="glass-Box large-Only">
-			<h1>Merch</h1>
+			<h1><a href="/Shop">Merch</a></h1>
 		</article>
 
 		<article class="glass-Box">
@@ -103,7 +103,7 @@
 			{/if}
 		</article>
 		<article class="glass-Box large-Only">
-			<h1>Video</h1>
+			<h1><a href="/Videos">Videos</a></h1>
 		</article>
 	</section>
 </header>

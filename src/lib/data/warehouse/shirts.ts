@@ -1,8 +1,16 @@
-import shirt from '$lib/Images/con1.png';
+import shirt from '$lib/Images/con40.jpg';
 import shirt2 from '$lib/Images/con3.png';
 import shirt3 from '$lib/Images/con5.png';
 import shirt4 from '$lib/Images/con20.jpg';
 import shirt5 from '$lib/Images/con21.jpg';
+
+import CD from '$lib/Images/conCD.jpg';
+import CD2 from '$lib/Images/conCD2.jpg';
+import CD3 from '$lib/Images/conCD3.jpg';
+import CD4 from '$lib/Images/conCD4.jpg';
+import CD5 from '$lib/Images/conCD5.jpg';
+import CD6 from '$lib/Images/conCD6.jpg';
+import CD7 from '$lib/Images/conCD7.jpg';
 
 import SceneAlt from '$lib/SceneAlt.svelte';
 
@@ -58,7 +66,7 @@ export const Cds = [
 		id: 1,
 		name: 'I Hate Cops Vol. 1(TEST MODE)',
 		price: 6.66,
-		img: shirt,
+		img: CD,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		// sizes: [{ label: 'CD', productId: 'PX00YF1WV2' }],
@@ -70,7 +78,7 @@ export const Cds = [
 		id: 2,
 		name: 'I Hate Cops Vol. 2',
 		price: 6.66,
-		img: shirt2,
+		img: CD7,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00OJJVFR' }],
@@ -81,7 +89,7 @@ export const Cds = [
 		id: 3,
 		name: 'SAWS UP',
 		price: 6.66,
-		img: shirt3,
+		img: CD2,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6' }],
@@ -92,7 +100,7 @@ export const Cds = [
 		id: 4,
 		name: 'Kill The T.H.O.T.',
 		price: 6.66,
-		img: shirt4,
+		img: CD3,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O' }],
@@ -103,7 +111,7 @@ export const Cds = [
 		id: 5,
 		name: 'EVOL',
 		price: 6.66,
-		img: shirt5,
+		img: CD4,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00HTD7S8' }],
@@ -114,7 +122,7 @@ export const Cds = [
 		id: 6,
 		name: 'Sawdemic',
 		price: 6.66,
-		img: shirt,
+		img: CD5,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT' }],
@@ -125,7 +133,7 @@ export const Cds = [
 		id: 7,
 		name: 'Indulgence Of The Flesh: The Sequel',
 		price: 6.66,
-		img: shirt3,
+		img: CD6,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R' }],

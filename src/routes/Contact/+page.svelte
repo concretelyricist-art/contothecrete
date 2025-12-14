@@ -3,8 +3,6 @@
 </script>
 
 <section class="contact-page">
-	<h1>Contact & Follow</h1>
-
 	<div class="contact-card">
 		<h2>Contact Me</h2>
 		<p>For booking, collaborations, or business inquiries:</p>
@@ -58,6 +56,18 @@
 		margin: 0 auto;
 		padding: 2rem;
 		text-align: center;
+		display: grid;
+		grid-template-columns: 1fr;
+		@media (min-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.contact-card {
+		p {
+			padding: 0;
+			margin: 0;
+		}
 	}
 
 	.social-grid {
@@ -65,10 +75,5 @@
 		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 		gap: 1rem;
 		margin-top: 1.5rem;
-
-		@media only screen and (min-width: 1024px) {
-			width: 60vw;
-			margin: 1.5rem auto;
-		}
 	}
 </style>

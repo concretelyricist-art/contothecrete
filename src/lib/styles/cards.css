@@ -78,17 +78,22 @@
     background: var(--bg-2);
     color: #fff;
     padding: 1.6rem;
-    border-radius: 6px;
     width: 60vw;
-    height: 30vh;  
+    height: 40vh;  
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    img {
+        width: 85%;
+        margin: 0.25rem 0 0 0;
+        height: auto;
+    }
+
     h2 {
         padding: 0;
-        margin:40% 0 0 0;
+        margin:100% 0 0 0;
     }
 
     .price {
@@ -96,7 +101,6 @@
         padding: 0;
         margin: 2rem 0;
     }
-
     
 	.size-row {
 		margin: 0;
@@ -137,8 +141,12 @@
         }
 
         h2 {
-            margin:20% 0 0 0;
+            margin:60% 0 0 0;
         }
+
+            img {
+        width: 55%;
+    }
 	}
 
             @media only screen and (min-width: 1024px) { 

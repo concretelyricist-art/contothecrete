@@ -69,6 +69,18 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.video-Frame {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		width: 100%;
+		max-width: 1000px;
+		margin: 2rem auto;
+		@media only screen and (min-width: 1024px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
 	.video-Frame iframe {
 		position: relative;
 		z-index: 1;
