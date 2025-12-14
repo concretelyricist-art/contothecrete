@@ -1,25 +1,42 @@
-<script>
+<script lang="ts">
 	import { Canvas } from '@threlte/core';
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls, GLTF } from '@threlte/extras';
-
 	import { cart } from '$lib/stores/cart.svelte.js';
-	import { Shirts } from '$lib/data/warehouse/shirts';
+	import { Shirts, Hats, Stickers, Cds } from '$lib/data/warehouse/shirts';
 
-	let { shirt } = $props();
+	let { item } = $props();
 
-	let currentShirt = $state(shirt);
+	let currentItem = $state(item);
 	let selectedSize = $state(null);
 	let warning = $state(false);
 
+	function getCollectionForType(type: string) {
+		switch (type) {
+			case 'shirt':
+				return Shirts;
+			case 'hat':
+				return Hats;
+			case 'sticker':
+				return Stickers;
+			case 'cd':
+				return Cds;
+			default:
+				return [];
+		}
+	}
+
 	function navigate(direction) {
-		const currentIndex = Shirts.findIndex((s) => s.name === currentShirt.name);
+		const currentIndex = getCollectionForType(currentItem.type).findIndex(
+			(s) => s.name === currentItem.name
+		);
 
-		const newIndex = (currentIndex + direction + Shirts.length) % Shirts.length;
+		const newIndex =
+			(currentIndex + direction + getCollectionForType(currentItem.type).length) %
+			getCollectionForType(currentItem.type).length;
 
-		currentShirt = Shirts[newIndex];
-
+		currentItem = getCollectionForType(currentItem.type)[newIndex];
 		selectedSize = null;
 		warning = false;
 	}
@@ -29,14 +46,14 @@
 			warning = true;
 			return;
 		}
-		cart.addItem(currentShirt, selectedSize);
+		cart.addItem(currentItem, selectedSize);
 		warning = false;
 	}
 </script>
 
 <article class="merch-card">
 	<div class="shirtObject">
-		{#key currentShirt.id}
+		{#key currentItem.id}
 			<Canvas>
 				<T.PerspectiveCamera
 					makeDefault
@@ -57,18 +74,18 @@
 				<T.AmbientLight intensity={1} />
 				<T.DirectionalLight position={[1, 5, 1]} castShadow />
 
-				<GLTF url={currentShirt.url} />
+				<GLTF url={currentItem.url} />
 			</Canvas>
 		{/key}
 	</div>
 
-	<h2>{currentShirt.name}</h2>
+	<h2>{currentItem.name}</h2>
 
-	<p><strong>Price:</strong> ${currentShirt.price}</p>
+	<p><strong>Price:</strong> ${currentItem.price}</p>
 
 	<h3>Available Sizes</h3>
 	<div class="size-row">
-		{#each currentShirt.sizes as size}
+		{#each currentItem.sizes as size}
 			<button
 				class="size-badge"
 				class:active={selectedSize === size}
@@ -82,8 +99,8 @@
 		{/each}
 	</div>
 
-	{#if currentShirt.description}
-		<p>{currentShirt.description}</p>
+	{#if currentItem.description}
+		<p>{currentItem.description}</p>
 	{/if}
 
 	<div class="modal-nav">

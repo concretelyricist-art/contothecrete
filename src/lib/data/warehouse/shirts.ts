@@ -15,6 +15,7 @@ export type Cds = {
 	description: string;
 	sizes: { label: string; productId: string }[];
 	provider: string;
+	type: string;
 };
 
 export type Shirt = {
@@ -26,6 +27,7 @@ export type Shirt = {
 	description: string;
 	sizes: { label: string; catalogObjectId: string }[];
 	provider: string;
+	type: string;
 };
 
 export type Hat = {
@@ -37,6 +39,7 @@ export type Hat = {
 	description: string;
 	sizes: { label: string; catalogObjectId: string }[];
 	provider: string;
+	type: string;
 };
 
 export type Sticker = {
@@ -53,13 +56,15 @@ export type Sticker = {
 export const Cds = [
 	{
 		id: 1,
-		name: 'I Hate Cops Vol. 1',
+		name: 'I Hate Cops Vol. 1(TEST MODE)',
 		price: 6.66,
 		img: shirt,
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00YF1WV2' }],
-		provider: 'kunaki'
+		// sizes: [{ label: 'CD', productId: 'PX00YF1WV2' }],
+		sizes: [{ label: 'CD', productId: 'PX00Z193GH' }],
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 2,
@@ -69,7 +74,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00OJJVFR' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 3,
@@ -79,7 +85,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 4,
@@ -89,7 +96,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 5,
@@ -99,7 +107,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00HTD7S8' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 6,
@@ -109,7 +118,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	},
 	{
 		id: 7,
@@ -119,7 +129,8 @@ export const Cds = [
 		url: './sticker.glb',
 		description: 'Platinum selling record from Concrete.',
 		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R' }],
-		provider: 'kunaki'
+		provider: 'kunaki',
+		type: 'cd'
 	}
 ];
 
@@ -138,7 +149,8 @@ export const Shirts = [
 			{ label: 'XL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
 			{ label: 'XXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'shirt'
 	},
 	{
 		id: 2,
@@ -156,7 +168,8 @@ export const Shirts = [
 			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
 			{ label: 'XXXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'shirt'
 	},
 	{
 		id: 3,
@@ -174,7 +187,8 @@ export const Shirts = [
 			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
 			{ label: 'XXXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'shirt'
 	},
 	{
 		id: 4,
@@ -187,7 +201,8 @@ export const Shirts = [
 			{ label: 'S', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
 			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'shirt'
 	}
 ];
 
@@ -205,7 +220,8 @@ export const Hats = [
 			{ label: 'Green', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
 			{ label: 'Grey', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'hat'
 	},
 	{
 		id: 2,
@@ -220,7 +236,8 @@ export const Hats = [
 			{ label: 'Green', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
 			{ label: 'Grey', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
 		],
-		provider: 'square'
+		provider: 'square',
+		type: 'hat'
 	}
 ];
 

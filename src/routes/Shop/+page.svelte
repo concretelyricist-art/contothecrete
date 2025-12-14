@@ -4,16 +4,16 @@
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
 	let merchItem = $state(false);
-	let selectedShirt = $state(null);
+	let selectedItem = $state(null);
 
-	function openMerch(shirt) {
-		selectedShirt = shirt;
+	function openMerch(item) {
+		selectedItem = item;
 		merchItem = true;
 	}
 
 	function closeMerch() {
 		merchItem = false;
-		selectedShirt = null;
+		selectedItem = null;
 	}
 </script>
 
@@ -25,6 +25,7 @@
 </p>
 
 <h2>Cds</h2>
+
 <main class="grid-Main">
 	<section class="grid-SideScroll">
 		{#each Cds as cd}
@@ -80,7 +81,7 @@
 	{#if merchItem}
 		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
 			<div class="modal-content" tabindex="-1" autofocus>
-				<MerchItem shirt={selectedShirt} />
+				<MerchItem item={selectedItem} />
 				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
 			</div>
 		</dialog>
