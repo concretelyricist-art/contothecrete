@@ -217,7 +217,7 @@ export const Shirts = [
 export const Hats = [
 	{
 		id: 12,
-		name: 'Cow',
+		name: 'Con-Crete',
 		price: 25,
 		img: shirt5,
 		url: './hat.glb',
@@ -237,7 +237,7 @@ export const Hats = [
 		price: 25,
 		img: shirt,
 		url: './hat2.glb',
-		description: 'A stylish hat featuring Concretefacepaint.',
+		description: 'A stylish hat featuring Concrete in facepaint.',
 		sizes: [
 			{ label: 'Blue', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
 			{ label: 'Red', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },

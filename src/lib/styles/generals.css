@@ -32,8 +32,7 @@ h1 {
 }
 
 h2 {
-    font-size: var(--size-6); 
-    border-bottom: var(--bord);
+    font-size: var(--size-6);  
 }
 
 h3 {

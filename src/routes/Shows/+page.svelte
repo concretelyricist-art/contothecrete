@@ -1,7 +1,7 @@
 <script>
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
 
-	import img1 from '$lib/Images/con4.jpg';
+	import img1 from '$lib/Images/con35.jpg';
 </script>
 
 <main class="showPage" style={`background-image: url(${img1});`}>
@@ -34,7 +34,7 @@
 	</article>
 </main>
 
-<div class="bottom-Line"></div>
+<!-- <div class="bottom-Line"></div> -->
 
 <!--svelte-ignore css_unused_selector -->
 <style>

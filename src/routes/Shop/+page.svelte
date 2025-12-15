@@ -24,7 +24,9 @@
 	a raise.
 </p>
 
-<h2>Cds</h2>
+<div class="heading-border">
+	<h2>Cds</h2>
+</div>
 
 <main class="grid-Main">
 	<section class="grid-SideScroll">
@@ -37,7 +39,9 @@
 		{/each}
 	</section>
 
-	<h2>Shirts</h2>
+	<div class="heading-border">
+		<h2>Shirts</h2>
+	</div>
 
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
@@ -49,7 +53,9 @@
 		{/each}
 	</section>
 
-	<h2>Hats</h2>
+	<div class="heading-border">
+		<h2>Hats</h2>
+	</div>
 
 	<section class="grid-SideScroll">
 		{#each Hats as hat}
@@ -97,5 +103,19 @@
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
 		scrollbar-width: thin;
+	}
+
+	.heading-border {
+		background: url('$lib/Images/dripBord.png') no-repeat center / cover;
+		height: 8rem;
+		width: fit-content;
+		margin: 0 25vw;
+		padding: 1.5rem 2rem;
+
+		h2 {
+			margin: 0 2.75rem;
+			width: 6rem;
+			padding: 0 1.25rem;
+		}
 	}
 </style>

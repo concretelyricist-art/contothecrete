@@ -138,13 +138,9 @@
 	.menu-overlay {
 		position: fixed;
 		inset: 0;
-		background: radial-gradient(
-			circle at center,
-			var(--bg-1),
-			var(--bg-1),
-			var(--bg-1),
-			var(--accent-2)
-		);
+		background: rgba(158, 52, 52, 0.418);
+		backdrop-filter: blur(8px);
+		--webkit-backdrop-filter: blur(1.5px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -175,7 +171,7 @@
 	}
 
 	.menu-link.current {
-		color: var(--accent-1);
+		color: var(--bg-1);
 		font-weight: bold;
 		text-shadow: 0 0 12px var(--accent-1);
 	}

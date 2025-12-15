@@ -124,15 +124,18 @@
 	</section>
 
 	<section>
-		<h2>Merch</h2>
+		<div class="heading-border">
+			<h2>Merch</h2>
+		</div>
 
 		<p>
-			Buy some dope shit and make youself look fresh as fuck! Click the item to check it out and
+			Buy some dope shit and make yourself look fresh as fuck! Click the item to check it out and
 			learn more about it.
 		</p>
 	</section>
-
-	<h2>Cds</h2>
+	<div class="heading-border">
+		<h2>Cds</h2>
+	</div>
 
 	<section class="grid-SideScroll">
 		{#each Cds as cd}
@@ -144,7 +147,9 @@
 		{/each}
 	</section>
 
-	<h2>Shirts</h2>
+	<div class="heading-border">
+		<h2>Shirts</h2>
+	</div>
 
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
@@ -184,6 +189,20 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.heading-border {
+		background: url('../lib/Images/dripBord.png') no-repeat center / cover;
+		height: 8rem;
+		width: fit-content;
+		margin: 0 25vw;
+		padding: 1.5rem 2rem;
+
+		h2 {
+			margin: 0 2.75rem;
+			width: 6rem;
+			padding: 0 1.25rem;
+		}
+	}
+
 	header {
 		background-color: var(--bg-1);
 		position: relative;
