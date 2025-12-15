@@ -144,7 +144,7 @@ export const Cds = [
 
 export const Shirts = [
 	{
-		id: 1,
+		id: 8,
 		name: 'Snapped: Grey',
 		price: 35,
 		img: shirt2,
@@ -161,7 +161,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 2,
+		id: 9,
 		name: 'Snapped: Black',
 		price: 35,
 		img: shirt2,
@@ -180,7 +180,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 3,
+		id: 10,
 		name: 'SPD',
 		price: 35,
 		img: shirt3,
@@ -199,7 +199,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 4,
+		id: 11,
 		name: 'Facepaint',
 		price: 35,
 		img: shirt,
@@ -216,7 +216,7 @@ export const Shirts = [
 
 export const Hats = [
 	{
-		id: 1,
+		id: 12,
 		name: 'Cow',
 		price: 25,
 		img: shirt5,
@@ -232,8 +232,8 @@ export const Hats = [
 		type: 'hat'
 	},
 	{
-		id: 2,
-		name: 'Facepaint',
+		id: 13,
+		name: 'Facepainted',
 		price: 25,
 		img: shirt,
 		url: './hat2.glb',

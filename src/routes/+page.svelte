@@ -54,8 +54,6 @@
 			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
 		return upcoming[0] ?? null;
 	});
-
-	$inspect({ nextShow });
 </script>
 
 <header>

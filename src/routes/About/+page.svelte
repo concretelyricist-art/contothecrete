@@ -54,31 +54,6 @@
 		it shows that we’re not afraid to change, question ourselves, or start fresh when the music asks
 		for it.
 	</p>
-
-	<p>
-		The road has had its fair share of challenges. Long drives, unpredictable gigs, equipment
-		failures, and those weird moments where everything seems to go wrong at once — we’ve been
-		through all of it. But somehow, those chaotic nights became the stories we laugh about later.
-		They reminded us why we started this in the first place: not for perfection, but for connection,
-		for the rush of giving everything onstage, and for the simple joy of creating something
-		together.
-	</p>
-
-	<p>
-		What keeps us inspired today is the community that has grown around our music. Over the years,
-		we’ve met people who found comfort, motivation, or clarity in songs that started as our own
-		private journals. Knowing that something we made in a quiet room can echo out into someone
-		else’s life is still the most surreal and rewarding part of this whole journey. It’s a
-		relationship we never take for granted.
-	</p>
-
-	<p>
-		As we look ahead, our goal is simple: keep growing, keep experimenting, and keep telling the
-		truth through our music. We’re excited for what’s coming next — the new songs, the new stages,
-		and the new people we’ll get to share it all with. The story is still being written, and every
-		chapter feels like a chance to push a little further and say something worth hearing. We hope
-		you’ll be there with us for the next part of the journey.
-	</p>
 </main>
 <div class="bottom-Line"></div>
 
