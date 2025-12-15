@@ -43,7 +43,6 @@
 		status = 'Paying...';
 
 		const simplifiedItems = cart.items.map((item) => {
-			// Grab the selected size object (contains either catalogObjectId or productId + provider)
 			const size = item.selectedSize;
 
 			return {

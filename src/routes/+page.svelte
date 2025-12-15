@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-
 	import { Shirts, Cds } from '$lib/data/warehouse/shirts';
-
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
-
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 
 	let merchItem = $state(false);

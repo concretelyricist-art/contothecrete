@@ -38,7 +38,7 @@ ${kunakiItems
 
 	const response = await fetch('https://kunaki.com/XMLService.ASP', {
 		method: 'POST',
-		headers: { 'Content-Type': 'text/xml' }, // <-- change here
+		headers: { 'Content-Type': 'text/xml' },
 		body: xmlPayload
 	});
 

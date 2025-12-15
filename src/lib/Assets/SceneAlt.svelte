@@ -2,7 +2,6 @@
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls, GLTF } from '@threlte/extras';
-	import Shirt from './Assets/Shirt.svelte';
 </script>
 
 <T.PerspectiveCamera

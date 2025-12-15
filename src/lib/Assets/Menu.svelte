@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Canvas } from '@threlte/core';
-	import Scene from '$lib/Scene.svelte';
+	import Scene from '$lib/Assets/Scene.svelte';
 	import type { CharacterActions } from './types';
 
 	let action = $state<CharacterActions>('idleChainsaw');

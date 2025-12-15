@@ -2,16 +2,16 @@
 	import { MathUtils } from 'three';
 	import { T } from '@threlte/core';
 	import { OrbitControls } from '@threlte/extras';
-	import Character from './Assets/ContactRoom.svelte';
+	import Character from './ChainsawMan.svelte';
 
 	let { action } = $props();
 </script>
 
 <T.PerspectiveCamera
 	makeDefault
-	position={[0, 1.1, 0.4]}
+	position={[0, 1, 4]}
 	oncreate={(ref) => {
-		ref.lookAt(0.3, 0.5, -1.7);
+		ref.lookAt(0, 1, 0);
 	}}
 ></T.PerspectiveCamera>
 

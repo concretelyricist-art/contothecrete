@@ -12,7 +12,7 @@ import CD5 from '$lib/Images/conCD5.jpg';
 import CD6 from '$lib/Images/conCD6.jpg';
 import CD7 from '$lib/Images/conCD7.jpg';
 
-import SceneAlt from '$lib/SceneAlt.svelte';
+import SceneAlt from '$lib/Assets/SceneAlt.svelte';
 
 export type Cds = {
 	id: number;
