@@ -17,6 +17,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Con-Crete store to buy merch</title>
+	<meta
+		name="description"
+		content="Buy Con-Crete's official merchandise including shirts, hats, and CDs."
+	/>
+</svelte:head>
+
 <h1>Shop</h1>
 
 <p>
@@ -32,7 +40,7 @@
 	<section class="grid-SideScroll">
 		{#each Cds as cd}
 			<button class="card-Topper" onclick={() => openMerch(cd)}>
-				<img src={cd.img} alt={cd.description} />
+				<img src={cd.img} alt={cd.alt} />
 				<h2>{cd.name}</h2>
 				<p class="price">${cd.price}</p>
 			</button>
@@ -46,7 +54,7 @@
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
 			<button class="card-Topper" onclick={() => openMerch(shirt)}>
-				<img src={shirt.img} alt={shirt.description} />
+				<img src={shirt.img} alt={shirt.alt} />
 				<h2>{shirt.name}</h2>
 				<p class="price">${shirt.price}</p>
 			</button>
@@ -60,29 +68,12 @@
 	<section class="grid-SideScroll">
 		{#each Hats as hat}
 			<button class="card-Topper" onclick={() => openMerch(hat)}>
-				<img src={hat.img} alt={hat.description} />
+				<img src={hat.img} alt={hat.alt} />
 				<h2>{hat.name}</h2>
 				<p class="price">${hat.price}</p>
 			</button>
 		{/each}
 	</section>
-
-	<!-- <h2>Stickers</h2>
-
-	<section class="grid-SideScroll">
-		{#each Stickers as sticker}
-			<button class="card-Topper" onclick={() => openMerch(sticker)}>
-				<img src={sticker.img} alt={sticker.description} />
-				<h2>{sticker.name}</h2>
-				<p class="price">${sticker.price}</p>
-				<div class="size-row">
-					{#each sticker.sizes as stickerSize}
-						<span class="size-badge">{stickerSize}</span>
-					{/each}
-				</div>
-			</button>
-		{/each}
-	</section> -->
 
 	{#if merchItem}
 		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">

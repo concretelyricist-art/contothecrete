@@ -64,13 +64,21 @@ export type Sticker = {
 export const Cds = [
 	{
 		id: 1,
-		name: 'I Hate Cops Vol. 1(TEST MODE)',
+		name: 'I Hate Cops Vol. 1',
 		price: 6.66,
+		currency: 'USD',
 		img: CD,
+		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 1',
 		url: './cdBaseIHC.glb',
-		description: 'Platinum selling record from Concrete.',
-		// sizes: [{ label: 'CD', productId: 'PX00YF1WV2' }],
-		sizes: [{ label: 'CD', productId: 'PX00Z193GH' }],
+		description: 'Platinum selling record from Con-Crete, I Hate Cops Vol. 1.',
+		brand: 'Con-Crete',
+		sku: 'CD-IHC1-1',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 1', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00Z193GH', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -78,10 +86,19 @@ export const Cds = [
 		id: 2,
 		name: 'I Hate Cops Vol. 2',
 		price: 6.66,
+		currency: 'USD',
 		img: CD7,
+		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 2',
 		url: './cdBaseIHCv2.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00OJJVFR' }],
+		description: 'Platinum selling record from Con-Crete, I Hate Cops Vol. 2.',
+		brand: 'Con-Crete',
+		sku: 'CD-IHC2-2',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 2', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00OJJVFR', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -89,10 +106,19 @@ export const Cds = [
 		id: 3,
 		name: 'SAWS UP',
 		price: 6.66,
+		currency: 'USD',
 		img: CD2,
+		alt: 'Album cover for Con-Crete – SAWS UP',
 		url: './cdBaseSawsup.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6' }],
+		description: 'Platinum selling record from Con-Crete, SAWS UP.',
+		brand: 'Con-Crete',
+		sku: 'CD-SAWSUP-3',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'SAWS UP', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -100,10 +126,19 @@ export const Cds = [
 		id: 4,
 		name: 'Kill The T.H.O.T.',
 		price: 6.66,
+		currency: 'USD',
 		img: CD3,
+		alt: 'Album cover for Con-Crete – Kill The T.H.O.T.',
 		url: './cdBaseTHOT.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O' }],
+		description: 'Platinum selling record from Con-Crete, Kill The T.H.O.T.',
+		brand: 'Con-Crete',
+		sku: 'CD-THOT-4',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'Kill The T.H.O.T.', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -111,10 +146,19 @@ export const Cds = [
 		id: 5,
 		name: 'EVOL',
 		price: 6.66,
+		currency: 'USD',
 		img: CD4,
+		alt: 'Album cover for Con-Crete – EVOL',
 		url: './cdBaseEVOL.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00HTD7S8' }],
+		description: 'Platinum selling record from Con-Crete, EVOL.',
+		brand: 'Con-Crete',
+		sku: 'CD-EVOL-5',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'EVOL', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00HTD7S8', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -122,10 +166,19 @@ export const Cds = [
 		id: 6,
 		name: 'Sawdemic',
 		price: 6.66,
+		currency: 'USD',
 		img: CD5,
+		alt: 'Album cover for Con-Crete – Sawdemic',
 		url: './cdBaseDemic.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT' }],
+		description: 'Platinum selling record from Con-Crete, Sawdemic.',
+		brand: 'Con-Crete',
+		sku: 'CD-SAWDEMIC-6',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'Sawdemic', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	},
@@ -133,10 +186,19 @@ export const Cds = [
 		id: 7,
 		name: 'Indulgence Of The Flesh: The Sequel',
 		price: 6.66,
+		currency: 'USD',
 		img: CD6,
+		alt: 'Album cover for Con-Crete – Indulgence Of The Flesh: The Sequel',
 		url: './cdBaseFlesh.glb',
-		description: 'Platinum selling record from Concrete.',
-		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R' }],
+		description: 'Platinum selling record from Con-Crete, Indulgence Of The Flesh: The Sequel.',
+		brand: 'Con-Crete',
+		sku: 'CD-FLESH-7',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'Indulgence Of The Flesh', 'rock album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rock',
+		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	}
@@ -145,17 +207,43 @@ export const Cds = [
 export const Shirts = [
 	{
 		id: 8,
-		name: 'Snapped: Grey(test mode)',
+		name: 'Snapped: Grey(test mode',
 		price: 35,
+		currency: 'USD',
 		img: shirt2,
+		alt: 'Grey Con-Crete shirt featuring Concrete chasing a guy with a chainsaw',
 		url: './shirtBase.glb',
-		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
+		description:
+			'Official Con-Crete band shirt in grey, featuring Concrete chasing a guy with a chainsaw.',
+		brand: 'Con-Crete',
+		sku: 'SNAPPED-GREY-8',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'grey shirt', 'rock band apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Grey',
 		sizes: [
-			{ label: 'S', catalogObjectId: ' RQFLELCRCG6HU2K3Y2ZGTLE2' },
-			{ label: 'M', catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF' },
-			{ label: 'L', catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH' },
-			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW' },
-			{ label: 'XXL', catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR' }
+			{
+				label: 'S',
+				catalogObjectId: 'RQFLELCRCG6HU2K3Y2ZGTLE2',
+				description: 'Small – chest 34-36'
+			},
+			{
+				label: 'M',
+				catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF',
+				description: 'Medium – chest 38-40'
+			},
+			{
+				label: 'L',
+				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
+				description: 'Large – chest 42-44'
+			},
+			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
+			{
+				label: 'XXL',
+				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
+				description: 'XXL – chest 50-52'
+			}
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -164,18 +252,56 @@ export const Shirts = [
 		id: 9,
 		name: 'Snapped: Black',
 		price: 35,
+		currency: 'USD',
 		img: shirt2,
+		alt: 'Black Con-Crete shirt featuring Concrete chasing a guy with a chainsaw',
 		url: './shirtBase.glb',
-		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
+		description:
+			'Official Con-Crete band shirt in black, featuring Concrete chasing a guy with a chainsaw.',
+		brand: 'Con-Crete',
+		sku: 'SNAPPED-BLACK-9',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rock band apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Black',
 		sizes: [
-			{ label: 'XS', catalogObjectId: 'KL534BHYURWL43CIZJBMYTJ6' },
-			{ label: 'S', catalogObjectId: 'CFGHTWXHATDEDK5DKDGOQRKM' },
-			{ label: 'M', catalogObjectId: 'SAQMIIRHLWW447TUGBD2IKIU' },
-			{ label: 'L', catalogObjectId: 'DIZRMZ436EDCVM2TISFNO7GA' },
-			{ label: 'XL', catalogObjectId: 'OYTZLIBQQ2XTMI66HW6B3CAU' },
-			{ label: 'XXXL', catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT' },
-			{ label: 'XXXXL', catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73' },
-			{ label: 'XXXXXL', catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC' }
+			{
+				label: 'XS',
+				catalogObjectId: 'KL534BHYURWL43CIZJBMYTJ6',
+				description: 'Extra Small – chest 32-34'
+			},
+			{
+				label: 'S',
+				catalogObjectId: 'CFGHTWXHATDEDK5DKDGOQRKM',
+				description: 'Small – chest 34-36'
+			},
+			{
+				label: 'M',
+				catalogObjectId: 'SAQMIIRHLWW447TUGBD2IKIU',
+				description: 'Medium – chest 38-40'
+			},
+			{
+				label: 'L',
+				catalogObjectId: 'DIZRMZ436EDCVM2TISFNO7GA',
+				description: 'Large – chest 42-44'
+			},
+			{ label: 'XL', catalogObjectId: 'OYTZLIBQQ2XTMI66HW6B3CAU', description: 'XL – chest 46-48' },
+			{
+				label: 'XXXL',
+				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
+				description: '3XL – chest 52-54'
+			},
+			{
+				label: 'XXXXL',
+				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
+				description: '4XL – chest 56-58'
+			},
+			{
+				label: 'XXXXXL',
+				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
+				description: '5XL – chest 60-62'
+			}
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -184,17 +310,54 @@ export const Shirts = [
 		id: 10,
 		name: 'SPD',
 		price: 35,
+		currency: 'USD',
 		img: shirt3,
+		alt: 'Con-Crete SPD shirt featuring Concrete chasing a guy with a chainsaw',
 		url: './shirtBase2.glb',
-		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
+		description: 'Official Con-Crete SPD shirt, featuring Concrete chasing a guy with a chainsaw.',
+		brand: 'Con-Crete',
+		sku: 'SPD-10',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'SPD shirt', 'rock band apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Black',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'QKVNHFSJEG35WPYJZOZZCWMU' },
-			{ label: 'M', catalogObjectId: '5STFAF7HGSNR4MA2OQAUL6YD' },
-			{ label: 'L', catalogObjectId: 'DOWH35SZIK53UGONOCXVRG7E' },
-			{ label: 'XXL', catalogObjectId: 'CLKETJNHTE5XJRNPPCWCGJB7' },
-			{ label: 'XXXL', catalogObjectId: 'X2X7NI7EFK7EHNUH44PGAYGH' },
-			{ label: 'XXXXL', catalogObjectId: 'HX37R542VEZ3H2BI4KIQN3GB' },
-			{ label: 'XXXXXL', catalogObjectId: 'HQTU3TQRBZZLRB2RVZLKPSPU' }
+			{
+				label: 'S',
+				catalogObjectId: 'QKVNHFSJEG35WPYJZOZZCWMU',
+				description: 'Small – chest 34-36'
+			},
+			{
+				label: 'M',
+				catalogObjectId: '5STFAF7HGSNR4MA2OQAUL6YD',
+				description: 'Medium – chest 38-40'
+			},
+			{
+				label: 'L',
+				catalogObjectId: 'DOWH35SZIK53UGONOCXVRG7E',
+				description: 'Large – chest 42-44'
+			},
+			{
+				label: 'XXL',
+				catalogObjectId: 'CLKETJNHTE5XJRNPPCWCGJB7',
+				description: '2XL – chest 48-50'
+			},
+			{
+				label: 'XXXL',
+				catalogObjectId: 'X2X7NI7EFK7EHNUH44PGAYGH',
+				description: '3XL – chest 52-54'
+			},
+			{
+				label: 'XXXXL',
+				catalogObjectId: 'HX37R542VEZ3H2BI4KIQN3GB',
+				description: '4XL – chest 56-58'
+			},
+			{
+				label: 'XXXXXL',
+				catalogObjectId: 'HQTU3TQRBZZLRB2RVZLKPSPU',
+				description: '5XL – chest 60-62'
+			}
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -203,12 +366,30 @@ export const Shirts = [
 		id: 11,
 		name: 'Facepaint',
 		price: 35,
+		currency: 'USD',
 		img: shirt,
+		alt: 'Con-Crete Facepaint shirt featuring Concrete chasing a guy with a chainsaw',
 		url: './shirtBase3.glb',
-		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
+		description:
+			'Official Con-Crete Facepaint shirt, featuring Concrete chasing a guy with a chainsaw.',
+		brand: 'Con-Crete',
+		sku: 'FACEPAINT-11',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'facepaint shirt', 'rock band apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Black',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'IYWBHKC6ZENWIORUYQ2USGGN' },
-			{ label: 'XXXXL', catalogObjectId: 'QZR247VSO2XOSEWI4MTCPUCI' }
+			{
+				label: 'S',
+				catalogObjectId: 'IYWBHKC6ZENWIORUYQ2USGGN',
+				description: 'Small – chest 34-36'
+			},
+			{
+				label: 'XXXXL',
+				catalogObjectId: 'QZR247VSO2XOSEWI4MTCPUCI',
+				description: '4XL – chest 56-58'
+			}
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -218,32 +399,88 @@ export const Shirts = [
 export const Hats = [
 	{
 		id: 12,
-		name: 'Con-Crete',
+		name: 'Con-Crete Hat',
 		price: 25,
+		currency: 'USD',
 		img: shirt5,
+		alt: 'Con-Crete hat featuring Concrete chasing a guy with a chainsaw',
 		url: './hat.glb',
-		description: 'A stylish hat featuring Concrete chasing a guy with a chainsaw.',
+		description:
+			'Official Con-Crete band hat, available in multiple colors, featuring Concrete chasing a guy with a chainsaw.',
+		brand: 'Con-Crete',
+		sku: 'HAT-CONCRETE-12',
+		category: 'Apparel > Hats',
+		keywords: ['band merch', 'Con-Crete hat', 'rock band apparel', 'adjustable cap'],
+		availability: 'InStock',
+		material: 'Cotton blend',
 		sizes: [
-			{ label: 'Blue', catalogObjectId: 'H2EDDCZVWIHETO4FQ73DUB4O' },
-			{ label: 'Red', catalogObjectId: 'MEJASG3UHPJYKVSWOUEVRDMN' },
-			{ label: 'Green', catalogObjectId: 'HOHOMKDGSAFD43AFK44J4IAQ' },
-			{ label: 'Grey', catalogObjectId: 'QC2O5YI4MN4VBWHV37L6OJFF' }
+			{
+				label: 'Blue',
+				catalogObjectId: 'H2EDDCZVWIHETO4FQ73DUB4O',
+				description: 'Blue color variant'
+			},
+			{
+				label: 'Red',
+				catalogObjectId: 'MEJASG3UHPJYKVSWOUEVRDMN',
+				description: 'Red color variant'
+			},
+			{
+				label: 'Green',
+				catalogObjectId: 'HOHOMKDGSAFD43AFK44J4IAQ',
+				description: 'Green color variant'
+			},
+			{
+				label: 'Grey',
+				catalogObjectId: 'QC2O5YI4MN4VBWHV37L6OJFF',
+				description: 'Grey color variant'
+			}
 		],
 		provider: 'square',
 		type: 'hat'
 	},
 	{
 		id: 13,
-		name: 'Facepainted',
+		name: 'Facepainted Hat',
 		price: 25,
+		currency: 'USD',
 		img: shirt,
+		alt: 'Con-Crete hat featuring Concrete in facepaint',
 		url: './hat2.glb',
-		description: 'A stylish hat featuring Concrete in facepaint.',
+		description:
+			'Official Con-Crete Facepainted hat, available in multiple colors, featuring Concrete in facepaint.',
+		brand: 'Con-Crete',
+		sku: 'HAT-FACEPAINTED-13',
+		category: 'Apparel > Hats',
+		keywords: [
+			'band merch',
+			'Con-Crete hat',
+			'facepaint hat',
+			'rock band apparel',
+			'adjustable cap'
+		],
+		availability: 'InStock',
+		material: 'Cotton blend',
 		sizes: [
-			{ label: 'Blue', catalogObjectId: 'ZOUPZXXJGODRYUJKSUDPZZLP' },
-			{ label: 'Red', catalogObjectId: 'CMWNOFWPKRUQDIGDQT2NKMZS' },
-			{ label: 'Green', catalogObjectId: 'CLJHOPUGRMM5MJ4O2A27WAN4' },
-			{ label: 'Grey', catalogObjectId: 'IRPIYJLPZ4KP2COXYJFWXTTQ' }
+			{
+				label: 'Blue',
+				catalogObjectId: 'ZOUPZXXJGODRYUJKSUDPZZLP',
+				description: 'Blue color variant'
+			},
+			{
+				label: 'Red',
+				catalogObjectId: 'CMWNOFWPKRUQDIGDQT2NKMZS',
+				description: 'Red color variant'
+			},
+			{
+				label: 'Green',
+				catalogObjectId: 'CLJHOPUGRMM5MJ4O2A27WAN4',
+				description: 'Green color variant'
+			},
+			{
+				label: 'Grey',
+				catalogObjectId: 'IRPIYJLPZ4KP2COXYJFWXTTQ',
+				description: 'Grey color variant'
+			}
 		],
 		provider: 'square',
 		type: 'hat'

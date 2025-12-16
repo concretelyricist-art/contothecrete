@@ -1,14 +1,21 @@
 <script>
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
-
-	import img1 from '$lib/Images/con35.jpg';
 </script>
 
-<main class="showPage" style={`background-image: url(${img1});`}>
+<svelte:head>
+	<title>Con-Crete Upcoming Shows</title>
+	<meta
+		name="description"
+		content="See Con-Crete's upcoming shows, dates, venues, and ticket info."
+	/>
+</svelte:head>
+:
+<main class="showPage">
 	<article>
 		<h1>Shows</h1>
 
 		<table class="centered">
+			<caption>Upcoming Con-Crete Shows</caption>
 			<thead>
 				<tr>
 					<th>Place</th>
@@ -18,14 +25,13 @@
 					<th>Tickets</th>
 				</tr>
 			</thead>
-
 			<tbody>
 				{#each ShowDates as d}
 					<tr>
 						<td><a href={d.venueUrl}>{d.location}</a></td>
 						<td>{d.city}</td>
-						<td>{d.date}</td>
-						<td>{d.time}</td>
+						<td><time datetime={d.date}>{d.date}</time></td>
+						<td><time datetime={d.time}>{d.time}</time></td>
 						<td><a href={d.ticketsUrl}>Tickets: {d.price}</a></td>
 					</tr>
 				{/each}
@@ -33,8 +39,6 @@
 		</table>
 	</article>
 </main>
-
-<!-- <div class="bottom-Line"></div> -->
 
 <!--svelte-ignore css_unused_selector -->
 <style>
@@ -45,6 +49,7 @@
 	.showPage {
 		min-height: 100vh;
 		height: 100%;
+		background-image: url('$lib/Images/con35.jpg');
 		background-size: cover;
 		background-position: center;
 	}

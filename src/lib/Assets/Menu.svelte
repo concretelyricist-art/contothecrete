@@ -45,6 +45,14 @@
 		}, 3500);
 	}
 
+	let theme = $state('Dark');
+	const themes = ['Dark', 'Light', 'Headache', 'Colorblind'];
+
+	function setTheme(name) {
+		theme = name;
+		document.documentElement.setAttribute('data-theme', theme);
+	}
+
 	import Cart from '$lib/Assets/Cart.svelte';
 	import { cart } from '$lib/stores/cart.svelte.js';
 
@@ -82,6 +90,19 @@
 					>
 						{item.label}
 					</a>
+				{/each}
+
+				{#each themes as t}
+					<label>
+						<input
+							type="radio"
+							name="theme"
+							value={t}
+							bind:group={theme}
+							onchange={() => setTheme(t)}
+						/>
+						{t}
+					</label>
 				{/each}
 			</div>
 		</div>

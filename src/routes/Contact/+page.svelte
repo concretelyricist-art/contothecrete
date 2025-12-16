@@ -2,52 +2,60 @@
 	import { Socials } from '$lib/data/shows/contactPoints';
 </script>
 
-<section class="contact-page">
-	<div class="contact-card">
-		<h2>Contact Me</h2>
+<svelte:head>
+	<title>Con-Crete contact and music platform links</title>
+	<meta
+		name="description"
+		content="Contact Con-Crete for booking, collaborations, or business inquiries, and follow his music on major platforms like Spotify and Facebook."
+	/>
+</svelte:head>
+
+<main class="contact-page">
+	<section class="contact-card" aria-labelledby="contact-heading">
+		<h2 id="contact-heading">Contact Me</h2>
 		<p>For booking, collaborations, or business inquiries:</p>
 
 		<form class="classicForm" name="contact" method="POST" data-netlify="true">
 			<input type="hidden" name="form-name" value="contact" />
 
-			<div style="display:none">
+			<div style="display:none" aria-hidden="true">
 				<input name="bot-field" />
 			</div>
 
-			<label>
-				Your Name
-				<input type="text" name="name" required />
-			</label>
+			<label for="name">Your Name</label>
+			<input id="name" type="text" name="name" required aria-required="true" />
 
-			<label>
-				Your Email
-				<input type="email" name="email" required />
-			</label>
+			<label for="email">Your Email</label>
+			<input id="email" type="email" name="email" required aria-required="true" />
 
-			<label>
-				Message
-				<textarea name="message" required></textarea>
-			</label>
+			<label for="message">Message</label>
+			<textarea id="message" name="message" required aria-required="true"></textarea>
 
 			<button class="btn-Ghost" type="submit">Send Message</button>
 		</form>
-	</div>
+	</section>
 
-	<div class="socials-card">
-		<h2>Follow My Music</h2>
+	<section class="socials-card" aria-labelledby="socials-heading">
+		<h2 id="socials-heading">Follow My Music</h2>
 		<p>Find Con-Crete on every major platform:</p>
 
-		<div class="social-grid">
+		<article class="social-grid">
 			{#each Socials as s}
-				<a class="btn-Ghost" href={s.url} target="_blank" rel="noopener">
+				<a
+					class="btn-Ghost"
+					href={s.url}
+					target="_blank"
+					rel="noopener"
+					title={`Follow Con-Crete on ${s.name}`}
+				>
 					{s.name}
 				</a>
 			{/each}
-		</div>
-	</div>
-</section>
+		</article>
+	</section>
+</main>
 
-<div class="bottom-Line"></div>
+<section class="bottom-Line"></section>
 
 <!--svelte-ignore css_unused_selector -->
 <style>

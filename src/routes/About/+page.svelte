@@ -1,17 +1,19 @@
-<script>
-	import img1 from '$lib/Images/con12.jpg';
-</script>
+<svelte:head>
+	<title>Con-Crete Backstory and information</title>
+	<meta name="description" content="Read Con-Crete's story and learn about him" />
+</svelte:head>
 
-<main class="showPage" style={`background-image: url(${img1});`}>
+<main class="showPage">
 	<h1>Con-crete!</h1>
 
-	<h3>
-		Age : 783 years old<br />
-		Height : 12'3"<br />
-		Weight : 2 tons<br />
-		Likes : Long walks on the beach, crushing small buildings and sunsets<br />
-		Dislikes : Being chipped away at, water and pigeons<br />
-	</h3>
+	<h2>Stats</h2>
+	<ul>
+		<li><strong>Age:</strong> 783 years old</li>
+		<li><strong>Height:</strong> 12'3"</li>
+		<li><strong>Weight:</strong> 2 tons</li>
+		<li><strong>Likes:</strong> Long walks on the beach, crushing small buildings, sunsets.</li>
+		<li><strong>Dislikes:</strong> Being chipped away at, water, pigeons.</li>
+	</ul>
 
 	<p>
 		The story of our band didn’t begin on a stage or in a studio — it started in small rooms filled
@@ -59,6 +61,7 @@
 
 <style>
 	main {
+		background-image: url('$lib/Images/con12.jpg');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -72,7 +75,7 @@
 	}
 
 	h1,
-	h3 {
+	ul {
 		background-color: var(--hallow);
 		border: var(--bord);
 		backdrop-filter: blur(8px);

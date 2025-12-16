@@ -1,27 +1,10 @@
 <script lang="ts">
-	const images = import.meta.glob('$lib/Images/gallery/*.jpg', { eager: true });
+	import { galleryImages } from '$lib/Images/GalleryData';
 
-	const imageEntries = Object.entries(images).map(([path, module]) => {
-		const fileName = path.split('/').pop();
-		const [rawIndex, ...labelParts] = fileName.replace('.jpg', '').split('_');
-		const index = parseInt(rawIndex, 10);
-		const label = labelParts.join(' ');
-
-		return {
-			src: module.default,
-			index,
-			label
-		};
-	});
-
-	imageEntries.sort((a, b) => a.index - b.index);
-
-	let selectedIndex = $state(null);
-
-	/* 🦕  🦖🦖🦖 🦕 🦕 Modal  💀= 💣 🌠 */
+	let selectedIndex = $state<number | null>(null);
 
 	function openImage(image) {
-		selectedIndex = imageEntries.findIndex((img) => img.src === image.src);
+		selectedIndex = galleryImages.findIndex((img) => img.src === image.src);
 	}
 
 	function closeModal() {
@@ -29,39 +12,45 @@
 	}
 
 	function showNext() {
-		if (selectedIndex < imageEntries.length - 1) {
+		if (selectedIndex !== null && selectedIndex < galleryImages.length - 1) {
 			selectedIndex += 1;
 		}
 	}
 
 	function showPrevious() {
-		if (selectedIndex > 0) {
+		if (selectedIndex !== null && selectedIndex > 0) {
 			selectedIndex -= 1;
 		}
 	}
 </script>
 
+<svelte:head>
+	<title>Con-Crete adventure gallery</title>
+	<meta name="description" content="view Con-Crete's photographic life." />
+</svelte:head>
+
 <h1 id="pictures-heading">Travel Gallery</h1>
 
 <p>
-	These are pictures of you magnificent people near and far. Thank you all for every minute. Thank
-	you all for everything.
+	These are pictures of you magnificent people from near and far. Thank you all for every minute.
+	Thank you all for everything.
 </p>
 
 <section class="image-gallery" aria-labelledby="pictures-heading">
-	{#each imageEntries as image}
+	{#each galleryImages as image}
 		<figure class="image-card">
 			<button
 				type="button"
 				class="image-button"
 				onclick={() => openImage(image)}
-				aria-label={`View image ${image.index}: ${image.label}`}
+				aria-label={`View image: ${image.caption}`}
 			>
-				<img src={image.src} alt={`Image ${image.index}: ${image.label}`} />
+				<img src={image.src} alt={image.alt} />
 			</button>
 		</figure>
 	{/each}
 </section>
+
 {#if selectedIndex !== null}
 	<dialog
 		class="gallery-modal-overlay"
@@ -70,10 +59,9 @@
 		aria-labelledby="gallery-modal-title"
 	>
 		<div class="gallery-modal-content" tabindex="-1">
+			<img src={galleryImages[selectedIndex].src} alt={galleryImages[selectedIndex].alt} />
 			<h2 id="gallery-modal-title" class="visually-hidden">Image preview</h2>
-			<img src={imageEntries[selectedIndex].src} alt={imageEntries[selectedIndex].label} />
-
-			<p>{imageEntries[selectedIndex].label}</p>
+			<p>{galleryImages[selectedIndex].alt}</p>
 
 			<div class="modal-nav">
 				<button
@@ -89,15 +77,16 @@
 					type="button"
 					class="btn-Shadow"
 					onclick={closeModal}
-					aria-label="Close image preview">Close</button
+					aria-label="Close image preview"
 				>
-
+					Close
+				</button>
 				<button
 					type="button"
 					class="btn-Pulse"
 					onclick={showNext}
 					aria-label="Next image"
-					disabled={selectedIndex === imageEntries.length - 1}
+					disabled={selectedIndex === galleryImages.length - 1}
 				>
 					→
 				</button>
@@ -162,6 +151,7 @@
 		& p {
 			padding: 0;
 			margin: var(--size-5) 0 0 0;
+			color: var(--txt-1);
 		}
 
 		.btn-Shadow {

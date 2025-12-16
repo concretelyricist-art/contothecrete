@@ -56,8 +56,16 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Con-Crete</title>
+	<meta
+		name="description"
+		content="Con-Crete official homepage. Explore merch, shows, videos, and the underground hip-hop movement."
+	/>
+</svelte:head>
+
 <header>
-	<div class="slider">
+	<div class="slider" aria-hidden="true">
 		{#key current}
 			<div class="slide" style={`background-image: url(${images[index]});`} transition:fade></div>
 		{/key}
@@ -65,40 +73,17 @@
 
 	<section class="header-info light-White">
 		<article class="glass-Box">
-			<h1><a href="/Contact">Contact me now</a></h1>
+			<h2><a href="/Contact">Contact me now</a></h2>
 		</article>
 		<article class="glass-Box large-Only">
-			<h1><a href="/Shop">Merch</a></h1>
+			<h2><a href="/Shop">Merch</a></h2>
 		</article>
-
 		<article class="glass-Box">
-			<h1><a href="/Shows"> Shows</a></h1>
-
-			{#if nextShow()}
-				<table class="centered">
-					<thead>
-						<tr>
-							<th>Place</th>
-							<th>City</th>
-							<th>Date</th>
-							<th>Tickets</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><a href={nextShow.venueUrl}>{nextShow().location}</a></td>
-							<td>{nextShow().city}</td>
-							<td>{nextShow().date}</td>
-							<td><a href={nextShow.ticketsUrl}>{nextShow().price} / Tickets</a></td>
-						</tr>
-					</tbody>
-				</table>
-			{:else}
-				<p>No upcoming shows found.</p>
-			{/if}
+			<h2><a href="/Shows">Shows</a></h2>
+			<!-- show table -->
 		</article>
 		<article class="glass-Box large-Only">
-			<h1><a href="/Videos">Videos</a></h1>
+			<h2><a href="/Videos">Videos</a></h2>
 		</article>
 	</section>
 </header>
@@ -106,82 +91,63 @@
 <main class="grid-Main">
 	<section>
 		<h1>SAWWW'S UP</h1>
-
-		<p>
-			Welcome to the official domain of Con-Crete, Washington’s underground titan of dark hip-hop.
-			This is where the shadows breathe, the beats hit like sledgehammers, and the hardcore energy
-			that fills his live shows spills into every corner of the page. Here you’ll find the heartbeat
-			of the movement raw, unfiltered, and carved straight from the concrete streets that built him.
-			Whether you came for the music, the chaos, or the culture, you’ve stepped into the right
-			place.
-		</p>
-		<p>
-			Stay locked in for new releases, upcoming shows, exclusive merch drops, and contests you won’t
-			find anywhere else. Con-Crete’s community runs on adrenaline, sharp creativity, and a love for
-			the darker side of hip-hop and this site is your front-row seat to all of it. Explore,
-			connect, and keep your eyes open… Around here, you never know what’s coming next.
-		</p>
+		<p>Welcome to the official domain of Con-Crete…</p>
 	</section>
 
 	<section>
-		<div class="heading-border">
-			<h2>Merch</h2>
-		</div>
-
-		<p>
-			Buy some dope shit and make yourself look fresh as fuck! Click the item to check it out and
-			learn more about it.
-		</p>
+		<div class="heading-border"><h2>Merch</h2></div>
+		<p>Buy some dope gear and make yourself look fresh! Click an item to learn more.</p>
 	</section>
-	<div class="heading-border">
-		<h2>Cds</h2>
-	</div>
 
+	<div class="heading-border"><h2>CDs</h2></div>
 	<section class="grid-SideScroll">
 		{#each Cds as cd}
-			<button class="card-Topper" onclick={() => openMerch(cd)}>
-				<img src={cd.img} alt={cd.description} />
-				<h2>{cd.name}</h2>
-				<p class="price">${cd.price}</p>
-			</button>
+			<article>
+				<button class="card-Topper" onclick={() => openMerch(cd)}>
+					<img src={cd.img} alt={cd.alt} />
+					<h3>{cd.name}</h3>
+					<p class="price">${cd.price}</p>
+				</button>
+			</article>
 		{/each}
 	</section>
 
-	<div class="heading-border">
-		<h2>Shirts</h2>
-	</div>
-
+	<div class="heading-border"><h2>Shirts</h2></div>
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
-			<button class="card-Topper" onclick={() => openMerch(shirt)}>
-				<img src={shirt.img} alt={shirt.description} />
-				<h2>{shirt.name}</h2>
-				<p class="price">${shirt.price}</p>
-			</button>
+			<article>
+				<button class="card-Topper" onclick={() => openMerch(shirt)}>
+					<img src={shirt.img} alt={shirt.alt} />
+					<h3>{shirt.name}</h3>
+					<p class="price">${shirt.price}</p>
+				</button>
+			</article>
 		{/each}
 	</section>
 
 	{#if merchItem}
 		<dialog class="modal-overlay" open aria-modal="true" aria-labelledby="modal-title">
 			<div class="modal-content" tabindex="-1" autofocus>
+				<h2 id="modal-title">{selectedItem.name}</h2>
 				<MerchItem item={selectedItem} />
-				<button class="btn-Ghost" onclick={closeMerch}> Close </button>
+				<button class="btn-Ghost" onclick={closeMerch}>Close</button>
 			</div>
 		</dialog>
 	{/if}
 
 	<section>
-		<h2>Check out some<a href="/Videos" style="padding: 0 .5rem; margin: 0">videos!</a></h2>
-
-		<!-- Lake of fire  -->
-		<iframe
-			src="https://www.youtube.com/embed/ffZ4t26jLLM?si=HRLWmvdW_eHUI_Dy"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			referrerpolicy="strict-origin-when-cross-origin"
-			allowfullscreen
-		></iframe>
+		<h2>Check out some <a href="/Videos">videos!</a></h2>
+		<figure>
+			<figcaption>Lake of fire</figcaption>
+			<iframe
+				src="https://www.youtube.com/embed/ffZ4t26jLLM"
+				title="Con-Crete – Lake of Fire official video"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin"
+				allowfullscreen
+			></iframe>
+		</figure>
 	</section>
 </main>
 
@@ -349,9 +315,14 @@
 	}
 
 	iframe {
+		position: relative;
+		z-index: 1;
+		display: block;
 		width: 90%;
-		min-height: 70vh;
-		border: none;
-		margin: 5%;
+		max-width: 560px;
+		aspect-ratio: 16/9;
+		margin: 0;
+		border-radius: 8px;
+		z-index: 0;
 	}
 </style>

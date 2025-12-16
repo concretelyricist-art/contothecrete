@@ -6,7 +6,6 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--size-4);
-	/* border: var(--bord); */
     
 	section {   
     position: relative;
@@ -26,9 +25,8 @@
 
         p, h2, h3 {
             z-index: 1;
-            width: fit-content;
-            position: relative;
-			margin-left: 10vw;
+            width: 85%;
+            position: relative; 
             background-color: var(--hallow); 
             border-radius: var(--rad-Tiny);
             backdrop-filter: blur(10px);
