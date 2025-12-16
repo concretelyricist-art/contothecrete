@@ -145,17 +145,17 @@ export const Cds = [
 export const Shirts = [
 	{
 		id: 8,
-		name: 'Snapped: Grey',
+		name: 'Snapped: Grey(test mode)',
 		price: 35,
 		img: shirt2,
 		url: './shirtBase.glb',
 		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'M', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'L', catalogObjectId: 'JUCUVF47LLP6I34LINB52L5E' },
-			{ label: 'XL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'S', catalogObjectId: ' RQFLELCRCG6HU2K3Y2ZGTLE2' },
+			{ label: 'M', catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF' },
+			{ label: 'L', catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH' },
+			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW' },
+			{ label: 'XXL', catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR' }
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -168,13 +168,14 @@ export const Shirts = [
 		url: './shirtBase.glb',
 		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'M', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'L', catalogObjectId: 'JUCUVF47LLP6I34LINB52L5E' },
-			{ label: 'XL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'XS', catalogObjectId: 'KL534BHYURWL43CIZJBMYTJ6' },
+			{ label: 'S', catalogObjectId: 'CFGHTWXHATDEDK5DKDGOQRKM' },
+			{ label: 'M', catalogObjectId: 'SAQMIIRHLWW447TUGBD2IKIU' },
+			{ label: 'L', catalogObjectId: 'DIZRMZ436EDCVM2TISFNO7GA' },
+			{ label: 'XL', catalogObjectId: 'OYTZLIBQQ2XTMI66HW6B3CAU' },
+			{ label: 'XXXL', catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT' },
+			{ label: 'XXXXL', catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73' },
+			{ label: 'XXXXXL', catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC' }
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -187,13 +188,13 @@ export const Shirts = [
 		url: './shirtBase2.glb',
 		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'M', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'L', catalogObjectId: 'JUCUVF47LLP6I34LINB52L5E' },
-			{ label: 'XXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' },
-			{ label: 'XXXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'S', catalogObjectId: 'QKVNHFSJEG35WPYJZOZZCWMU' },
+			{ label: 'M', catalogObjectId: '5STFAF7HGSNR4MA2OQAUL6YD' },
+			{ label: 'L', catalogObjectId: 'DOWH35SZIK53UGONOCXVRG7E' },
+			{ label: 'XXL', catalogObjectId: 'CLKETJNHTE5XJRNPPCWCGJB7' },
+			{ label: 'XXXL', catalogObjectId: 'X2X7NI7EFK7EHNUH44PGAYGH' },
+			{ label: 'XXXXL', catalogObjectId: 'HX37R542VEZ3H2BI4KIQN3GB' },
+			{ label: 'XXXXXL', catalogObjectId: 'HQTU3TQRBZZLRB2RVZLKPSPU' }
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -206,8 +207,8 @@ export const Shirts = [
 		url: './shirtBase3.glb',
 		description: 'A stylish shirt featuring Concrete chasing a guy with a chainsaw.',
 		sizes: [
-			{ label: 'S', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'XXXXL', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'S', catalogObjectId: 'IYWBHKC6ZENWIORUYQ2USGGN' },
+			{ label: 'XXXXL', catalogObjectId: 'QZR247VSO2XOSEWI4MTCPUCI' }
 		],
 		provider: 'square',
 		type: 'shirt'
@@ -223,10 +224,10 @@ export const Hats = [
 		url: './hat.glb',
 		description: 'A stylish hat featuring Concrete chasing a guy with a chainsaw.',
 		sizes: [
-			{ label: 'Blue', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Red', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Green', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Grey', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'Blue', catalogObjectId: 'H2EDDCZVWIHETO4FQ73DUB4O' },
+			{ label: 'Red', catalogObjectId: 'MEJASG3UHPJYKVSWOUEVRDMN' },
+			{ label: 'Green', catalogObjectId: 'HOHOMKDGSAFD43AFK44J4IAQ' },
+			{ label: 'Grey', catalogObjectId: 'QC2O5YI4MN4VBWHV37L6OJFF' }
 		],
 		provider: 'square',
 		type: 'hat'
@@ -239,10 +240,10 @@ export const Hats = [
 		url: './hat2.glb',
 		description: 'A stylish hat featuring Concrete in facepaint.',
 		sizes: [
-			{ label: 'Blue', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Red', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Green', catalogObjectId: 'TWFXS766HHPGHYA54PBECIEF' },
-			{ label: 'Grey', catalogObjectId: 'XHJ57KJF7SV7NEQOAB6PWHKM' }
+			{ label: 'Blue', catalogObjectId: 'ZOUPZXXJGODRYUJKSUDPZZLP' },
+			{ label: 'Red', catalogObjectId: 'CMWNOFWPKRUQDIGDQT2NKMZS' },
+			{ label: 'Green', catalogObjectId: 'CLJHOPUGRMM5MJ4O2A27WAN4' },
+			{ label: 'Grey', catalogObjectId: 'IRPIYJLPZ4KP2COXYJFWXTTQ' }
 		],
 		provider: 'square',
 		type: 'hat'
