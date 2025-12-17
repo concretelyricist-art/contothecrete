@@ -111,7 +111,6 @@
 </header>
 
 <main class="grid-Main">
-	<div class="test-box">test</div>
 	<section>
 		<h1>SAWWW'S UP</h1>
 		<p>Welcome to the official domain of Con-Crete…</p>
