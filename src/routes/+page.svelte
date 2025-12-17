@@ -80,7 +80,29 @@
 		</article>
 		<article class="glass-Box">
 			<h2><a href="/Shows">Shows</a></h2>
-			<!-- show table -->
+
+			{#if nextShow()}
+				<table class="centered">
+					<thead>
+						<tr>
+							<th>Place</th>
+							<th>City</th>
+							<th>Date</th>
+							<th>Tickets</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href={nextShow.venueUrl}>{nextShow().location}</a></td>
+							<td>{nextShow().city}</td>
+							<td>{nextShow().date}</td>
+							<td><a href={nextShow.ticketsUrl}>{nextShow().price} / Tickets</a></td>
+						</tr>
+					</tbody>
+				</table>
+			{:else}
+				<p>No upcoming shows found.</p>
+			{/if}
 		</article>
 		<article class="glass-Box large-Only">
 			<h2><a href="/Videos">Videos</a></h2>

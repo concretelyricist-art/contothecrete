@@ -61,7 +61,7 @@
 		<div class="gallery-modal-content" tabindex="-1">
 			<img src={galleryImages[selectedIndex].src} alt={galleryImages[selectedIndex].alt} />
 			<h2 id="gallery-modal-title" class="visually-hidden">Image preview</h2>
-			<p>{galleryImages[selectedIndex].alt}</p>
+			<p>{galleryImages[selectedIndex].caption}</p>
 
 			<div class="modal-nav">
 				<button
