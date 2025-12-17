@@ -180,7 +180,7 @@
 	.test-box {
 		width: 400px;
 		height: 400px;
-		background-color: var(--txt-2);
+		background: var(--accent-1);
 	}
 	.heading-border {
 		background: url('../lib/Images/dripBord.png') no-repeat center / cover;
@@ -222,6 +222,7 @@
 			min-height: 20vh;
 			width: fit-content;
 			height: fit-content;
+			background-color: var(--hallow);
 		}
 
 		@media only screen and (min-width: 768px) {
@@ -259,7 +260,6 @@
 		margin: auto;
 		border-collapse: collapse;
 		table-layout: fixed;
-		background-color: var(--hallow);
 		border: var(--bord);
 		backdrop-filter: blur(8px);
 		--webkit-backdrop-filter: blur(1.5px);
