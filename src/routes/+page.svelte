@@ -111,6 +111,7 @@
 </header>
 
 <main class="grid-Main">
+	<div class="test-box">test</div>
 	<section>
 		<h1>SAWWW'S UP</h1>
 		<p>Welcome to the official domain of Con-Crete…</p>
@@ -177,6 +178,11 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.test-box {
+		width: 400px;
+		height: 400px;
+		background-color: var(--txt-2);
+	}
 	.heading-border {
 		background: url('../lib/Images/dripBord.png') no-repeat center / cover;
 		height: 8rem;
