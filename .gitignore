@@ -16,6 +16,11 @@ dist/
 # OS files
 .DS_Store
 Thumbs.db
+.npmrc
+.prettierignore
+.prettierirc
+.eslint.config.js
+.package-lock.json
 
 # Environment
 .env
