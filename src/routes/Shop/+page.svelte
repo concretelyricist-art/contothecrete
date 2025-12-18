@@ -108,5 +108,12 @@
 			width: 6rem;
 			padding: 0.5rem 1.5rem;
 		}
+
+		@media only screen and (min-width: 1024px) {
+			h2 {
+				width: 6rem;
+				padding: 0.25rem 1rem;
+			}
+		}
 	}
 </style>

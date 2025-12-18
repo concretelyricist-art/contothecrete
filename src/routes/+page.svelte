@@ -85,7 +85,7 @@
 		{/key}
 	</div>
 
-	<section class="header-info light-White">
+	<section class="header-info">
 		<article class="glass-Box">
 			<h2><a href="/Contact">Contact me now</a></h2>
 		</article>
@@ -135,29 +135,31 @@
 		<p>Buy some dope gear and make yourself look fresh!</p>
 	</section>
 
-	<div class="heading-border"><h2>CDs</h2></div>
+	<div class="heading-border">
+		<h2>Cds</h2>
+	</div>
+
 	<section class="grid-SideScroll">
 		{#each Cds as cd}
-			<article>
-				<button class="card-Topper" onclick={() => openMerch(cd)}>
-					<img src={cd.img} alt={cd.alt} />
-					<h3>{cd.name}</h3>
-					<p class="price">${cd.price}</p>
-				</button>
-			</article>
+			<button class="card-Topper" onclick={() => openMerch(cd)}>
+				<img src={cd.img} alt={cd.alt} />
+				<h2>{cd.name}</h2>
+				<p class="price">${cd.price}</p>
+			</button>
 		{/each}
 	</section>
 
-	<div class="heading-border"><h2>Shirts</h2></div>
+	<div class="heading-border">
+		<h2>Shirts</h2>
+	</div>
+
 	<section class="grid-SideScroll">
 		{#each Shirts as shirt}
-			<article>
-				<button class="card-Topper" onclick={() => openMerch(shirt)}>
-					<img src={shirt.img} alt={shirt.alt} />
-					<h3>{shirt.name}</h3>
-					<p class="price">${shirt.price}</p>
-				</button>
-			</article>
+			<button class="card-Topper" onclick={() => openMerch(shirt)}>
+				<img src={shirt.img} alt={shirt.alt} />
+				<h2>{shirt.name}</h2>
+				<p class="price">${shirt.price}</p>
+			</button>
 		{/each}
 	</section>
 
@@ -203,6 +205,13 @@
 			width: 6rem;
 			padding: 0.5rem 1.5rem;
 		}
+
+		@media only screen and (min-width: 1024px) {
+			h2 {
+				width: 6rem;
+				padding: 0.25rem 1rem;
+			}
+		}
 	}
 
 	header {
@@ -222,28 +231,26 @@
 		grid-template-columns: 1fr;
 		position: absolute;
 		bottom: 6rem;
-		height: 45vh;
-		width: 80vw;
-		margin: 0 2rem;
+		height: 30vh;
+		width: 90%;
+		margin: 0;
 
 		.glass-Box {
-			min-width: 60vw;
-			min-height: 20vh;
 			width: fit-content;
 			height: fit-content;
 			background-color: var(--hallow);
 		}
 
 		@media only screen and (min-width: 768px) {
-			left: 18%;
+			grid-template-columns: 1fr 1fr;
+			height: 30vh;
 
 			.glass-Box {
 				width: fit-content;
 				height: fit-content;
-
-				h1 {
+				h2 {
 					margin: 0;
-					padding: 3rem;
+					padding: 1rem;
 				}
 			}
 		}
@@ -251,9 +258,9 @@
 		@media only screen and (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr;
 
-			margin: 0;
+			margin: 0 10%;
 			.glass-Box {
-				max-width: 30vw;
+				max-width: 40vw;
 				min-width: 30vw;
 				min-height: fit-content;
 				p {
@@ -266,19 +273,13 @@
 
 	table.centered {
 		width: 100%;
-		margin: auto;
 		border-collapse: collapse;
 		table-layout: fixed;
-		border: var(--bord);
 		backdrop-filter: blur(8px);
 		--webkit-backdrop-filter: blur(1.5px);
 
 		a {
-			font-size: var(--size-5);
-		}
-
-		@media only screen and (min-width: 1024px) {
-			width: 70%;
+			font-size: var(--size-4);
 		}
 	}
 	th,
