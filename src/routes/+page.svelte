@@ -132,7 +132,7 @@
 
 	<section>
 		<div class="heading-border"><h2>Merch</h2></div>
-		<p>Buy some dope gear and make yourself look fresh! Click an item to learn more.</p>
+		<p>Buy some dope gear and make yourself look fresh!</p>
 	</section>
 
 	<div class="heading-border"><h2>CDs</h2></div>
@@ -355,6 +355,15 @@
 		100% {
 			opacity: 1;
 			background-position: right center;
+		}
+	}
+
+	section {
+		h2 {
+			a {
+				margin: 0;
+				padding: 0;
+			}
 		}
 	}
 
