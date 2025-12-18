@@ -26,7 +26,3 @@ Thumbs.db
 # Vite temp files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Optional custom folders (only if they are generated)
-# /Extra
-# /Models
