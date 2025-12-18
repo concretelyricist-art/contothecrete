@@ -81,7 +81,7 @@
 <header>
 	<div class="slider" aria-hidden="true">
 		{#key currentImageUrl}
-			<div class="slide" style:background-image="url({currentImageUrl})" transition:fade></div>
+			<div class="slide" style:background-image="url({currentImageUrl})"></div>
 		{/key}
 	</div>
 
@@ -338,14 +338,22 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: right;
-		animation: pan 20s linear forwards infinite;
+		animation: fadePan 17s ease forwards;
 	}
 
-	@keyframes pan {
-		from {
+	@keyframes fadePan {
+		0% {
+			opacity: 0;
 			background-position: center;
 		}
-		to {
+		25% {
+			opacity: 0.65;
+		}
+		50% {
+			opacity: 0.75;
+		}
+		100% {
+			opacity: 1;
 			background-position: right center;
 		}
 	}
