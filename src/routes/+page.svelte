@@ -17,30 +17,6 @@
 		selectedItem = null;
 	}
 
-	import img1 from '$lib/Images/con14.jpg';
-	import img2 from '$lib/Images/con16.jpg';
-	import img4 from '$lib/Images/con2.jpg';
-	import img3 from '$lib/Images/con5.jpg';
-	import img5 from '$lib/Images/con1.jpg';
-
-	const images = [img1, img2, img3, img4, img5];
-	let index = $state(0);
-	let playing = $state(true);
-	const total = images.length;
-	const current = $derived(() => images[index]);
-
-	function next() {
-		index = (index + 1) % total;
-	}
-
-	const intervalMs = 5000;
-
-	$effect(() => {
-		if (!playing) return;
-		const id = setInterval(next, intervalMs);
-		return () => clearInterval(id);
-	});
-
 	const parseDate = (str: string) => {
 		const [month, day, year] = str.split('-').map(Number);
 		return new Date(year, month - 1, day);
@@ -54,7 +30,45 @@
 			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
 		return upcoming[0] ?? null;
 	});
+
+	// Desktop/Large Images
+	import lg1 from '$lib/Images/con1.jpg';
+	import lg2 from '$lib/Images/con2.jpg';
+	import lg3 from '$lib/Images/con22.jpg';
+	import lg4 from '$lib/Images/con4.jpg';
+	import lg5 from '$lib/Images/con5.jpg';
+
+	// Mobile/Small Images
+	import sm2 from '$lib/Images/con14.jpg';
+	import sm1 from '$lib/Images/con16.jpg';
+	import sm3 from '$lib/Images/con5.jpg';
+	import sm4 from '$lib/Images/con2.jpg';
+	import sm5 from '$lib/Images/con1.jpg';
+
+	const desktopImages = [lg1, lg2, lg3, lg4, lg5];
+	const mobileImages = [sm1, sm2, sm3, sm4, sm5];
+
+	let index = $state(0);
+	let innerWidth = $state(0);
+	let playing = $state(true);
+
+	const currentList = $derived(innerWidth >= 1024 ? desktopImages : mobileImages);
+	const currentImageUrl = $derived(currentList[index]);
+
+	const total = desktopImages.length;
+
+	function next() {
+		index = (index + 1) % total;
+	}
+
+	$effect(() => {
+		if (!playing) return;
+		const id = setInterval(next, 5000);
+		return () => clearInterval(id);
+	});
 </script>
+
+<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<title>Con-Crete</title>
@@ -66,8 +80,8 @@
 
 <header>
 	<div class="slider" aria-hidden="true">
-		{#key current}
-			<div class="slide" style={`background-image: url(${images[index]});`} transition:fade></div>
+		{#key currentImageUrl}
+			<div class="slide" style:background-image="url({currentImageUrl})" transition:fade></div>
 		{/key}
 	</div>
 
@@ -177,11 +191,6 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
-	.test-box {
-		width: 400px;
-		height: 400px;
-		background: var(--accent-1);
-	}
 	.heading-border {
 		background: url('../lib/Images/dripBord.png') no-repeat center / cover;
 		height: 8rem;
