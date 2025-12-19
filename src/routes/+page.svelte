@@ -146,7 +146,7 @@
 		<p>Welcome to the official domain of Con-Crete…</p>
 	</section>
 
-	<div class="ParallaxObjext" style="transform: translateY({scrollY * 0.4}px);  ">
+	<div class="ParallaxObjext" style="transform: translateY({scrollY * 0.5}px);  ">
 		<Canvas>
 			<Chainsaw />
 		</Canvas>
@@ -171,11 +171,11 @@
 		{/each}
 	</section>
 
-	<div class="heading-border">
+	<div class="heading-border content">
 		<h2>Shirts</h2>
 	</div>
 
-	<section class="grid-SideScroll">
+	<section class="grid-SideScroll content">
 		{#each Shirts as shirt}
 			<button class="card-Topper" onclick={() => openMerch(shirt)}>
 				<img src={shirt.img} alt={shirt.alt} />

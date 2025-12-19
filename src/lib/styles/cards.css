@@ -75,7 +75,7 @@
 .card-Sideline h3 { margin-top: 0; }
 
 .card-Topper {
-    background: var(--bg-2);
+    background: var(--hallow-Accent);
     color: #fff;
     padding: 1.6rem;
     width: 60vw;
