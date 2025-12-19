@@ -1,16 +1,19 @@
-import shirt from '$lib/Images/con40.jpg';
-import shirt2 from '$lib/Images/con3.png';
-import shirt3 from '$lib/Images/con5.png';
-import shirt4 from '$lib/Images/con20.jpg';
-import shirt5 from '$lib/Images/con21.jpg';
+import shirt from '$lib/Images/Warehouse/con40.jpg';
+import shirt2 from '$lib/Images/Warehouse/con3.png';
+import shirt3 from '$lib/Images/Warehouse/con5.png';
+import shirt4 from '$lib/Images/Warehouse/con20.jpg';
+import shirt5 from '$lib/Images/Warehouse/con21.jpg';
+import shirt6 from '$lib/Images/Warehouse/con41.jpg';
+import shirt7 from '$lib/Images/Warehouse/con42.jpg';
+import hat from '$lib/Images/Warehouse/con38.jpg';
 
-import CD from '$lib/Images/conCD.jpg';
-import CD2 from '$lib/Images/conCD2.jpg';
-import CD3 from '$lib/Images/conCD3.jpg';
-import CD4 from '$lib/Images/conCD4.jpg';
-import CD5 from '$lib/Images/conCD5.jpg';
-import CD6 from '$lib/Images/conCD6.jpg';
-import CD7 from '$lib/Images/conCD7.jpg';
+import CD from '$lib/Images/Warehouse/conCD.jpg';
+import CD2 from '$lib/Images/Warehouse/conCD2.jpg';
+import CD3 from '$lib/Images/Warehouse/conCD3.jpg';
+import CD4 from '$lib/Images/Warehouse/conCD4.jpg';
+import CD5 from '$lib/Images/Warehouse/conCD5.jpg';
+import CD6 from '$lib/Images/Warehouse/conCD6.jpg';
+import CD7 from '$lib/Images/Warehouse/conCD7.jpg';
 
 import SceneAlt from '$lib/Assets/SceneAlt.svelte';
 
@@ -74,10 +77,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-IHC1-1',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 1', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 1', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00Z193GH', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -94,10 +97,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-IHC2-2',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 2', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'I Hate Cops Vol. 2', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00OJJVFR', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -114,10 +117,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-SAWSUP-3',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'SAWS UP', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'SAWS UP', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00Z4E4N6', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -134,10 +137,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-THOT-4',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'Kill The T.H.O.T.', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'Kill The T.H.O.T.', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00ZWTX1O', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -154,10 +157,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-EVOL-5',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'EVOL', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'EVOL', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00HTD7S8', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -174,10 +177,10 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-SAWDEMIC-6',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'Sawdemic', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'Sawdemic', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
@@ -194,15 +197,102 @@ export const Cds = [
 		brand: 'Con-Crete',
 		sku: 'CD-FLESH-7',
 		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'Indulgence Of The Flesh', 'rock album'],
+		keywords: ['band merch', 'Con-Crete CD', 'Indulgence Of The Flesh', 'Rap album'],
 		availability: 'InStock',
 		format: 'Audio CD',
-		genre: 'Rock',
+		genre: 'Rap',
 		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
 	}
 ];
+
+// export const StagedItem = [
+// 	{
+// 		id: 8,
+// 		name: 'Fuck My Boss',
+// 		price: 35,
+// 		currency: 'USD',
+// 		img: shirt6,
+// 		alt: 'Cartoon Con-Crete over a dead body',
+// 		url: './shirtBase.glb',
+// 		description: 'Cartoon Con-Crete over a dead body with blood all over the ground',
+// 		brand: 'Con-Crete',
+// 		sku: 'FMB-BLACK-8',
+// 		category: 'Apparel > Shirts',
+// 		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
+// 		availability: 'InStock',
+// 		material: '100% cotton',
+// 		color: 'Black',
+// 		sizes: [
+// 			{
+// 				label: 'S',
+// 				catalogObjectId: 'RQFLELCRCG6HU2K3Y2ZGTLE2',
+// 				description: 'Small – chest 34-36'
+// 			},
+// 			{
+// 				label: 'M',
+// 				catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF',
+// 				description: 'Medium – chest 38-40'
+// 			},
+// 			{
+// 				label: 'L',
+// 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
+// 				description: 'Large – chest 42-44'
+// 			},
+// 			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
+// 			{
+// 				label: 'XXL',
+// 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
+// 				description: 'XXL – chest 50-52'
+// 			}
+// 		],
+// 		provider: 'square',
+// 		type: 'shirt'
+// 	},
+// 	{
+// 		id: 8,
+// 		name: 'Good Guy',
+// 		price: 35,
+// 		currency: 'USD',
+// 		img: shirt7,
+// 		alt: 'Cartoon Con-Crete and a a lady in facepaint',
+// 		url: './shirtBase.glb',
+// 		description: 'Con-Crete and a a lady in facepaint leaving a house for something.',
+// 		brand: 'Con-Crete',
+// 		sku: 'GOOD-GUY-Black-8',
+// 		category: 'Apparel > Shirts',
+// 		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
+// 		availability: 'InStock',
+// 		material: '100% cotton',
+// 		color: 'Black',
+// 		sizes: [
+// 			{
+// 				label: 'S',
+// 				catalogObjectId: 'RQFLELCRCG6HU2K3Y2ZGTLE2',
+// 				description: 'Small – chest 34-36'
+// 			},
+// 			{
+// 				label: 'M',
+// 				catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF',
+// 				description: 'Medium – chest 38-40'
+// 			},
+// 			{
+// 				label: 'L',
+// 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
+// 				description: 'Large – chest 42-44'
+// 			},
+// 			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
+// 			{
+// 				label: 'XXL',
+// 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
+// 				description: 'XXL – chest 50-52'
+// 			}
+// 		],
+// 		provider: 'square',
+// 		type: 'shirt'
+// 	}
+// ];
 
 export const Shirts = [
 	{
@@ -218,7 +308,7 @@ export const Shirts = [
 		brand: 'Con-Crete',
 		sku: 'SNAPPED-GREY-8',
 		category: 'Apparel > Shirts',
-		keywords: ['band merch', 'Con-Crete shirt', 'grey shirt', 'rock band apparel'],
+		keywords: ['band merch', 'Con-Crete shirt', 'grey shirt', 'Rap apparel'],
 		availability: 'InStock',
 		material: '100% cotton',
 		color: 'Grey',
@@ -261,7 +351,7 @@ export const Shirts = [
 		brand: 'Con-Crete',
 		sku: 'SNAPPED-BLACK-9',
 		category: 'Apparel > Shirts',
-		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rock band apparel'],
+		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'Rap apparel'],
 		availability: 'InStock',
 		material: '100% cotton',
 		color: 'Black',
@@ -318,7 +408,7 @@ export const Shirts = [
 		brand: 'Con-Crete',
 		sku: 'SPD-10',
 		category: 'Apparel > Shirts',
-		keywords: ['band merch', 'Con-Crete shirt', 'SPD shirt', 'rock band apparel'],
+		keywords: ['band merch', 'Con-Crete shirt', 'SPD shirt', 'Rap apparel'],
 		availability: 'InStock',
 		material: '100% cotton',
 		color: 'Black',
@@ -375,7 +465,7 @@ export const Shirts = [
 		brand: 'Con-Crete',
 		sku: 'FACEPAINT-11',
 		category: 'Apparel > Shirts',
-		keywords: ['band merch', 'Con-Crete shirt', 'facepaint shirt', 'rock band apparel'],
+		keywords: ['band merch', 'Con-Crete shirt', 'facepaint shirt', 'Rap apparel'],
 		availability: 'InStock',
 		material: '100% cotton',
 		color: 'Black',
@@ -402,7 +492,7 @@ export const Hats = [
 		name: 'Con-Crete Hat',
 		price: 25,
 		currency: 'USD',
-		img: shirt5,
+		img: hat,
 		alt: 'Con-Crete hat featuring Concrete chasing a guy with a chainsaw',
 		url: './hat.glb',
 		description:
@@ -410,7 +500,7 @@ export const Hats = [
 		brand: 'Con-Crete',
 		sku: 'HAT-CONCRETE-12',
 		category: 'Apparel > Hats',
-		keywords: ['band merch', 'Con-Crete hat', 'rock band apparel', 'adjustable cap'],
+		keywords: ['band merch', 'Con-Crete hat', 'Rap apparel', 'adjustable cap'],
 		availability: 'InStock',
 		material: 'Cotton blend',
 		sizes: [
@@ -451,13 +541,7 @@ export const Hats = [
 		brand: 'Con-Crete',
 		sku: 'HAT-FACEPAINTED-13',
 		category: 'Apparel > Hats',
-		keywords: [
-			'band merch',
-			'Con-Crete hat',
-			'facepaint hat',
-			'rock band apparel',
-			'adjustable cap'
-		],
+		keywords: ['band merch', 'Con-Crete hat', 'facepaint hat', 'Rap apparel', 'adjustable cap'],
 		availability: 'InStock',
 		material: 'Cotton blend',
 		sizes: [

@@ -45,13 +45,13 @@
 		}, 3500);
 	}
 
-	let theme = $state('Dark');
-	const themes = ['Dark', 'Light', 'Colorblind'];
+	// let theme = $state('Dark');
+	// const themes = ['Dark', 'Light', 'Colorblind'];
 
-	function setTheme(name) {
-		theme = name;
-		document.documentElement.setAttribute('data-theme', theme);
-	}
+	// function setTheme(name) {
+	// 	theme = name;
+	// 	document.documentElement.setAttribute('data-theme', theme);
+	// }
 
 	import Cart from '$lib/Assets/Cart.svelte';
 	import { cart } from '$lib/stores/cart.svelte.js';
@@ -92,7 +92,7 @@
 					</a>
 				{/each}
 
-				{#each themes as t}
+				<!-- {#each themes as t}
 					<label>
 						<input
 							type="radio"
@@ -103,7 +103,7 @@
 						/>
 						{t}
 					</label>
-				{/each}
+				{/each} -->
 			</div>
 		</div>
 	{/if}

@@ -93,7 +93,7 @@
 <style>
 	main {
 		position: relative;
-		background-image: url('$lib/Images/con12.jpg');
+		background-image: url('$lib/Images/con9.jpg');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

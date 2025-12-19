@@ -6,18 +6,18 @@
 	import Chainsaw from '$lib/Assets/Chainsaw.svelte';
 
 	// Mobile/Small Images
-	import sm1 from '$lib/Images/con36.jpg';
-	import sm2 from '$lib/Images/con33.jpg';
-	import sm3 from '$lib/Images/con14.jpg';
-	import sm4 from '$lib/Images/con16.jpg';
-	import sm5 from '$lib/Images/con1.jpg';
+	import sm1 from '$lib/Images/con1.jpg';
+	import sm2 from '$lib/Images/con2.jpg';
+	import sm3 from '$lib/Images/con3.jpg';
+	import sm4 from '$lib/Images/con4.jpg';
+	import sm5 from '$lib/Images/con5.jpg';
 
 	// Desktop/Large Images
-	import lg1 from '$lib/Images/con31.jpg';
-	import lg2 from '$lib/Images/con33.jpg';
-	import lg3 from '$lib/Images/con85.jpg';
-	import lg4 from '$lib/Images/con16.jpg';
-	import lg5 from '$lib/Images/con1.jpg';
+	import lg1 from '$lib/Images/con6.jpg';
+	import lg2 from '$lib/Images/con2.jpg';
+	import lg3 from '$lib/Images/con7.jpg';
+	import lg4 from '$lib/Images/con4.jpg';
+	import lg5 from '$lib/Images/con5.jpg';
 
 	const desktopImages = [lg1, lg2, lg3, lg4, lg5];
 	const mobileImages = [sm1, sm2, sm3, sm4, sm5];
