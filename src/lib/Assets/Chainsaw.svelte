@@ -23,14 +23,3 @@
 <div class="test">
 	<GLTF rotation.y={rotation} url="./ChainsawSolo.glb" />
 </div>
-
-<style>
-	.test {
-		width: 100%;
-		height: 100%;
-		position: relative;
-		z-index: 1;
-		margin: 0;
-		padding: 0;
-	}
-</style>
