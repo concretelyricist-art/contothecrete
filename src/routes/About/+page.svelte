@@ -1,5 +1,8 @@
 <script>
 	import Parallax from '$lib/Images/dripsbuuud.png';
+	import { Canvas } from '@threlte/core';
+	import Chainsaw from '$lib/Assets/Chainsaw.svelte';
+
 	import { onMount } from 'svelte';
 
 	let scrollY = $state(0);
@@ -49,6 +52,7 @@
 		class="ParallaxObjext"
 		style="transform: translateY({scrollY * 0.5}px);"
 	/>
+
 	<section class="content">
 		<p>
 			We spent years experimenting, shifting between genres, and carving out our identity one messy
@@ -96,14 +100,9 @@
 		background-attachment: fixed;
 		margin: 0;
 		padding: 5rem 0;
-
 		@media only screen and (min-width: 1440px) {
 			background-size: 70%;
 		}
-	}
-
-	.content {
-		z-index: 9;
 	}
 
 	h1,
@@ -115,6 +114,7 @@
 		width: fit-content;
 		margin: 2rem auto;
 		padding: 1rem;
+		z-index: 99;
 	}
 
 	p {
@@ -131,14 +131,18 @@
 		}
 	}
 
+	.content {
+		z-index: 99;
+		position: relative;
+	}
+
 	.ParallaxObjext {
-		width: 70%;
-		height: auto;
-		max-width: 800px;
-		margin-top: -10rem;
-		z-index: 0;
+		width: 90%;
+		height: 60%;
+		max-width: 1200px;
+		margin: -40% 0;
+		z-index: 1;
 		opacity: 1;
-		filter: blur(1px);
 		transform-origin: center;
 		mix-blend-mode: multiply;
 	}

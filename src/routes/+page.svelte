@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { Canvas } from '@threlte/core';
 	import { Shirts, Cds } from '$lib/data/warehouse/shirts';
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
+	import Chainsaw from '$lib/Assets/Chainsaw.svelte';
 
 	// Mobile/Small Images
 	import sm1 from '$lib/Images/con36.jpg';
@@ -66,6 +67,21 @@
 			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
 		return upcoming[0] ?? null;
 	});
+
+	import { onMount } from 'svelte';
+
+	let scrollY = $state(0);
+
+	// update scrollY whenever the user scrolls
+	const handleScroll = () => {
+		scrollY = window.scrollY;
+	};
+
+	// attach listener
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
 <svelte:window bind:innerWidth />
@@ -125,21 +141,27 @@
 </header>
 
 <main class="grid-Main">
-	<section>
+	<section class="content">
 		<h1>SAWWW'S UP</h1>
 		<p>Welcome to the official domain of Con-Crete…</p>
 	</section>
 
-	<section>
+	<div class="ParallaxObjext" style="transform: translateY({scrollY * 0.4}px);  ">
+		<Canvas>
+			<Chainsaw />
+		</Canvas>
+	</div>
+
+	<section class="content">
 		<div class="heading-border"><h2>Merch</h2></div>
 		<p>Buy some dope gear and make yourself look fresh!</p>
 	</section>
 
-	<div class="heading-border">
+	<div class="heading-border content">
 		<h2>Cds</h2>
 	</div>
 
-	<section class="grid-SideScroll">
+	<section class="grid-SideScroll content">
 		{#each Cds as cd}
 			<button class="card-Topper" onclick={() => openMerch(cd)}>
 				<img src={cd.img} alt={cd.alt} />
@@ -193,6 +215,21 @@
 
 <!--svelte-ignore css_unused_selector -->
 <style>
+	.ParallaxObjext {
+		width: 90vw;
+		height: 60vh;
+		/* max-width: 1200px; */
+		margin: -40vh 0;
+		z-index: 1;
+		transform-origin: center;
+		/* mix-blend-mode: multiply; */
+	}
+
+	.content {
+		z-index: 99;
+		position: relative;
+	}
+
 	.heading-border {
 		background: url('$lib/Images/dripBack.png') no-repeat center / cover;
 		height: 8rem;
