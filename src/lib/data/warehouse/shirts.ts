@@ -5,6 +5,7 @@ import shirt4 from '$lib/Images/Warehouse/con20.jpg';
 import shirt5 from '$lib/Images/Warehouse/con21.jpg';
 import shirt6 from '$lib/Images/Warehouse/con41.jpg';
 import shirt7 from '$lib/Images/Warehouse/con42.jpg';
+
 import hat from '$lib/Images/Warehouse/con38.jpg';
 
 import CD from '$lib/Images/Warehouse/conCD.jpg';
@@ -215,7 +216,7 @@ export const Cds = [
 // 		currency: 'USD',
 // 		img: shirt6,
 // 		alt: 'Cartoon Con-Crete over a dead body',
-// 		url: './shirtBase.glb',
+// 		url: './shirt6.glb',
 // 		description: 'Cartoon Con-Crete over a dead body with blood all over the ground',
 // 		brand: 'Con-Crete',
 // 		sku: 'FMB-BLACK-8',
@@ -226,16 +227,6 @@ export const Cds = [
 // 		color: 'Black',
 // 		sizes: [
 // 			{
-// 				label: 'S',
-// 				catalogObjectId: 'RQFLELCRCG6HU2K3Y2ZGTLE2',
-// 				description: 'Small – chest 34-36'
-// 			},
-// 			{
-// 				label: 'M',
-// 				catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF',
-// 				description: 'Medium – chest 38-40'
-// 			},
-// 			{
 // 				label: 'L',
 // 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
 // 				description: 'Large – chest 42-44'
@@ -245,6 +236,21 @@ export const Cds = [
 // 				label: 'XXL',
 // 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
 // 				description: 'XXL – chest 50-52'
+// 			},
+// 			{
+// 				label: 'XXXL',
+// 				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
+// 				description: '3XL – chest 52-54'
+// 			},
+// 			{
+// 				label: 'XXXXL',
+// 				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
+// 				description: '4XL – chest 56-58'
+// 			},
+// 			{
+// 				label: 'XXXXXL',
+// 				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
+// 				description: '5XL – chest 60-62'
 // 			}
 // 		],
 // 		provider: 'square',
@@ -257,7 +263,7 @@ export const Cds = [
 // 		currency: 'USD',
 // 		img: shirt7,
 // 		alt: 'Cartoon Con-Crete and a a lady in facepaint',
-// 		url: './shirtBase.glb',
+// 		url: './shirt7.glb',
 // 		description: 'Con-Crete and a a lady in facepaint leaving a house for something.',
 // 		brand: 'Con-Crete',
 // 		sku: 'GOOD-GUY-Black-8',
@@ -268,16 +274,6 @@ export const Cds = [
 // 		color: 'Black',
 // 		sizes: [
 // 			{
-// 				label: 'S',
-// 				catalogObjectId: 'RQFLELCRCG6HU2K3Y2ZGTLE2',
-// 				description: 'Small – chest 34-36'
-// 			},
-// 			{
-// 				label: 'M',
-// 				catalogObjectId: '3QW65BWJSVA7SO7FI2QEO5HF',
-// 				description: 'Medium – chest 38-40'
-// 			},
-// 			{
 // 				label: 'L',
 // 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
 // 				description: 'Large – chest 42-44'
@@ -287,6 +283,21 @@ export const Cds = [
 // 				label: 'XXL',
 // 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
 // 				description: 'XXL – chest 50-52'
+// 			},
+// 			{
+// 				label: 'XXXL',
+// 				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
+// 				description: '3XL – chest 52-54'
+// 			},
+// 			{
+// 				label: 'XXXXL',
+// 				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
+// 				description: '4XL – chest 56-58'
+// 			},
+// 			{
+// 				label: 'XXXXXL',
+// 				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
+// 				description: '5XL – chest 60-62'
 // 			}
 // 		],
 // 		provider: 'square',
