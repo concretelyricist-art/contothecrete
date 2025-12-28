@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
 	import Parallax from '$lib/Images/dripsbuuud.png';
 	import { onMount } from 'svelte';
 	import { Socials } from '$lib/data/shows/contactPoints';
-	import Press1 from '$lib/Images/Gallery/con32.jpg';
-	import Press2 from '$lib/Images/Gallery/con33.jpg';
-	import Press3 from '$lib/Images/Gallery/con34.jpg';
-	import Press4 from '$lib/Images/Gallery/con6.jpg';
+	import Press1 from '$lib/Images/gallery/con32.jpg';
+	import Press2 from '$lib/Images/gallery/con33.jpg';
+	import Press3 from '$lib/Images/gallery/con34.jpg';
+	import Press4 from '$lib/Images/gallery/con6.jpg';
 	import Press5 from '$lib/Images/con4.jpg';
 
 	let images = $state([Press1, Press2, Press3, Press4, Press5]);
@@ -28,7 +28,58 @@
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 
-	/* 🦕  🦖🦖🦖 🦕 🦕 Grids  💀= 💣 🌠 */
+	/* 🦕  🦖🦖🦖 🦕 🦕 contact cooldown  💀= 💣 🌠 */
+
+	let cooldownRemaining = $state(0);
+	const COOLDOWN_MINUTES = 33;
+	const COOLDOWN_MS = COOLDOWN_MINUTES * 60 * 1000;
+
+	onMount(() => {
+		if (typeof localStorage === 'undefined') return;
+
+		const last = localStorage.getItem('lastContactSubmit');
+		if (!last) return;
+
+		const diff = Date.now() - Number(last);
+
+		if (diff < COOLDOWN_MS) {
+			cooldownRemaining = Math.ceil((COOLDOWN_MS - diff) / 60000);
+			startCountdown();
+		}
+	});
+
+	function startCountdown() {
+		const interval = setInterval(() => {
+			const last = localStorage.getItem('lastContactSubmit');
+			if (!last) {
+				cooldownRemaining = 0;
+				clearInterval(interval);
+				return;
+			}
+
+			const diff = Date.now() - Number(last);
+
+			if (diff >= COOLDOWN_MS) {
+				cooldownRemaining = 0;
+				clearInterval(interval);
+				return;
+			}
+
+			cooldownRemaining = Math.ceil((COOLDOWN_MS - diff) / 60000);
+		}, 1000 * 30);
+	}
+
+	function handleSubmit(event: SubmitEvent) {
+		if (cooldownRemaining > 0) {
+			event.preventDefault();
+			alert(`Please wait ${cooldownRemaining} more minute(s) before sending another message.`);
+			return;
+		}
+
+		if (typeof localStorage !== 'undefined') {
+			localStorage.setItem('lastContactSubmit', Date.now().toString());
+		}
+	}
 </script>
 
 <svelte:head>
@@ -59,9 +110,17 @@
 <main class="grid-Main">
 	<!-- 🦕  🦖🦖🦖 🦕 🦕 Contact's  💀= 💣 🌠  -->
 	<section class="contact-card" aria-labelledby="contact-heading">
-		<form class="classicForm" name="contact" method="POST" data-netlify="true">
-			<h2 id="contact-heading">Contact Me</h2>
-			<p>For booking, collaborations, or business inquiries:</p>
+		<h2 id="contact-heading">Contact Me</h2>
+		<p>For booking, collaborations, or business inquiries:</p>
+
+		<form
+			class="classicForm"
+			name="contact"
+			method="POST"
+			data-netlify="true"
+			netlify-honeypot="bot-field"
+			onsubmit={handleSubmit}
+		>
 			<input type="hidden" name="form-name" value="contact" />
 
 			<div style="display:none" aria-hidden="true">
@@ -77,7 +136,13 @@
 			<label for="message">Message</label>
 			<textarea id="message" name="message" required aria-required="true"></textarea>
 
-			<button class="btn-Ghost" type="submit">Send Message</button>
+			<button class="btn-Ghost" type="submit" disabled={cooldownRemaining > 0}>
+				{#if cooldownRemaining > 0}
+					Please wait {cooldownRemaining} min
+				{:else}
+					Send Message
+				{/if}
+			</button>
 		</form>
 	</section>
 
