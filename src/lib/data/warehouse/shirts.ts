@@ -69,7 +69,7 @@ export const Cds = [
 	{
 		id: 1,
 		name: 'I Hate Cops Vol. 1',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD,
 		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 1',
@@ -89,7 +89,7 @@ export const Cds = [
 	{
 		id: 2,
 		name: 'I Hate Cops Vol. 2',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD7,
 		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 2',
@@ -109,7 +109,7 @@ export const Cds = [
 	{
 		id: 3,
 		name: 'SAWS UP',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD2,
 		alt: 'Album cover for Con-Crete – SAWS UP',
@@ -129,7 +129,7 @@ export const Cds = [
 	{
 		id: 4,
 		name: 'Kill The T.H.O.T.',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD3,
 		alt: 'Album cover for Con-Crete – Kill The T.H.O.T.',
@@ -149,7 +149,7 @@ export const Cds = [
 	{
 		id: 5,
 		name: 'EVOL',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD4,
 		alt: 'Album cover for Con-Crete – EVOL',
@@ -169,7 +169,7 @@ export const Cds = [
 	{
 		id: 6,
 		name: 'Sawdemic',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD5,
 		alt: 'Album cover for Con-Crete – Sawdemic',
@@ -189,7 +189,7 @@ export const Cds = [
 	{
 		id: 7,
 		name: 'Indulgence Of The Flesh: The Sequel',
-		price: 6.66,
+		price: 10,
 		currency: 'USD',
 		img: CD6,
 		alt: 'Album cover for Con-Crete – Indulgence Of The Flesh: The Sequel',
@@ -212,7 +212,7 @@ export const Cds = [
 // 	{
 // 		id: 8,
 // 		name: 'Fuck My Boss',
-// 		price: 35,
+// 		price: 30,
 // 		currency: 'USD',
 // 		img: shirt6,
 // 		alt: 'Cartoon Con-Crete over a dead body',
@@ -226,30 +226,35 @@ export const Cds = [
 // 		material: '100% cotton',
 // 		color: 'Black',
 // 		sizes: [
+// {
+// 	label: 'M',
+// 	catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
+// 	description: 'Medium – chest 38-40'
+// },
 // 			{
 // 				label: 'L',
-// 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
+// 				catalogObjectId: 'I43AVHNSJ4RPBFL7HHKFVL4C',
 // 				description: 'Large – chest 42-44'
 // 			},
-// 			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
+// 			{ label: 'XL', catalogObjectId: 'VIO4C6N3O4SPX3YZTSVYYV3T', description: 'XL – chest 46-48' },
 // 			{
-// 				label: 'XXL',
-// 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
-// 				description: 'XXL – chest 50-52'
+// 				label: '2XL',
+// 				catalogObjectId: 'ZFF55MMEMFUZ5D3FWF7SV5LR',
+// 				description: '2XL – chest 50-52'
 // 			},
 // 			{
-// 				label: 'XXXL',
-// 				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
+// 				label: '3XL',
+// 				catalogObjectId: '7YJNAWUFXATHUKFV3GX7GRJE',
 // 				description: '3XL – chest 52-54'
 // 			},
 // 			{
-// 				label: 'XXXXL',
-// 				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
+// 				label: '4XL',
+// 				catalogObjectId: '5OUYRLR2CNIOX3AKKOIV2LX4',
 // 				description: '4XL – chest 56-58'
 // 			},
 // 			{
-// 				label: 'XXXXXL',
-// 				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
+// 				label: '5XL',
+// 				catalogObjectId: 'YYFKRBTCKZBBNVXHYNCIM4KC',
 // 				description: '5XL – chest 60-62'
 // 			}
 // 		],
@@ -259,7 +264,7 @@ export const Cds = [
 // 	{
 // 		id: 8,
 // 		name: 'Good Guy',
-// 		price: 35,
+// 		price: 30,
 // 		currency: 'USD',
 // 		img: shirt7,
 // 		alt: 'Cartoon Con-Crete and a a lady in facepaint',
@@ -273,30 +278,35 @@ export const Cds = [
 // 		material: '100% cotton',
 // 		color: 'Black',
 // 		sizes: [
+// {
+// 	label: 'M',
+// 	catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
+// 	description: 'Medium – chest 38-40'
+// },
 // 			{
 // 				label: 'L',
-// 				catalogObjectId: 'TRJKLULF6KV7XMNYAVZ4G7MH',
+// 				catalogObjectId: '7GHAK2FGD2BU2Z463DQ46WZ2',
 // 				description: 'Large – chest 42-44'
 // 			},
-// 			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
+// 			{ label: 'XL', catalogObjectId: 'R5I7JBXOC2FAW2WXPOCYKLYG', description: 'XL – chest 46-48' },
 // 			{
-// 				label: 'XXL',
-// 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
-// 				description: 'XXL – chest 50-52'
+// 				label: '2XL',
+// 				catalogObjectId: 'A5AMMMYGRCTEQQER6TEDBPGJ',
+// 				description: '2XL – chest 50-52'
 // 			},
 // 			{
-// 				label: 'XXXL',
-// 				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
+// 				label: '3XL',
+// 				catalogObjectId: 'TYID7SDBVXG6QL43DBBR4BSU',
 // 				description: '3XL – chest 52-54'
 // 			},
 // 			{
-// 				label: 'XXXXL',
-// 				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
+// 				label: '4XL',
+// 				catalogObjectId: 'IDTGRZNBZ2B4A4YRZYDVAO2U',
 // 				description: '4XL – chest 56-58'
 // 			},
 // 			{
-// 				label: 'XXXXXL',
-// 				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
+// 				label: '5XL',
+// 				catalogObjectId: 'JGZHTBBTD6SIFGUKKETHUJVW',
 // 				description: '5XL – chest 60-62'
 // 			}
 // 		],
@@ -309,7 +319,7 @@ export const Shirts = [
 	{
 		id: 8,
 		name: 'Snapped: Grey(test mode',
-		price: 35,
+		price: 30,
 		currency: 'USD',
 		img: shirt2,
 		alt: 'Grey Con-Crete shirt featuring Concrete chasing a guy with a chainsaw',
@@ -341,9 +351,9 @@ export const Shirts = [
 			},
 			{ label: 'XL', catalogObjectId: 'WV5EGRL64IFJ6WM25AZYJXTW', description: 'XL – chest 46-48' },
 			{
-				label: 'XXL',
+				label: '2XL',
 				catalogObjectId: 'SHIDKLU5M7SZPW7APCCPACPR',
-				description: 'XXL – chest 50-52'
+				description: '2XL – chest 50-52'
 			}
 		],
 		provider: 'square',
@@ -352,7 +362,7 @@ export const Shirts = [
 	{
 		id: 9,
 		name: 'Snapped: Black',
-		price: 35,
+		price: 30,
 		currency: 'USD',
 		img: shirt2,
 		alt: 'Black Con-Crete shirt featuring Concrete chasing a guy with a chainsaw',
@@ -389,17 +399,17 @@ export const Shirts = [
 			},
 			{ label: 'XL', catalogObjectId: 'OYTZLIBQQ2XTMI66HW6B3CAU', description: 'XL – chest 46-48' },
 			{
-				label: 'XXXL',
+				label: '3XL',
 				catalogObjectId: '73PHRWWGYWOTANHARTJVGEYT',
 				description: '3XL – chest 52-54'
 			},
 			{
-				label: 'XXXXL',
+				label: '4XL',
 				catalogObjectId: 'PIKSTRUQ3UGQ3EZPE4DWFW73',
 				description: '4XL – chest 56-58'
 			},
 			{
-				label: 'XXXXXL',
+				label: '5XL',
 				catalogObjectId: 'TR3VVZ7XJ55DDLS3IZSEOXJC',
 				description: '5XL – chest 60-62'
 			}
@@ -410,7 +420,7 @@ export const Shirts = [
 	{
 		id: 10,
 		name: 'SPD',
-		price: 35,
+		price: 30,
 		currency: 'USD',
 		img: shirt3,
 		alt: 'Con-Crete SPD shirt featuring Concrete chasing a guy with a chainsaw',
@@ -440,22 +450,22 @@ export const Shirts = [
 				description: 'Large – chest 42-44'
 			},
 			{
-				label: 'XXL',
+				label: '2XL',
 				catalogObjectId: 'CLKETJNHTE5XJRNPPCWCGJB7',
 				description: '2XL – chest 48-50'
 			},
 			{
-				label: 'XXXL',
+				label: '3XL',
 				catalogObjectId: 'X2X7NI7EFK7EHNUH44PGAYGH',
 				description: '3XL – chest 52-54'
 			},
 			{
-				label: 'XXXXL',
+				label: '4XL',
 				catalogObjectId: 'HX37R542VEZ3H2BI4KIQN3GB',
 				description: '4XL – chest 56-58'
 			},
 			{
-				label: 'XXXXXL',
+				label: '5XL',
 				catalogObjectId: 'HQTU3TQRBZZLRB2RVZLKPSPU',
 				description: '5XL – chest 60-62'
 			}
@@ -466,7 +476,7 @@ export const Shirts = [
 	{
 		id: 11,
 		name: 'Facepaint',
-		price: 35,
+		price: 30,
 		currency: 'USD',
 		img: shirt,
 		alt: 'Con-Crete Facepaint shirt featuring Concrete chasing a guy with a chainsaw',
@@ -487,7 +497,7 @@ export const Shirts = [
 				description: 'Small – chest 34-36'
 			},
 			{
-				label: 'XXXXL',
+				label: '4XL',
 				catalogObjectId: 'QZR247VSO2XOSEWI4MTCPUCI',
 				description: '4XL – chest 56-58'
 			}
