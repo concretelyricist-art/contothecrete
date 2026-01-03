@@ -3,8 +3,8 @@ import shirt2 from '$lib/Images/Warehouse/con3.png';
 import shirt3 from '$lib/Images/Warehouse/con5.png';
 import shirt4 from '$lib/Images/Warehouse/con20.jpg';
 import shirt5 from '$lib/Images/Warehouse/con21.jpg';
-import shirt6 from '$lib/Images/Warehouse/con41.jpg';
-import shirt7 from '$lib/Images/Warehouse/con42.jpg';
+import shirt6 from '$lib/Images/Warehouse/conShirt.jpg';
+import shirt7 from '$lib/Images/Warehouse/conShirt2.jpg';
 
 import hat from '$lib/Images/Warehouse/con38.jpg';
 
@@ -209,116 +209,117 @@ export const Cds = [
 ];
 
 // export const StagedItem = [
-// 	{
-// 		id: 8,
-// 		name: 'Fuck My Boss',
-// 		price: 30,
-// 		currency: 'USD',
-// 		img: shirt6,
-// 		alt: 'Cartoon Con-Crete over a dead body',
-// 		url: './shirt6.glb',
-// 		description: 'Cartoon Con-Crete over a dead body with blood all over the ground',
-// 		brand: 'Con-Crete',
-// 		sku: 'FMB-BLACK-8',
-// 		category: 'Apparel > Shirts',
-// 		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
-// 		availability: 'InStock',
-// 		material: '100% cotton',
-// 		color: 'Black',
-// 		sizes: [
-// {
-// 	label: 'M',
-// 	catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
-// 	description: 'Medium – chest 38-40'
-// },
-// 			{
-// 				label: 'L',
-// 				catalogObjectId: 'I43AVHNSJ4RPBFL7HHKFVL4C',
-// 				description: 'Large – chest 42-44'
-// 			},
-// 			{ label: 'XL', catalogObjectId: 'VIO4C6N3O4SPX3YZTSVYYV3T', description: 'XL – chest 46-48' },
-// 			{
-// 				label: '2XL',
-// 				catalogObjectId: 'ZFF55MMEMFUZ5D3FWF7SV5LR',
-// 				description: '2XL – chest 50-52'
-// 			},
-// 			{
-// 				label: '3XL',
-// 				catalogObjectId: '7YJNAWUFXATHUKFV3GX7GRJE',
-// 				description: '3XL – chest 52-54'
-// 			},
-// 			{
-// 				label: '4XL',
-// 				catalogObjectId: '5OUYRLR2CNIOX3AKKOIV2LX4',
-// 				description: '4XL – chest 56-58'
-// 			},
-// 			{
-// 				label: '5XL',
-// 				catalogObjectId: 'YYFKRBTCKZBBNVXHYNCIM4KC',
-// 				description: '5XL – chest 60-62'
-// 			}
-// 		],
-// 		provider: 'square',
-// 		type: 'shirt'
-// 	},
-// 	{
-// 		id: 8,
-// 		name: 'Good Guy',
-// 		price: 30,
-// 		currency: 'USD',
-// 		img: shirt7,
-// 		alt: 'Cartoon Con-Crete and a a lady in facepaint',
-// 		url: './shirt7.glb',
-// 		description: 'Con-Crete and a a lady in facepaint leaving a house for something.',
-// 		brand: 'Con-Crete',
-// 		sku: 'GOOD-GUY-Black-8',
-// 		category: 'Apparel > Shirts',
-// 		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
-// 		availability: 'InStock',
-// 		material: '100% cotton',
-// 		color: 'Black',
-// 		sizes: [
-// {
-// 	label: 'M',
-// 	catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
-// 	description: 'Medium – chest 38-40'
-// },
-// 			{
-// 				label: 'L',
-// 				catalogObjectId: '7GHAK2FGD2BU2Z463DQ46WZ2',
-// 				description: 'Large – chest 42-44'
-// 			},
-// 			{ label: 'XL', catalogObjectId: 'R5I7JBXOC2FAW2WXPOCYKLYG', description: 'XL – chest 46-48' },
-// 			{
-// 				label: '2XL',
-// 				catalogObjectId: 'A5AMMMYGRCTEQQER6TEDBPGJ',
-// 				description: '2XL – chest 50-52'
-// 			},
-// 			{
-// 				label: '3XL',
-// 				catalogObjectId: 'TYID7SDBVXG6QL43DBBR4BSU',
-// 				description: '3XL – chest 52-54'
-// 			},
-// 			{
-// 				label: '4XL',
-// 				catalogObjectId: 'IDTGRZNBZ2B4A4YRZYDVAO2U',
-// 				description: '4XL – chest 56-58'
-// 			},
-// 			{
-// 				label: '5XL',
-// 				catalogObjectId: 'JGZHTBBTD6SIFGUKKETHUJVW',
-// 				description: '5XL – chest 60-62'
-// 			}
-// 		],
-// 		provider: 'square',
-// 		type: 'shirt'
-// 	}
+//
 // ];
 
 export const Shirts = [
 	{
 		id: 8,
-		name: 'Snapped: Grey(test mode',
+		name: 'Fuck My Boss',
+		price: 30,
+		currency: 'USD',
+		img: shirt6,
+		alt: 'Cartoon Con-Crete over a dead body',
+		url: './shirt6.glb',
+		description: 'Cartoon Con-Crete over a dead body with blood all over the ground',
+		brand: 'Con-Crete',
+		sku: 'FMB-BLACK-8',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Black',
+		sizes: [
+			{
+				label: 'M',
+				catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
+				description: 'Medium – chest 38-40'
+			},
+			{
+				label: 'L',
+				catalogObjectId: 'I43AVHNSJ4RPBFL7HHKFVL4C',
+				description: 'Large – chest 42-44'
+			},
+			{ label: 'XL', catalogObjectId: 'VIO4C6N3O4SPX3YZTSVYYV3T', description: 'XL – chest 46-48' },
+			{
+				label: '2XL',
+				catalogObjectId: 'ZFF55MMEMFUZ5D3FWF7SV5LR',
+				description: '2XL – chest 50-52'
+			},
+			{
+				label: '3XL',
+				catalogObjectId: '7YJNAWUFXATHUKFV3GX7GRJE',
+				description: '3XL – chest 52-54'
+			},
+			{
+				label: '4XL',
+				catalogObjectId: '5OUYRLR2CNIOX3AKKOIV2LX4',
+				description: '4XL – chest 56-58'
+			},
+			{
+				label: '5XL',
+				catalogObjectId: 'YYFKRBTCKZBBNVXHYNCIM4KC',
+				description: '5XL – chest 60-62'
+			}
+		],
+		provider: 'square',
+		type: 'shirt'
+	},
+	{
+		id: 9,
+		name: 'Good Guy',
+		price: 30,
+		currency: 'USD',
+		img: shirt7,
+		alt: 'Cartoon Con-Crete and a a lady in facepaint',
+		url: './shirt7.glb',
+		description: 'Con-Crete and a a lady in facepaint leaving a house for something.',
+		brand: 'Con-Crete',
+		sku: 'GOOD-GUY-Black-8',
+		category: 'Apparel > Shirts',
+		keywords: ['band merch', 'Con-Crete shirt', 'black shirt', 'rapper apparel'],
+		availability: 'InStock',
+		material: '100% cotton',
+		color: 'Black',
+		sizes: [
+			{
+				label: 'M',
+				catalogObjectId: '72QKBG23GGQH5MJIQXGKUXZY',
+				description: 'Medium – chest 38-40'
+			},
+			{
+				label: 'L',
+				catalogObjectId: '7GHAK2FGD2BU2Z463DQ46WZ2',
+				description: 'Large – chest 42-44'
+			},
+			{ label: 'XL', catalogObjectId: 'R5I7JBXOC2FAW2WXPOCYKLYG', description: 'XL – chest 46-48' },
+			{
+				label: '2XL',
+				catalogObjectId: 'A5AMMMYGRCTEQQER6TEDBPGJ',
+				description: '2XL – chest 50-52'
+			},
+			{
+				label: '3XL',
+				catalogObjectId: 'TYID7SDBVXG6QL43DBBR4BSU',
+				description: '3XL – chest 52-54'
+			},
+			{
+				label: '4XL',
+				catalogObjectId: 'IDTGRZNBZ2B4A4YRZYDVAO2U',
+				description: '4XL – chest 56-58'
+			},
+			{
+				label: '5XL',
+				catalogObjectId: 'JGZHTBBTD6SIFGUKKETHUJVW',
+				description: '5XL – chest 60-62'
+			}
+		],
+		provider: 'square',
+		type: 'shirt'
+	},
+	{
+		id: 9,
+		name: 'Snapped: Grey',
 		price: 30,
 		currency: 'USD',
 		img: shirt2,
@@ -360,7 +361,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 9,
+		id: 10,
 		name: 'Snapped: Black',
 		price: 30,
 		currency: 'USD',
@@ -418,7 +419,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 10,
+		id: 11,
 		name: 'SPD',
 		price: 30,
 		currency: 'USD',
@@ -474,7 +475,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 11,
+		id: 12,
 		name: 'Facepaint',
 		price: 30,
 		currency: 'USD',
@@ -509,7 +510,7 @@ export const Shirts = [
 
 export const Hats = [
 	{
-		id: 12,
+		id: 13,
 		name: 'Con-Crete Hat',
 		price: 25,
 		currency: 'USD',
@@ -550,7 +551,7 @@ export const Hats = [
 		type: 'hat'
 	},
 	{
-		id: 13,
+		id: 14,
 		name: 'Facepainted Hat',
 		price: 25,
 		currency: 'USD',
