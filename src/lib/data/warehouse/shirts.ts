@@ -15,6 +15,8 @@ import CD4 from '$lib/Images/Warehouse/conCD4.jpg';
 import CD5 from '$lib/Images/Warehouse/conCD5.jpg';
 import CD6 from '$lib/Images/Warehouse/conCD6.jpg';
 import CD7 from '$lib/Images/Warehouse/conCD7.jpg';
+import CD8 from '$lib/Images/Warehouse/conCD8.jpg';
+import CD9 from '$lib/Images/Warehouse/conCD9.jpg';
 
 import SceneAlt from '$lib/Assets/SceneAlt.svelte';
 
@@ -68,6 +70,46 @@ export type Sticker = {
 export const Cds = [
 	{
 		id: 1,
+		name: 'Snapped',
+		price: 20,
+		currency: 'USD',
+		img: CD9,
+		alt: 'Album cover for Con-Crete – Snapped',
+		url: './cdBaseSnapped.glb',
+		description: 'Platinum selling record from Con-Crete, Snapped.',
+		brand: 'Con-Crete',
+		sku: 'CD-SNPD-1',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'Snapped', 'Rap album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rap',
+		sizes: [{ label: 'CD', productId: 'PX00ZZ8K8FA', description: 'Physical audio CD' }],
+		provider: 'kunaki',
+		type: 'cd'
+	},
+	{
+		id: 2,
+		name: 'The Haunted EP',
+		price: 15,
+		currency: 'USD',
+		img: CD8,
+		alt: 'Album cover for Con-Crete – The Haunted EP',
+		url: './cdBaseHaunted.glb',
+		description: 'Platinum selling record from Con-Crete, The Haunted EP.',
+		brand: 'Con-Crete',
+		sku: 'CD-HANT-1',
+		category: 'Music > CDs',
+		keywords: ['band merch', 'Con-Crete CD', 'The Haunted EP', 'Rap album'],
+		availability: 'InStock',
+		format: 'Audio CD',
+		genre: 'Rap',
+		sizes: [{ label: 'CD', productId: 'PX001XBZPN', description: 'Physical audio CD' }],
+		provider: 'kunaki',
+		type: 'cd'
+	},
+	{
+		id: 3,
 		name: 'I Hate Cops Vol. 1',
 		price: 10,
 		currency: 'USD',
@@ -87,7 +129,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 2,
+		id: 4,
 		name: 'I Hate Cops Vol. 2',
 		price: 10,
 		currency: 'USD',
@@ -107,7 +149,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 3,
+		id: 5,
 		name: 'SAWS UP',
 		price: 10,
 		currency: 'USD',
@@ -127,7 +169,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 4,
+		id: 6,
 		name: 'Kill The T.H.O.T.',
 		price: 10,
 		currency: 'USD',
@@ -147,7 +189,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 5,
+		id: 7,
 		name: 'EVOL',
 		price: 10,
 		currency: 'USD',
@@ -167,7 +209,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 6,
+		id: 8,
 		name: 'Sawdemic',
 		price: 10,
 		currency: 'USD',
@@ -187,7 +229,7 @@ export const Cds = [
 		type: 'cd'
 	},
 	{
-		id: 7,
+		id: 9,
 		name: 'Indulgence Of The Flesh: The Sequel',
 		price: 10,
 		currency: 'USD',
@@ -214,7 +256,7 @@ export const Cds = [
 
 export const Shirts = [
 	{
-		id: 8,
+		id: 10,
 		name: 'Fuck My Boss',
 		price: 30,
 		currency: 'USD',
@@ -266,7 +308,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 9,
+		id: 11,
 		name: 'Good Guy',
 		price: 30,
 		currency: 'USD',
@@ -318,7 +360,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 9,
+		id: 12,
 		name: 'Snapped: Grey',
 		price: 30,
 		currency: 'USD',
@@ -361,7 +403,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 10,
+		id: 13,
 		name: 'Snapped: Black',
 		price: 30,
 		currency: 'USD',
@@ -419,7 +461,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 11,
+		id: 14,
 		name: 'SPD',
 		price: 30,
 		currency: 'USD',
@@ -475,7 +517,7 @@ export const Shirts = [
 		type: 'shirt'
 	},
 	{
-		id: 12,
+		id: 15,
 		name: 'Facepaint',
 		price: 30,
 		currency: 'USD',
@@ -510,7 +552,7 @@ export const Shirts = [
 
 export const Hats = [
 	{
-		id: 13,
+		id: 16,
 		name: 'Con-Crete Hat',
 		price: 25,
 		currency: 'USD',
@@ -551,7 +593,7 @@ export const Hats = [
 		type: 'hat'
 	},
 	{
-		id: 14,
+		id: 17,
 		name: 'Facepainted Hat',
 		price: 25,
 		currency: 'USD',

@@ -240,7 +240,7 @@
 			<p>“Most streamed track”</p>
 			<ul>
 				<li style="font-style: italic;">Asshole</li>
-				<li>Produced by Devereaux</li>
+				<li>Produced by Con-Crete</li>
 				<li>Mixed and mastered by Devereaux</li>
 				<li>Over 9 billion plays</li>
 			</ul>
@@ -255,7 +255,7 @@
 			<p>“New single”</p>
 			<ul>
 				<li style="font-style: italic;">Good Guy</li>
-				<li>Produced by Devereaux</li>
+				<li>Produced by Con-Crete</li>
 				<li>Mixed and mastered by Devereaux</li>
 				<li>Over 9 billion plays</li>
 			</ul>
@@ -264,7 +264,7 @@
 				src="https://bandcamp.com/EmbeddedPlayer/track=1498605677/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/"
 				seamless
 				><a href="https://contothecrete.bandcamp.com/track/good-guy-produced-by-devereaux"
-					>Good Guy (Produced by Devereaux) by CON-CRETE</a
+					>Good Guy (Produced by Con-Crete) by CON-CRETE</a
 				></iframe
 			>
 		</figure>
@@ -273,7 +273,7 @@
 			<p>“Fan favorite”</p>
 			<ul>
 				<li style="font-style: italic;">WITCHDOCTA ft. Razakel</li>
-				<li>Produced by Devereaux</li>
+				<li>Produced by Con-Crete</li>
 				<li>Mixed and mastered by Devereaux</li>
 				<li>Featuring additional vocals by Razakel</li>
 				<li>Over 9 billion plays</li>
