@@ -29,7 +29,7 @@
 	async function loadSquareSdk() {
 		return new Promise((resolve, reject) => {
 			const script = document.createElement('script');
-			script.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
+			script.src = 'https://web.squarecdn.com/v1/square.js';
 			script.onload = () => resolve((window as any).Square);
 			script.onerror = reject;
 			document.head.appendChild(script);
