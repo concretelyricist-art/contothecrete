@@ -186,7 +186,7 @@
 			</p></summary
 		>
 
-		<ul>
+		<ul class="marg-Also">
 			<li><strong>Age:</strong> 783 years old</li>
 			<li><strong>Height:</strong> 12'3"</li>
 			<li><strong>Weight:</strong> 2 tons</li>
@@ -241,7 +241,7 @@
 			<ul>
 				<li style="font-style: italic;">Asshole</li>
 				<li>Produced by Con-Crete</li>
-				<li>Mixed and mastered by Devereaux</li>
+				<li>Mixed and mastered by Con-Crete</li>
 				<li>Over 9 billion plays</li>
 			</ul>
 			<iframe
@@ -255,8 +255,8 @@
 			<p>“New single”</p>
 			<ul>
 				<li style="font-style: italic;">Good Guy</li>
-				<li>Produced by Con-Crete</li>
-				<li>Mixed and mastered by Devereaux</li>
+				<li>Produced by Devereaux</li>
+				<li>Mixed and mastered by Con-Crete</li>
 				<li>Over 9 billion plays</li>
 			</ul>
 			<iframe
@@ -274,7 +274,7 @@
 			<ul>
 				<li style="font-style: italic;">WITCHDOCTA ft. Razakel</li>
 				<li>Produced by Con-Crete</li>
-				<li>Mixed and mastered by Devereaux</li>
+				<li>Mixed and mastered by Con-Crete</li>
 				<li>Featuring additional vocals by Razakel</li>
 				<li>Over 9 billion plays</li>
 				<iframe
@@ -505,12 +505,12 @@
 		content: '>';
 		position: absolute;
 		left: 10vw;
-		top: 20vh;
+		top: 15vh;
 		transition: transform 0.2s ease;
 		border: var(--bord);
 
 		@media only screen and (min-width: 1024px) {
-			top: 17vh;
+			top: 12vh;
 		}
 	}
 
