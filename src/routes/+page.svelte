@@ -339,6 +339,12 @@
 					margin: 0;
 					padding: 0;
 				}
+
+				img {
+					width: 45%;
+					object-fit: cover;
+					animation: pulse 1s infinite;
+				}
 			}
 
 			.flyer {
