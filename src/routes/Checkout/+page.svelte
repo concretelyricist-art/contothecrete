@@ -101,7 +101,7 @@
 	});
 </script>
 
-<h1>Checkout</h1>
+<h1>Checkout!</h1>
 
 <div>
 	<div>
