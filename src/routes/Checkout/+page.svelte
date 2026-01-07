@@ -36,7 +36,8 @@
 		});
 	}
 
-	async function handlePayment() {
+	async function handlePayment(event) {
+		event.preventDefault();
 		status = 'Tokenizing...';
 		const result = await card.tokenize();
 
