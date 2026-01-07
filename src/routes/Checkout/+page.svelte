@@ -10,6 +10,8 @@
 	const { applicationId, locationId } = data.publicConfig;
 
 	let form = $state({
+		name: '',
+		email: '',
 		address1: '',
 		address2: '',
 		city: '',
@@ -29,15 +31,14 @@
 	async function loadSquareSdk() {
 		return new Promise((resolve, reject) => {
 			const script = document.createElement('script');
-			script.src = 'https://web.squarecdn.com/v1/square.js';
+			script.src = 'https://sandbox.web.squarecdn.com/v1/square.js';
 			script.onload = () => resolve((window as any).Square);
 			script.onerror = reject;
 			document.head.appendChild(script);
 		});
 	}
 
-	async function handlePayment(event) {
-		event.preventDefault();
+	async function handlePayment() {
 		status = 'Tokenizing...';
 		const result = await card.tokenize();
 
@@ -70,6 +71,8 @@
 				token: result.token,
 				items: simplifiedItems,
 				postal: {
+					name: form.name,
+					email: form.email,
 					addressLine1: form.address1,
 					addressLine2: form.address2,
 					city: form.city,
@@ -101,7 +104,7 @@
 	});
 </script>
 
-<h1>Checkout!</h1>
+<h1>Checkout</h1>
 
 <div>
 	<div>
@@ -168,6 +171,9 @@
 		<h1>Checkout</h1>
 
 		<form class="classicForm" onsubmit={handlePayment}>
+			<label>
+				<input bind:value={form.name} required placeholder="Name" />
+			</label>
 			<label>
 				<input bind:value={form.address1} required placeholder="Address(Main)" />
 			</label>
