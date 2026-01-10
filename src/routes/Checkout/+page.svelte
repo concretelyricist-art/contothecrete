@@ -175,6 +175,9 @@
 				<input bind:value={form.name} required placeholder="Name" />
 			</label>
 			<label>
+				<input bind:value={form.email} required placeholder="Email" />
+			</label>
+			<label>
 				<input bind:value={form.address1} required placeholder="Address(Main)" />
 			</label>
 			<label>

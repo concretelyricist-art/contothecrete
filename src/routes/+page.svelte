@@ -4,7 +4,9 @@
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 	import Chainsaw from '$lib/Assets/Chainsaw.svelte';
+
 	import Flyer from '$lib/Images/FRONTFLYER.jpg';
+	import Flyer2 from '$lib/Images/frontFlyer2.jpg';
 
 	/* 🦕  🦖🦖🦖 🦕 🦕  Entry Banner 💀= 💣 🌠 */
 	// Mobile/Small Images
@@ -46,7 +48,7 @@
 	// Date for show parser
 	const parseDate = (str: string) => {
 		const [month, day, year] = str.split('-').map(Number);
-		return new Date(year, month - 1, day);
+		return new Date(year, month + 1, day);
 	};
 
 	const today = $state(new Date());
@@ -56,6 +58,11 @@
 			.filter((d) => d.parsed.getTime() >= today.getTime())
 			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
 		return upcoming[0] ?? null;
+	});
+
+	const flyerToUse = $derived(() => {
+		const cutoff = new Date(today.getFullYear(), today.getMonth(), 11);
+		return today > cutoff ? Flyer2 : Flyer;
 	});
 
 	/* 🦕  🦖🦖🦖 🦕 🦕  Merch 💀= 💣 🌠 */
@@ -105,8 +112,14 @@
 	</div>
 
 	<section class="header-info">
-		<article class="glass-Box flyer">
-			<a href={nextShow().ticketsUrl} target="_blank" rel="noopener"><img src={Flyer} alt="" /> </a>
+		<article class=" flyer">
+			{#if nextShow()}
+				<a href={nextShow().ticketsUrl} target="_blank" rel="noopener">
+					<img src={flyerToUse()} alt="" />
+				</a>
+			{:else}
+				<img src={flyerToUse()} alt="" />
+			{/if}
 		</article>
 
 		<article class="glass-Box">
@@ -284,6 +297,16 @@
 		width: 90%;
 		margin: 0;
 
+		.flyer {
+			width: fit-content;
+			height: fit-content;
+			img {
+				width: 65%;
+				margin-bottom: 1rem;
+				object-fit: cover;
+				animation: pulse 1s infinite;
+			}
+		}
 		.glass-Box {
 			width: fit-content;
 			height: fit-content;
@@ -300,7 +323,8 @@
 			grid-template-columns: 1fr 1fr;
 			height: 30vh;
 			top: 45vh;
-			.glass-Box {
+			.glass-Box,
+			.flyer {
 				width: fit-content;
 				height: fit-content;
 				h2 {
@@ -339,16 +363,15 @@
 					margin: 0;
 					padding: 0;
 				}
-
-				img {
-					width: 45%;
-					object-fit: cover;
-					animation: pulse 1s infinite;
-				}
 			}
 
 			.flyer {
 				grid-row: span 3;
+
+				img {
+					width: 45%;
+					object-fit: cover;
+				}
 			}
 		}
 	}

@@ -107,6 +107,7 @@ export async function POST(event) {
 						shipmentDetails: {
 							recipient: {
 								displayName: postal.name,
+								emailAddress: postal.email,
 								address: {
 									addressLine1: postal.addressLine1,
 									addressLine2: postal.addressLine2,

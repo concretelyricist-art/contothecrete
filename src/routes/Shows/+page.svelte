@@ -4,7 +4,7 @@
 	// Date for show parser
 	const parseDate = (str: string) => {
 		const [month, day, year] = str.split('-').map(Number);
-		return new Date(year, month - 1, day);
+		return new Date(year, month + 0, day);
 	};
 
 	const today = $state(new Date());
