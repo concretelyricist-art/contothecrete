@@ -76,7 +76,7 @@ export const Cds = [
 		img: CD9,
 		alt: 'Album cover for Con-Crete – Snapped',
 		url: './cdBaseSnapped.glb',
-		description: 'Platinum selling record from Con-Crete, Snapped.',
+		description: 'Brand brand new full-length album from Con-Crete.',
 		brand: 'Con-Crete',
 		sku: 'CD-SNPD-1',
 		category: 'Music > CDs',
@@ -96,7 +96,7 @@ export const Cds = [
 		img: CD8,
 		alt: 'Album cover for Con-Crete – The Haunted EP',
 		url: './cdBaseHaunted.glb',
-		description: 'Platinum selling record from Con-Crete, The Haunted EP.',
+		description: 'An extra helping of fresh new sounds from Con-Crete.',
 		brand: 'Con-Crete',
 		sku: 'CD-HANT-1',
 		category: 'Music > CDs',
@@ -227,27 +227,28 @@ export const Cds = [
 		sizes: [{ label: 'CD', productId: 'PX00ZA7VZT', description: 'Physical audio CD' }],
 		provider: 'kunaki',
 		type: 'cd'
-	},
-	{
-		id: 9,
-		name: 'Indulgence Of The Flesh: The Sequel',
-		price: 10,
-		currency: 'USD',
-		img: CD6,
-		alt: 'Album cover for Con-Crete – Indulgence Of The Flesh: The Sequel',
-		url: './cdBaseFlesh.glb',
-		description: 'Platinum selling record from Con-Crete, Indulgence Of The Flesh: The Sequel.',
-		brand: 'Con-Crete',
-		sku: 'CD-FLESH-7',
-		category: 'Music > CDs',
-		keywords: ['band merch', 'Con-Crete CD', 'Indulgence Of The Flesh', 'Rap album'],
-		availability: 'InStock',
-		format: 'Audio CD',
-		genre: 'Rap',
-		sizes: [{ label: 'CD', productId: 'PX00ZAJT2R', description: 'Physical audio CD' }],
-		provider: 'kunaki',
-		type: 'cd'
 	}
+	// ,
+	// {
+	// 	id: 9,
+	// 	name: 'Indulgence Of The Flesh: The Sequel',
+	// 	price: 10,
+	// 	currency: 'USD',
+	// 	img: CD6,
+	// 	alt: 'Album cover for Con-Crete – Indulgence Of The Flesh: The Sequel',
+	// 	url: './cdBaseFlesh.glb',
+	// 	description: 'Platinum selling record from Con-Crete, Indulgence Of The Flesh: The Sequel.',
+	// 	brand: 'Con-Crete',
+	// 	sku: 'CD-FLESH-7',
+	// 	category: 'Music > CDs',
+	// 	keywords: ['band merch', 'Con-Crete CD', 'Indulgence Of The Flesh', 'Rap album'],
+	// 	availability: 'InStock',
+	// 	format: 'Audio CD',
+	// 	genre: 'Rap',
+	// 	sizes: [{ label: 'CD', productId: 'PX00ZAJT2R', description: 'Physical audio CD' }],
+	// 	provider: 'kunaki',
+	// 	type: 'cd'
+	// }
 ];
 
 // export const StagedItem = [

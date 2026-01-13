@@ -15,10 +15,11 @@
 		{ label: 'Shop', href: '/Shop', id: 3 },
 		{ label: 'Checkout', href: '/Checkout', id: 4 },
 		{ label: 'Gallery ', href: '/Gallery', id: 5 },
-		{ label: 'Videos', href: '/Videos', id: 8 },
+		{ label: 'Music/Videos', href: '/Videos', id: 8 },
 		{ label: 'Contact', href: '/Contact', id: 6 },
 		{ label: 'About ', href: '/About', id: 7 },
-		{ label: 'Epk', href: '/Epk', id: 9 }
+		{ label: 'Epk', href: '/Epk', id: 9 },
+		{ label: 'New Music', href: '/newMusic', id: 10 }
 	];
 
 	let showScrollButton = $state(false);

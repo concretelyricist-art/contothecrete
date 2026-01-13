@@ -48,7 +48,7 @@
 	// Date for show parser
 	const parseDate = (str: string) => {
 		const [month, day, year] = str.split('-').map(Number);
-		return new Date(year, month + 1, day);
+		return new Date(year, month - 1, day);
 	};
 
 	const today = $state(new Date());
@@ -118,14 +118,13 @@
 					<img src={flyerToUse()} alt="" />
 				</a>
 			{:else}
-				<img src={flyerToUse()} alt="" />
+				<a href="/newMusic"> <img src={flyerToUse()} alt="" /> </a>
 			{/if}
 		</article>
 
 		<article class="glass-Box">
-			<h2><a href="/Shows">Shows</a></h2>
-
 			{#if nextShow()}
+				<h2><a href="/Shows">Shows</a></h2>
 				<table class="centered">
 					<thead>
 						<tr>
@@ -153,7 +152,7 @@
 					</tbody>
 				</table>
 			{:else}
-				<p>No upcoming shows found.</p>
+				<h2><a href="/Contact">Contact</a></h2>
 			{/if}
 		</article>
 		<article class="glass-Box large-Only">

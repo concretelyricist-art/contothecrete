@@ -8,8 +8,16 @@
 
 <div class="app">
 	<Header />
-	<main>
-		{@render children()}
-	</main>
+	<div class="page">
+		<main>
+			{@render children()}
+		</main>
+	</div>
 	<Footer />
 </div>
+
+<style>
+	.page {
+		min-height: 90vh;
+	}
+</style>

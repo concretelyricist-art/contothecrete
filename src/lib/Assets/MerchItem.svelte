@@ -11,6 +11,7 @@
 	let currentItem = $state(item);
 	let selectedSize = $state(null);
 	let warning = $state(false);
+	let addedMessage = $state(false);
 
 	function getCollectionForType(type: string) {
 		switch (type) {
@@ -46,8 +47,12 @@
 			warning = true;
 			return;
 		}
+
 		cart.addItem(currentItem, selectedSize);
 		warning = false;
+
+		addedMessage = true;
+		setTimeout(() => (addedMessage = false), 1500);
 	}
 </script>
 
@@ -113,6 +118,10 @@
 	{/if}
 
 	<button class="btn-Ghost" onclick={handleAddToCart}> Add to Cart</button>
+
+	{#if addedMessage}
+		<p class="added-msg">Added to cart!</p>
+	{/if}
 </article>
 
 <style>
