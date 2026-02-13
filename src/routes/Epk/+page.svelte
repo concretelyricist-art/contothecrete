@@ -233,6 +233,19 @@
 		</p>
 	</details>
 
+	<!-- 🦕  🦖🦖🦖 🦕 🦕 Press support  💀= 💣 🌠  -->
+	<details>
+		<h3>Press Support</h3>
+		<p>
+			​"Whoop Whoop, Fam! ​If you’re looking for that raw, neck-snapping energy to blast through
+			your speakers, look no further. The homie Con-Crete just unleashed his latest monster of a
+			project, “SNAPPED,” and it is pure underground fire. ​The entire project was laced by the
+			homie Devereaux, and you already know when Devereaux is behind the boards, the beats are going
+			to be dark, heavy, and absolute ear candy for the wicked world. Make sure and peep the
+			freshness!" - Seth Moon at Faygoluvers.net
+		</p>
+	</details>
+
 	<!-- 🦕  🦖🦖🦖 🦕 🦕 Song's  💀= 💣 🌠  -->
 	<section class="video-Frame">
 		<h2>Choice Songs</h2>
