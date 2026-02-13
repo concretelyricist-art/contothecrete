@@ -234,7 +234,7 @@
 	</details>
 
 	<!-- 🦕  🦖🦖🦖 🦕 🦕 Press support  💀= 💣 🌠  -->
-	<details>
+	<section>
 		<h3>Press Support</h3>
 		<p>
 			​"Whoop Whoop, Fam! ​If you’re looking for that raw, neck-snapping energy to blast through
@@ -244,7 +244,7 @@
 			to be dark, heavy, and absolute ear candy for the wicked world. Make sure and peep the
 			freshness!" - Seth Moon at Faygoluvers.net
 		</p>
-	</details>
+	</section>
 
 	<!-- 🦕  🦖🦖🦖 🦕 🦕 Song's  💀= 💣 🌠  -->
 	<section class="video-Frame">
