@@ -301,7 +301,6 @@
 			height: fit-content;
 			img {
 				width: 65%;
-				margin-bottom: 1rem;
 				object-fit: cover;
 				animation: pulse 1s infinite;
 			}
@@ -314,6 +313,7 @@
 			img {
 				width: 65%;
 				object-fit: cover;
+				margin-bottom: 3rem;
 				animation: pulse 1s infinite;
 			}
 		}
@@ -346,6 +346,11 @@
 					margin: 0;
 					padding: 0;
 				}
+				a {
+					img {
+						margin-bottom: 3rem;
+					}
+				}
 			}
 
 			.flyer {
@@ -365,8 +370,6 @@
 			}
 
 			.flyer {
-				grid-row: span 3;
-
 				img {
 					width: 45%;
 					object-fit: cover;

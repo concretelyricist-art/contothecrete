@@ -70,7 +70,7 @@
         --bg-2: oklch(25.197% 0.00003 271.152); /* Extra soft */
         --txt-1: oklch(72.193% 0.00008 271.152); /* Grey*/
         --txt-2: oklch(79.837% 0.00009 271.152); /* Grey*/
-        --accent-1: oklch(33.815% 0.1232 26.919); /* Muted purple */
+        --accent-1: oklch(33.815% 0.1232 26.919); /* Muted red */
         --accent-2: oklch(35% 0.1 95); /* Muted gold */ 
     
         --hover: color-mix(in oklch, var(--accent-1) 80%, black 20%);

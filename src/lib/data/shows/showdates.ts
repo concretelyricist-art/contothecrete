@@ -21,14 +21,14 @@ export const ShowDates = [
 		price: 'FREE'
 	},
 	{
-		date: '03-21-2026',
-		time: '8:00 PM',
-		location: 'El Corazon',
-		city: 'Seattle, WA',
-		venueUrl: 'https://www.elcorazonseattle.com/',
-		ticketsUrl: 'https://www.elcorazonseattle.com/shows/twisted-insane-the-reaper-tour-21-mar',
-		description: 'Twisted Insane for The Reaper Tour at El Corazon in Seattle!',
-		price: 'FREE'
+		date: '03-14-2026',
+		time: '7pm - 10PM',
+		location: 'Le Voyeur Cafe',
+		city: 'Olympia, WA',
+		venueUrl: 'N/a',
+		ticketsUrl: 'N/a',
+		description: 'Kung Fu Vampire at El Corazon in Seattle!',
+		price: '$10'
 	},
 	{
 		date: '03-30-2026',
@@ -49,5 +49,15 @@ export const ShowDates = [
 		ticketsUrl: 'N/a',
 		description: 'Top jester?!',
 		price: '$10'
+	},
+	{
+		date: '06-07-2026',
+		time: '8:00 PM',
+		location: 'El Corazon',
+		city: 'Seattle, WA',
+		venueUrl: 'https://www.elcorazonseattle.com/',
+		ticketsUrl: 'https://www.elcorazonseattle.com/shows/twisted-insane-the-reaper-tour-21-mar',
+		description: 'Twisted Insane for The Reaper Tour at El Corazon in Seattle!',
+		price: '$20'
 	}
 ];
