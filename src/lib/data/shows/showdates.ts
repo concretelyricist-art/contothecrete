@@ -31,6 +31,27 @@ export const ShowDates = [
 		price: '$10'
 	},
 	{
+		date: '03-21-2026',
+		time: '7:00 PM',
+		location: 'El Corazon',
+		city: 'Seattle, WA',
+		venueUrl: 'https://www.elcorazonseattle.com/',
+		ticketsUrl: 'https://www.elcorazonseattle.com/shows/kung-fu-vampire-21-mar',
+		description:
+			'Join us for an unforgettable night of music with Kung Fu Vampire at El Corazon in Seattle!',
+		price: '$15'
+	},
+	{
+		date: '03-27-2026',
+		time: '7:00 PM',
+		location: 'The King of Clubs',
+		city: 'Columbus, OH',
+		venueUrl: 'https://www.tkoc.live/',
+		ticketsUrl: 'https://wl.eventim.us/event/JuggalOhio-4-2026/669622?afflky=TheKingofClubs',
+		description: 'The Legendary Event Returns:  JuggalOhio 4',
+		price: '$65'
+	},
+	{
 		date: '03-30-2026',
 		time: '7:00 PM',
 		location: 'Club Eden',
