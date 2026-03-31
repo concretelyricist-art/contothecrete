@@ -111,7 +111,7 @@ export const Cds = [
 	{
 		id: 3,
 		name: 'I Hate Cops Vol. 1',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD,
 		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 1',
@@ -131,7 +131,7 @@ export const Cds = [
 	{
 		id: 4,
 		name: 'I Hate Cops Vol. 2',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD7,
 		alt: 'Album cover for Con-Crete – I Hate Cops Vol. 2',
@@ -151,7 +151,7 @@ export const Cds = [
 	{
 		id: 5,
 		name: 'SAWS UP',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD2,
 		alt: 'Album cover for Con-Crete – SAWS UP',
@@ -171,7 +171,7 @@ export const Cds = [
 	{
 		id: 6,
 		name: 'Kill The T.H.O.T.',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD3,
 		alt: 'Album cover for Con-Crete – Kill The T.H.O.T.',
@@ -191,7 +191,7 @@ export const Cds = [
 	{
 		id: 7,
 		name: 'EVOL',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD4,
 		alt: 'Album cover for Con-Crete – EVOL',
@@ -211,7 +211,7 @@ export const Cds = [
 	{
 		id: 8,
 		name: 'Sawdemic',
-		price: 10,
+		price: 5,
 		currency: 'USD',
 		img: CD5,
 		alt: 'Album cover for Con-Crete – Sawdemic',

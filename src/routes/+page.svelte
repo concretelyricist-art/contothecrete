@@ -114,7 +114,7 @@
 	<section class="header-info">
 		<article class=" flyer">
 			{#if nextShow()}
-				<a href={nextShow().ticketsUrl} target="_blank" rel="noopener">
+				<a href="/Shop" target="_blank" rel="noopener">
 					<img src={flyerToUse()} alt="" />
 				</a>
 			{:else}
