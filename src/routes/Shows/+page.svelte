@@ -1,19 +1,18 @@
 <script lang="ts">
 	import { ShowDates } from '$lib/data/shows/showdates.ts';
 
-	// Date for show parser
 	const parseDate = (str: string) => {
 		const [month, day, year] = str.split('-').map(Number);
 		return new Date(year, month - 1, day);
 	};
 
 	const today = $state(new Date());
+	today.setHours(0, 0, 0, 0);
 
-	const nextShow = $derived(() => {
-		const upcoming = ShowDates.map((d) => ({ ...d, parsed: parseDate(d.date) }))
+	const upcomingShows = $derived(() => {
+		return ShowDates.map((d) => ({ ...d, parsed: parseDate(d.date) }))
 			.filter((d) => d.parsed.getTime() >= today.getTime())
 			.sort((a, b) => a.parsed.getTime() - b.parsed.getTime());
-		return upcoming[0] ?? null;
 	});
 </script>
 
@@ -29,38 +28,39 @@
 	<article>
 		<h1>Shows</h1>
 
-		{#if nextShow()}
-			<table class="centered">
-				<thead>
-					<tr>
-						<th>Place</th>
-						<th>City</th>
-						<th>Date</th>
-						<th>Tickets</th>
-					</tr>
-				</thead>
-				<tbody>
+		<table class="centered">
+			<thead>
+				<tr>
+					<th>Place</th>
+					<th>City</th>
+					<th>Date</th>
+					<th>Tickets</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each upcomingShows() as show (show)}
 					<tr>
 						<td>
-							<a href={nextShow().venueUrl} target="_blank" rel="noopener">
-								{nextShow().location}
+							<a href={show.venueUrl} target="_blank" rel="noopener">
+								{show.location}
 							</a>
 						</td>
-						<td>{nextShow().city}</td>
-						<td>{nextShow().date}</td>
+						<td>{show.city}</td>
+						<td>{show.date}</td>
 						<td>
-							<a href={nextShow().ticketsUrl} target="_blank" rel="noopener">
-								{nextShow().price} / Tickets
+							<a href={show.ticketsUrl} target="_blank" rel="noopener">
+								{show.price} / Tickets
 							</a>
 						</td>
 					</tr>
-				</tbody>
-			</table>
-		{:else}
-			<p style="display: none;">No upcoming shows found.</p>
-		{/if}
+				{/each}
+			</tbody>
+		</table>
 	</article>
 
+	<h3>
+		If tickets or venue links are not available above, they may exist from the spotify link below
+	</h3>
 	<script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
 	<a
 		class="bit-widget-initializer"

@@ -5,8 +5,8 @@
 	import MerchItem from '$lib/Assets/MerchItem.svelte';
 	import Chainsaw from '$lib/Assets/Chainsaw.svelte';
 
-	import Flyer2 from '$lib/Images/FRONTFLYER.jpg';
-	import Flyer from '$lib/Images/frontFlyer2.jpg';
+	import Flyer from '$lib/Images/FRONTFLYER.jpg';
+	import Flyer2 from '$lib/Images/frontFlyer2.jpg';
 
 	/* 🦕  🦖🦖🦖 🦕 🦕  Entry Banner 💀= 💣 🌠 */
 	// Mobile/Small Images
