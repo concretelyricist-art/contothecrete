@@ -150,7 +150,7 @@
 		<h2 id="socials-heading">Find me on every major platform:</h2>
 
 		<article class="social-grid">
-			{#each Socials as s}
+			{#each Socials as s (s)}
 				<a
 					class="btn-Ghost"
 					href={s.url}
