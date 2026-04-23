@@ -114,11 +114,11 @@
 	<section class="header-info">
 		<article class=" flyer">
 			{#if nextShow()}
-				<a href="/Shop" target="_blank" rel="noopener">
+				<a href="/Shows" target="_blank" rel="noopener">
 					<img src={flyerToUse()} alt="" />
 				</a>
 			{:else}
-				<a href="/newMusic"> <img src={flyerToUse()} alt="" /> </a>
+				<a href="/Shows"> <img src={flyerToUse()} alt="" /> </a>
 			{/if}
 		</article>
 
